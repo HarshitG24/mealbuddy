@@ -1,0 +1,33 @@
+{
+  "name": "meal_buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "lint": "eslint --fix --ext .js ./",
+    "checkstyle": "yarn run lint && yarn run prettier",
+    "prebuild": "rm -rf frontend/build",
+    "build": "yarn run prebuild && yarn run checkstyle && cd frontend && yarn install && yarn run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "eslint-config": "^0.3.0",
+    "express": "^4.18.2",
+    "mongodb": "^4.11.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-react": "^7.31.10",
+    "prettier": "^2.7.1"
+  }
+}
