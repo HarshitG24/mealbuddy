@@ -1,6 +1,9 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import { MongoClient } from "mongodb";
 
-const url = "mongodb://127.0.0.1:27017";
+
+const url = process.env.MONGO_URL;
 const client = new MongoClient(url, {});
 const db = client.db("MealBuddy");
 const users = db.collection("users");
