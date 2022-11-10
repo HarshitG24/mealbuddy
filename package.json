@@ -4,9 +4,8 @@
   "description": "",
   "main": "app.js",
   "type": "module",
-  "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
+    "start": "node app.js",
     "lint": "eslint --fix --ext .js ./",
     "checkstyle": "yarn run lint && yarn run prettier",
     "prebuild": "rm -rf frontend/build",
