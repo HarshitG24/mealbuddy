@@ -21,7 +21,6 @@ app.use((req, res, next) => {
   );
   next();
 });
-
 // app.use((req, res) => {
 //   res.sendFile("./frontend/public/index.html");
 // });
