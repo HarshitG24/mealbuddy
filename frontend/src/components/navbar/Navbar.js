@@ -7,6 +7,7 @@ import {
   faPizzaSlice,
   faBurger,
   faUser,
+  faCalculator,
 } from "@fortawesome/free-solid-svg-icons";
 import { fontSize } from "../../utils/util";
 // import { useState } from "react";
@@ -77,6 +78,18 @@ function Navbar({ selected, setSelected }) {
             e.preventDefault();
             window.location.href = "/burger-builder";
             navbarClicked(5);
+          }}
+        />
+      </a>
+      <a href="/calorie-tracker">
+        <FontAwesomeIcon
+          icon={faCalculator}
+          size={fontSize}
+          className={`font-icon ${selected === 6 ? "selected" : ""}`}
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "/calorie-tracker";
+            navbarClicked(6);
           }}
         />
       </a>
