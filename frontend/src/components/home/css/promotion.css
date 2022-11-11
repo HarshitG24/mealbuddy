@@ -1,5 +1,6 @@
 :root {
   --promotion-background: #ffd9a3;
+  --order-now-btn: #f49001;
 }
 
 *,
@@ -19,9 +20,54 @@ html {
   width: 100%;
   flex-wrap: wrap;
   background: var(--promotion-background);
+  flex: 1;
+  padding: 3rem;
+  border-radius: 4rem;
+  border: 0.1rem solid var(--order-now-btn);
 }
 
 .delivery_clipart {
-  width: 25%;
-  height: 25%;
+  width: 100%;
+  height: 100%;
+}
+
+.promotion_image {
+  display: flex;
+  flex: 0.3;
+}
+
+.promotion_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 0.7;
+  margin-left: 3rem;
+}
+
+.promotional_title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding: 1rem;
+}
+
+.promotion_description {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.order_now_parent {
+  margin-top: 1rem;
+}
+
+.order_now {
+  width: 20%;
+  background: var(--order-now-btn);
+  border: none;
+  padding: 1.5rem;
+  border-radius: 3rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-left: 1rem;
+  cursor: pointer;
 }
