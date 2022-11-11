@@ -1,3 +1,7 @@
+:root {
+  --body-background: #dfdfdf;
+}
+
 *,
 *::before,
 *::after {
@@ -12,5 +16,12 @@ html {
 
 .container {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: row;
+  background: var(--body-background);
+}
+
+main {
+  width: 65%;
 }

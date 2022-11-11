@@ -1,26 +1,26 @@
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
-async function testApiCall() {
-  const headers = new Headers({ "Content-Type": "application/json" });
-
-  try {
-    await fetch("/api/createUser", {
-      method: "post",
-      headers: headers,
-      body: JSON.stringify({ name: "harshit" }),
-    });
-  } catch (error) {
-    console.log("error is", error);
-  }
-}
+import AddToCart from "./components/addToCart/AddToCart";
+import Logo from "./components/header/logo";
+import Home from "./components/home/home";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
+  const [selected, setSelected] = useState(1);
+  console.log("selected", selected);
   return (
     <div className="container">
-      <h1>Meal Buddy</h1>
-      <button type="submit" onClick={() => testApiCall()}>
-        Make api call
-      </button>
+      <Navbar selected={selected} setSelected={setSelected} />
+      <main>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/settings" element={<Home />} />
+          </Routes>
+        </Router>
+      </main>
+      <AddToCart />
     </div>
   );
 }

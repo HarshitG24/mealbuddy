@@ -1,5 +1,5 @@
 :root {
-  --navbar-background: #dfdfdf;
+  --navbar-background: #fff;
   --font-icon-hover-background: #f09312;
   --font-icon-hover: #fff;
 }
@@ -14,6 +14,11 @@
 
 html {
   font-size: 62.5%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .nav_container {

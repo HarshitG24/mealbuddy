@@ -1,6 +1,6 @@
 :root {
-  --cart-background: #dfdfdf;
   --highlight-color: #f09312;
+  --add-to-cart-background: #fff;
 }
 
 *,
@@ -19,9 +19,9 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 25%;
+  width: 30%;
   height: 100vh;
-  background: var(--cart-background);
+  background: var(--add-to-cart-background);
 }
 
 .delievry_img {
