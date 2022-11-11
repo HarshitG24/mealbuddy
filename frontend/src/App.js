@@ -9,6 +9,7 @@ import CreateAccount from "./components/createAccount/createAccount";
 
 function App() {
   const [selected, setSelected] = useState(1);
+
   return (
     <div className="container">
       <div className="nav_block">
@@ -20,6 +21,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/settings" element={<Home />} />
               <Route path="/settings" element={<Home />} />
             </Routes>
           </Router>
