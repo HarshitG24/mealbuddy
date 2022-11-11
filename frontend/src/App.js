@@ -10,26 +10,26 @@ import CreateAccount from "./components/createAccount/createAccount";
 function App() {
   const [selected, setSelected] = useState(1);
   return (
-    <div className="container">
-      <div className="nav_block">
-        <Navbar selected={selected} setSelected={setSelected} />
-      </div>
-      <div className="content_block">
-        <main>
-          <Logo />
-          <Router>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/settings" element={<Home />} />
-            </Routes>
-          </Router>
-        </main>
-      </div>
-      <div className="cart_block">
-        <AddToCart />
-      </div>
-    </div>
-    // <CreateAccount></CreateAccount>
+    // <div className="container">
+    //   <div className="nav_block">
+    //     <Navbar selected={selected} setSelected={setSelected} />
+    //   </div>
+    //   <div className="content_block">
+    //     <main>
+    //       <Logo />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/settings" element={<Home />}></Route>
+        <Route path="/createUser" element={<CreateAccount />}></Route>
+      </Routes>
+    </Router>
+    //     </main>
+    //   </div>
+    //   <div className="cart_block">
+    //     <AddToCart />
+    //   </div>
+    // </div>
   );
 }
 

@@ -13,10 +13,19 @@ app.use(express.static("frontend/build"));
 app.use("/api", loginRouter);
 app.use("/api/createAccount", createUser);
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 // app.use((req, res) => {
 //   res.sendFile("./frontend/public/index.html");
 // });
 
-httpServer.listen(3000);
+httpServer.listen(8000);
 
 export default app;
