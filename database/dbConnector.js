@@ -24,6 +24,20 @@ function dbConnector() {
     }
   };
 
+  //AUTHOR: MIHIR MESIA
+  dbObj.createUser = async (userData) => {
+    await client.connect();
+    try {
+      await users.insertOne(userData);
+      return 200;
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      // client.close();
+    }
+  };
+
   return dbObj;
 }
 

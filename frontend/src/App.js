@@ -5,6 +5,7 @@ import AddToCart from "./components/addToCart/AddToCart";
 import Logo from "./components/header/logo";
 import Home from "./components/home/home";
 import Navbar from "./components/navbar/Navbar";
+import CreateAccount from "./components/createAccount/createAccount";
 
 function App() {
   const [selected, setSelected] = useState(1);
@@ -22,6 +23,7 @@ function App() {
       </main>
       <AddToCart />
     </div>
+    // <CreateAccount></CreateAccount>
   );
 }
 
