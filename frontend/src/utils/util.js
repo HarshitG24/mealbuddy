@@ -1,1 +1,1 @@
-export const fontSize = "3x";
+export const fontSize = "2xl";

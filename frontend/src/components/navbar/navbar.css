@@ -4,12 +4,24 @@
   --font-icon-hover: #fff;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 .nav_container {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  width: 8%;
+  width: 5%;
   height: 100vh;
   background: var(--navbar-background);
 }
