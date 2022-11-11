@@ -16,7 +16,7 @@ async function testApiCall() {
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <h1>Meal Buddy</h1>
       <button type="submit" onClick={() => testApiCall()}>
         Make api call

@@ -1,0 +1,44 @@
+:root {
+  --navbar-background: #dfdfdf;
+  --font-icon-hover-background: #f09312;
+  --font-icon-hover: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.nav_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 5%;
+  height: 100vh;
+  background: var(--navbar-background);
+}
+
+.font-icon {
+  padding: 1.5rem;
+}
+
+.font-icon:hover {
+  background: var(--font-icon-hover-background);
+  cursor: pointer;
+  border-radius: 10rem;
+  color: var(--font-icon-hover);
+}
+
+.selected {
+  background: var(--font-icon-hover-background);
+  color: var(--font-icon-hover);
+  border-radius: 10rem;
+}
