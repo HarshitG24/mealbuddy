@@ -1,9 +1,10 @@
-import "./home.css";
+import "./css/home.css";
+import Promotion from "./promotion";
 
 function Home() {
   return (
     <div className="home_container">
-      <h1>Home</h1>
+      <Promotion />
     </div>
   );
 }
