@@ -1,0 +1,27 @@
+:root {
+  --promotion-background: #ffd9a3;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.promotion_container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  background: var(--promotion-background);
+}
+
+.delivery_clipart {
+  width: 25%;
+  height: 25%;
+}
