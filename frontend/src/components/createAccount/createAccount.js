@@ -42,7 +42,7 @@ export default function CreateAccount() {
               type="name"
               id="name"
               required
-              class="input"
+              className="input"
               ref={user_name}
             />
             <label for="name" className="user_input_label">
@@ -54,7 +54,7 @@ export default function CreateAccount() {
               type="email"
               id="email"
               required
-              class="input"
+              className="input"
               ref={user_email}
             />
             <label for="email" className="user_input_label">
@@ -66,7 +66,7 @@ export default function CreateAccount() {
               type="password"
               id="password"
               required
-              class="input"
+              className="input"
               ref={user_password}
             />
             <label for="password" className="user_input_label">
