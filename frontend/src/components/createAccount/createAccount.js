@@ -77,7 +77,8 @@ export default function CreateAccount() {
             <button
               id="create"
               className="user_create_account"
-              onClick={createUser}>
+              onClick={createUser}
+            >
               Create Account
             </button>
           </div>

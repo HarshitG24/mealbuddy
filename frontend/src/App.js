@@ -13,14 +13,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <Home selected={selected} setSelected={setSelected} />
-            }></Route>
+            element={<Home selected={selected} setSelected={setSelected} />}
+          ></Route>
           <Route
             path="/settings"
-            element={
-              <Settings selected={selected} setSelected={setSelected} />
-            }></Route>
+            element={<Settings selected={selected} setSelected={setSelected} />}
+          ></Route>
         </Routes>
       </Router>
     </div>

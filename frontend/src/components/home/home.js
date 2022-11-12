@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar";
 import AddToCart from "../addToCart/AddToCart";
 import Logo from "../header/logo";
 import "../../Reused.css";
+import "./css/home.css";
 
 function Home({ selected, setSelected }) {
   return (
@@ -14,7 +15,6 @@ function Home({ selected, setSelected }) {
         <Logo />
         {/* Your content starts here */}
         <Promotion />
-        {/* Your content ends here */}
       </div>
 
       <div className="cart_block">
