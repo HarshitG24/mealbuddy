@@ -1,3 +1,15 @@
+:root {
+  --add-to-cart: #f49001;
+  --calorie-color: gray;
+  --plus-color: #fff;
+  --heart-color: #f14646;
+  --heart-background: rgb(245, 210, 209);
+}
+
+span {
+  margin-top: 2rem;
+}
+
 /* Sprites */
 .css-sprite-pizza3 {
   background: url("../../../sprites/css-sprite-pizzas.png") 0px -0px;
@@ -21,8 +33,23 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  position: relative;
   /* justify-content: center;
   align-items: center; */
+}
+
+.product_heart {
+  color: var(--heart-color);
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.product_wishlist {
+  position: absolute;
+  background: var(--heart-background);
+  left: 1;
+  padding: 0.5rem;
+  border-radius: 50%;
 }
 
 .product_name {
@@ -34,6 +61,28 @@
 .product_calories {
   font-weight: 500;
   font-size: 1.2rem;
-  color: gray;
+  color: var(--calorie-color);
   margin-top: 0.4rem;
+}
+
+.product_end {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product_price {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 100%;
+}
+
+.product_add {
+  padding: 1rem;
+  background: var(--add-to-cart);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--plus-color);
 }

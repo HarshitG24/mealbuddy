@@ -19,7 +19,7 @@ function Navbar({ selected, setSelected, def }) {
     setSelected(i);
   }
 
-  return def ? (
+  return (
     <div className="nav_container">
       <a href="/">
         <FontAwesomeIcon
@@ -106,7 +106,7 @@ function Navbar({ selected, setSelected, def }) {
         />
       </a>
     </div>
-  ) : null;
+  );
 }
 
 export default Navbar;
