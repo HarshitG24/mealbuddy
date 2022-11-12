@@ -26,18 +26,18 @@ export default function CreateAccount() {
 
     const resp = await fetch("/api/createAccount/createUser", opts);
     if (resp.status == 200 && resp.statusText == "OK") {
-      console.log("vamanos muchachos");
+      window.location.replace("/login");
     } else {
       alert("error creating account");
     }
   }
 
   return (
-    <div className="card_page">
-      <div class="card_container">
-        <div class="card">
+    <div className="user_card_page">
+      <div className="user_card_container">
+        <div className="user_card">
           <h1>Register New User</h1>
-          <div class="input_group">
+          <div className="user_input_group">
             <input
               type="name"
               id="name"
@@ -45,11 +45,11 @@ export default function CreateAccount() {
               class="input"
               ref={user_name}
             />
-            <label for="name" class="input_label">
+            <label for="name" className="user_input_label">
               Full Name
             </label>
           </div>
-          <div class="input_group">
+          <div className="user_input_group">
             <input
               type="email"
               id="email"
@@ -57,11 +57,11 @@ export default function CreateAccount() {
               class="input"
               ref={user_email}
             />
-            <label for="email" class="input_label">
+            <label for="email" className="user_input_label">
               Email
             </label>
           </div>
-          <div class="input_group">
+          <div className="user_input_group">
             <input
               type="password"
               id="password"
@@ -69,12 +69,16 @@ export default function CreateAccount() {
               class="input"
               ref={user_password}
             />
-            <label for="password" class="input_label">
+            <label for="password" className="user_input_label">
               Password
             </label>
           </div>
           <div>
-            <button id="create" class="create_account" onClick={createUser}>
+            <button
+              id="create"
+              className="user_create_account"
+              onClick={createUser}
+            >
               Create Account
             </button>
           </div>
