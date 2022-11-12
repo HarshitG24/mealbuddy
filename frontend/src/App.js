@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/home/home";
+import Settings from "./components/settings/Settings";
 
 function App() {
   const [selected, setSelected] = useState(1);
@@ -15,8 +16,11 @@ function App() {
             element={
               <Home selected={selected} setSelected={setSelected} />
             }></Route>
-          {/* <Route path="/settings" element={<Home />}></Route>
-          <Route path="/createUser" element={<CreateAccount />}></Route> */}
+          <Route
+            path="/settings"
+            element={
+              <Settings selected={selected} setSelected={setSelected} />
+            }></Route>
         </Routes>
       </Router>
     </div>
