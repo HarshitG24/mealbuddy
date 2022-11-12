@@ -1,0 +1,61 @@
+:root {
+  --menu-background: #fff;
+  --menu-selected: #f49001;
+}
+
+.menu_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--menu-background);
+  padding: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.menu_name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.menu_active {
+  background: var(--menu-selected);
+}
+
+/* Sprites css */
+.css-sprite-soda {
+  background: url("../../../sprites/css-sprite-combined.png") 0px -0px;
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+}
+
+.css-sprite-sandwich {
+  background: url("../../../sprites/css-sprite-combined.png") -64px -0px;
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+}
+
+.css-sprite-milkshake {
+  background: url("../../../sprites/css-sprite-combined.png") -128px -0px;
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+}
+
+.css-sprite-burger {
+  background: url("../../../sprites/css-sprite-combined.png") -192px -0px;
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+}
+
+.css-sprite-pizza {
+  background: url("../../../sprites/css-sprite-combined.png") -256px -0px;
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+}

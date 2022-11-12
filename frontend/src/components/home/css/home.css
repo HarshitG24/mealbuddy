@@ -1,34 +1,18 @@
-.css-sprite-pizza1 {
-  background: url("../../../sprites/css-sprite-combined.png") 0px -0px;
-  width: 128px;
-  height: 128px;
-  display: inline-block;
+.menu_list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.css-sprite-burger {
-  background: url("../../../sprites/css-sprite-combined.png") -128px -0px;
-  width: 128px;
-  height: 128px;
-  display: inline-block;
+.menu_content {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
-.css-sprite-nachos {
-  background: url("../../../sprites/css-sprite-combined.png") -256px -0px;
-  width: 128px;
-  height: 128px;
-  display: inline-block;
-}
-
-.css-sprite-cold-drink {
-  background: url("../../../sprites/css-sprite-combined.png") -384px -0px;
-  width: 128px;
-  height: 128px;
-  display: inline-block;
-}
-
-.css-sprite-sandwich {
-  background: url("../../../sprites/css-sprite-combined.png") -512px -0px;
-  width: 128px;
-  height: 128px;
-  display: inline-block;
+.menu_title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding: 4rem 0;
 }
