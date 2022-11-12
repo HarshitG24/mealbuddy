@@ -16,3 +16,11 @@
   font-weight: 700;
   padding: 4rem 0;
 }
+
+/* Product */
+.product_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+}

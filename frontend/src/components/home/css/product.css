@@ -1,0 +1,39 @@
+/* Sprites */
+.css-sprite-pizza3 {
+  background: url("../../../sprites/css-sprite-pizzas.png") 0px -0px;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.css-sprite-pizza2 {
+  background: url("../../../sprites/css-sprite-pizzas.png") -150px -0px;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.product_card {
+  padding: 1rem;
+  background: #fff;
+  border: 0.1rem solid #000;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.product_name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+
+.product_calories {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: gray;
+  margin-top: 0.4rem;
+}

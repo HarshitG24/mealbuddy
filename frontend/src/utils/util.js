@@ -22,3 +22,18 @@ export const menu = [
     img: "css-sprite-soda",
   },
 ];
+
+export const pizzas = [
+  {
+    name: "Spicy Chicken Ranch",
+    img: "css-sprite-pizza2",
+    calories: "500",
+    price: "$10.99",
+  },
+  {
+    name: "Veggie Paradise",
+    img: "css-sprite-pizza3",
+    calories: "400",
+    price: "$8.99",
+  },
+];

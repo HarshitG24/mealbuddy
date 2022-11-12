@@ -5,8 +5,9 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./css/home.css";
 import Menu from "./Menu";
-import { menu } from "../../utils/util";
+import { menu, pizzas } from "../../utils/util";
 import { useState } from "react";
+import "./css/product.css";
 
 function Home({ selected, setSelected }) {
   const [selectedMenu, setMenu] = useState(0);
@@ -35,6 +36,15 @@ function Home({ selected, setSelected }) {
                 />
               );
             })}
+          </div>
+
+          <div className="product_container">
+            <div className="product_card">
+              <span class="css-sprite-pizza3"></span>
+              <p className="product_name">Spicy Chicken Ranch</p>
+              <p className="product_calories">400 cal</p>
+              <p>$10.99</p>
+            </div>
           </div>
         </div>
       </div>
