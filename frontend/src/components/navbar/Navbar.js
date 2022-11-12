@@ -12,14 +12,14 @@ import {
 import { fontSize } from "../../utils/util";
 // import { useState } from "react";
 
-function Navbar({ selected, setSelected }) {
+function Navbar({ selected, setSelected, def }) {
   // const [selected, setSelected] = useState(1);
 
   function navbarClicked(i) {
     setSelected(i);
   }
 
-  return (
+  return def ? (
     <div className="nav_container">
       <a href="/">
         <FontAwesomeIcon
@@ -106,7 +106,7 @@ function Navbar({ selected, setSelected }) {
         />
       </a>
     </div>
-  );
+  ) : null;
 }
 
 export default Navbar;
