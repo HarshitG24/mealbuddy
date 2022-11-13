@@ -24,7 +24,7 @@ export default function CreateAccount() {
       body: JSON.stringify(newUser),
     };
 
-    const resp = await fetch("/api/createAccount/createUser", opts);
+    const resp = await fetch("/api/Account/createUser", opts);
     if (resp.status == 200 && resp.statusText == "OK") {
       window.location.replace("/login");
     } else {
@@ -42,7 +42,7 @@ export default function CreateAccount() {
               type="name"
               id="name"
               required
-              className="input"
+              className="user_input"
               ref={user_name}
             />
             <label htmlFor="name" className="user_input_label">
@@ -54,7 +54,7 @@ export default function CreateAccount() {
               type="email"
               id="email"
               required
-              className="input"
+              className="user_input"
               ref={user_email}
             />
             <label htmlFor="email" className="user_input_label">
@@ -66,7 +66,7 @@ export default function CreateAccount() {
               type="password"
               id="password"
               required
-              className="input"
+              className="user_input"
               ref={user_password}
             />
             <label htmlFor="password" className="user_input_label">
@@ -77,7 +77,8 @@ export default function CreateAccount() {
             <button
               id="create"
               className="user_create_account"
-              onClick={createUser}>
+              onClick={createUser}
+            >
               Create Account
             </button>
           </div>

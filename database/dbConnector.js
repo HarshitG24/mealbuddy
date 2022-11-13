@@ -38,6 +38,28 @@ function dbConnector() {
     }
   };
 
+  //AUTHOR: MIHIR MESIA
+  dbObj.login = async (userData) => {
+    await client.connect();
+    try {
+      const user = await users
+        .find({
+          email: userData.email,
+          password: userData.password,
+        })
+        .toArray();
+      return {
+        data: user.length ? user : [],
+        code: user.length > 0 ? 200 : 500,
+      };
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      // client.close();
+    }
+  };
+
   return dbObj;
 }
 

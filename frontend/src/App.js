@@ -12,6 +12,7 @@ import Settings from "./components/settings/Settings";
 import Navbar from "./components/navbar/Navbar";
 import AddToCart from "./components/addToCart/AddToCart";
 import CreateAccount from "./components/createAccount/createAccount";
+import Login from "./components/login/login";
 
 function App() {
   const [selected, setSelected] = useState(1);
@@ -39,6 +40,7 @@ function App() {
           path="/createAccount"
           element={<CreateAccount setDef={setDefault} />}
         ></Route>
+        <Route path="/login" element={<Login setDef={setDefault} />}></Route>
       </Routes>
 
       {location.pathname.includes("/createAccount") ||

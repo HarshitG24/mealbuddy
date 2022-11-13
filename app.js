@@ -21,7 +21,7 @@ app.use(express.static("frontend/build"));
 app.use(cors(corsOpts));
 
 app.use("/api", loginRouter);
-app.use("/api/createAccount", createUser);
+app.use("/api/Account", createUser);
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
