@@ -1,0 +1,8 @@
+:root {
+}
+
+.cart_order_container {
+  display: flex;
+  flex-wrap: wrap;
+  background: goldenrod;
+}

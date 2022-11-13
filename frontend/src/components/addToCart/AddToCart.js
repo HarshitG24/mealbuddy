@@ -1,4 +1,5 @@
-import "./add-to-cart.css";
+import "./css/add-to-cart.css";
+import "./css/cart-order.css";
 import delivery from "../../images/delivery.png";
 
 function AddToCart() {
@@ -13,6 +14,9 @@ function AddToCart() {
 
       <div className="your_order">
         <p>Your Order</p>
+
+        {/* Cart orders */}
+        <div className="cart_order_container"></div>
       </div>
     </div>
   );
