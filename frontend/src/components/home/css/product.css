@@ -10,7 +10,7 @@ span {
   margin-top: 2rem;
 }
 
-/* Sprites */
+/* Pizza Sprites */
 .css-sprite-pizza3 {
   background: url("../../../sprites/css-sprite-pizzas.png") 0px -0px;
   width: 150px;
@@ -20,6 +20,22 @@ span {
 
 .css-sprite-pizza2 {
   background: url("../../../sprites/css-sprite-pizzas.png") -150px -0px;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+/* Burger Sprites */
+
+.css-sprite-burger2 {
+  background: url("../../../sprites/css-sprite-burger.png") 0px -0px;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+}
+
+.css-sprite-burger1 {
+  background: url("../../../sprites/css-sprite-burger.png") -150px -0px;
   width: 150px;
   height: 150px;
   display: inline-block;

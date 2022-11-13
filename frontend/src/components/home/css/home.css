@@ -23,4 +23,6 @@
   display: flex;
   flex-wrap: wrap;
   margin: 4rem 0;
+  justify-content: space-around;
+  align-items: flex-start;
 }

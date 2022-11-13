@@ -37,3 +37,18 @@ export const pizzas = [
     price: "$8.99",
   },
 ];
+
+export const burgers = [
+  {
+    name: "Veggie Burger",
+    img: "css-sprite-burger1",
+    calories: "220",
+    price: "$6.99",
+  },
+  {
+    name: "Chichen Deluxe",
+    img: "css-sprite-burger2",
+    calories: "480",
+    price: "$7.99",
+  },
+];

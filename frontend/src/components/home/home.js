@@ -6,11 +6,11 @@ import Menu from "./Menu";
 import { menu, pizzas } from "../../utils/util";
 import { useState } from "react";
 import "./css/product.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
+import Product from "./Product";
 
 function Home() {
   const [selectedMenu, setMenu] = useState(0);
+  const [product, setProduct] = useState(pizzas);
   return (
     <div className="content_block">
       <Logo />
@@ -29,34 +29,16 @@ function Home() {
                 sel={selectedMenu === index}
                 index={index}
                 setMenu={setMenu}
+                setProduct={setProduct}
               />
             );
           })}
         </div>
 
         <div className="product_container">
-          <div className="product_card">
-            <div className="product_wishlist">
-              <FontAwesomeIcon
-                icon={faHeart}
-                size="2x"
-                className="product_heart"
-                onClick={(e) => {}}
-              />
-            </div>
-            <span className="css-sprite-pizza2"></span>
-            <p className="product_name">Spicy Chicken Ranch</p>
-            <p className="product_calories">400 cal</p>
-            <div className="product_end">
-              <p className="product_price">$10.99</p>
-              <FontAwesomeIcon
-                icon={faPlus}
-                size="2x"
-                className="product_add"
-                onClick={(e) => {}}
-              />
-            </div>
-          </div>
+          {product.map((elem) => {
+            return <Product elem={elem} />;
+          })}
         </div>
       </div>
     </div>
