@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./css/cart-order.css";
 
-function CartOrder({ elem }) {
-  const { name, img, calories, price, qty } = elem;
+function CartOrder({ elem, cart, setCart }) {
+  const { pid, name, img, calories, price, qty } = elem;
   // const [quantity, setQty] = useState(temp);
   return (
     <div className="cart_order_container">
@@ -30,7 +30,9 @@ function CartOrder({ elem }) {
           icon={faTrash}
           size="2x"
           className="add_to_cart_delete"
-          onClick={(e) => {}}
+          onClick={(e) => {
+            setCart(cart.filter((e) => e.pid !== pid));
+          }}
         />
       </div>
     </div>

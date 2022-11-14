@@ -36,7 +36,6 @@ function Product({ elem, setCart, cart }) {
               qty: 1,
             });
 
-            console.log("arr", arr);
             setCart(arr);
           }}
         />

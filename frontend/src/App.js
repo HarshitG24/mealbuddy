@@ -45,7 +45,7 @@ function App() {
       {location.pathname.includes("/createAccount") ||
       location.pathname.includes("/login") ? null : (
         <div className="cart_block">
-          <AddToCart cart={cart} />
+          <AddToCart cart={cart} setCart={setCart} />
         </div>
       )}
     </div>
