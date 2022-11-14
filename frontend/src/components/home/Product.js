@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import "./css/product.css";
+import { generateCart } from "../../utils/util";
 
 function Product({ elem }) {
-  const { name, img, calories, price } = elem;
-
+  const { pid, name, img, calories, price } = elem;
   //AUTHOR: MIHIR MESIA
   async function addToWishlist() {
     const fetch_user = await fetch("/api/Account/getUser");
@@ -40,6 +40,7 @@ function Product({ elem }) {
       }
     }
   }
+
   return (
     <div className="product_card">
       <div className="product_wishlist">
@@ -59,7 +60,19 @@ function Product({ elem }) {
           icon={faPlus}
           size="2x"
           className="product_add"
-          onClick={(e) => {}}
+          onClick={(e) => {
+            e.preventDefault();
+            let arr = generateCart(cart, {
+              pid,
+              name,
+              img,
+              calories,
+              price,
+              qty: 1,
+            });
+
+            setCart(arr);
+          }}
         />
       </div>
     </div>

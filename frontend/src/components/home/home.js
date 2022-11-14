@@ -8,7 +8,7 @@ import { useState } from "react";
 import "./css/product.css";
 import Product from "./Product";
 
-function Home() {
+function Home({ setCart, cart }) {
   const [selectedMenu, setMenu] = useState(0);
   const [product, setProduct] = useState(pizzas);
   return (
@@ -36,8 +36,10 @@ function Home() {
         </div>
 
         <div className="product_container">
-          {product.map((elem) => {
-            return <Product elem={elem} />;
+          {product.map((elem, index) => {
+            return (
+              <Product elem={elem} setCart={setCart} cart={cart} key={index} />
+            );
           })}
         </div>
       </div>

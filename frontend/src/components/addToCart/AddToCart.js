@@ -1,8 +1,9 @@
 import "./css/add-to-cart.css";
-import "./css/cart-order.css";
+import "../home/css/product.css";
 import delivery from "../../images/delivery.png";
+import CartOrder from "./CartOrder";
 
-function AddToCart() {
+function AddToCart({ cart, setCart }) {
   return (
     <div className="cart_container">
       <img src={delivery} alt="" className="delievry_img" />
@@ -16,7 +17,11 @@ function AddToCart() {
         <p>Your Order</p>
 
         {/* Cart orders */}
-        <div className="cart_order_container"></div>
+        {cart.map((elem, index) => {
+          return (
+            <CartOrder elem={elem} key={index} cart={cart} setCart={setCart} />
+          );
+        })}
       </div>
     </div>
   );
