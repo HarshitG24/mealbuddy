@@ -8,17 +8,13 @@ function CartOrder({ elem }) {
   // const [quantity, setQty] = useState(temp);
   return (
     <div className="cart_order_container">
-      <img src={sandwich} alt="This is the icon for product added" />
+      <div className="cart_product_img">
+        <img src={sandwich} alt="This is the icon for product added" />
+      </div>
       <div className="cart_product_left">
         <p className="cart_product_name">{name}</p>
         <div className="cart_quantity">
-          {/* <button className="cart_btns" onClick={() => setQty(quantity - 1)}>
-            -
-          </button> */}
           <p className="item_quantity">x{qty}</p>
-          {/* <button className="cart_btns" onClick={() => setQty(quantity + 1)}>
-            +
-          </button> */}
         </div>
 
         <div>

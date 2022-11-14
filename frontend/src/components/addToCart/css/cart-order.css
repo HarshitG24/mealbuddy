@@ -14,10 +14,16 @@
   margin-top: 2rem;
   border-radius: 1rem;
   padding: 1rem;
+  flex: 1;
+}
+
+.cart_product_img {
+  flex: 0.2;
 }
 
 .cart_product_left {
   margin-left: 1rem;
+  flex: 0.4;
 }
 
 .cart_product_name {
@@ -62,6 +68,7 @@
 
 .add_to_cart_price {
   margin-left: 2rem;
+  flex: 0.2;
 }
 
 .add_to_cart_price > p {
@@ -89,4 +96,5 @@
   justify-content: center;
   align-items: center;
   margin-left: 2rem;
+  flex: 0.2;
 }
