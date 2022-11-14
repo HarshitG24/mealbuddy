@@ -13,8 +13,8 @@ function App() {
   const [selected, setSelected] = useState(1);
   const [showDefault, setDefault] = useState(true);
   const [cart, setCart] = useState([]);
-
   const location = useLocation();
+
   return (
     <div className="main_container">
       {location.pathname.includes("/createAccount") ||
@@ -32,7 +32,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home setDef={setDefault} setCart={setCart} />}></Route>
+          element={
+            <Home setDef={setDefault} cart={cart} setCart={setCart} />
+          }></Route>
         <Route path="/settings" element={<Settings />}></Route>
         <Route
           path="/createAccount"

@@ -2,9 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import "./css/product.css";
+import { generateCart } from "../../utils/util";
 
-function Product({ elem, setCart }) {
-  const { name, img, calories, price } = elem;
+function Product({ elem, setCart, cart }) {
+  const { pid, name, img, calories, price } = elem;
   return (
     <div className="product_card">
       <div className="product_wishlist">
@@ -26,14 +27,17 @@ function Product({ elem, setCart }) {
           className="product_add"
           onClick={(e) => {
             e.preventDefault();
-            setCart([
-              {
-                name,
-                img,
-                calories,
-                price,
-              },
-            ]);
+            let arr = generateCart(cart, {
+              pid,
+              name,
+              img,
+              calories,
+              price,
+              qty: 1,
+            });
+
+            console.log("arr", arr);
+            setCart(arr);
           }}
         />
       </div>
