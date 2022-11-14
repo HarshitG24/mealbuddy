@@ -4,7 +4,7 @@ import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./css/product.css";
 import { generateCart } from "../../utils/util";
 
-function Product({ elem }) {
+function Product({ elem, cart, setCart }) {
   const { pid, name, img, calories, price } = elem;
   //AUTHOR: MIHIR MESIA
   async function addToWishlist() {
