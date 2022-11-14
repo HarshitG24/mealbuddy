@@ -23,6 +23,7 @@ span {
   width: 150px;
   height: 150px;
   display: inline-block;
+  scale: 0.5;
 }
 
 /* Burger Sprites */
