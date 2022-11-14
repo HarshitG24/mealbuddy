@@ -2,8 +2,24 @@ import "./css/add-to-cart.css";
 import "../home/css/product.css";
 import delivery from "../../images/delivery.png";
 import CartOrder from "./CartOrder";
+import { useEffect, useState } from "react";
 
 function AddToCart({ cart, setCart }) {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalCalories, setTotalCalories] = useState(0);
+
+  useEffect(() => {
+    let p = 0,
+      c = 0;
+
+    cart.forEach((element) => {
+      p += element.qty * element.price;
+      c += element.qty * element.calories;
+    });
+
+    setTotalPrice(p);
+    setTotalCalories(c);
+  }, [cart]);
   return (
     <div className="cart_container">
       <img src={delivery} alt="" className="delievry_img" />
@@ -22,6 +38,19 @@ function AddToCart({ cart, setCart }) {
             <CartOrder elem={elem} key={index} cart={cart} setCart={setCart} />
           );
         })}
+      </div>
+
+      <div className="order_summary">
+        <div className="order_summary_div">
+          <p className="order_summary_txt">Total Price:</p>
+          <p className="order_summary_div_value">${totalPrice}</p>
+        </div>
+        <div className="order_summary_div">
+          <p className="order_summary_txt">Total Calories:</p>
+          <p className="order_summary_div_value">{totalCalories} Calories</p>
+        </div>
+
+        <button className="order_checkout_div">Proceed to Checkout</button>
       </div>
     </div>
   );

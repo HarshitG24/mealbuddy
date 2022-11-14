@@ -35,7 +35,7 @@ function Product({ elem, cart, setCart }) {
       };
 
       const resp = await fetch("/api/send_wishlist_data", opts);
-      if (resp.status != 200) {
+      if (resp.status !== 200) {
         alert("unable to add to wishlist");
       }
     }

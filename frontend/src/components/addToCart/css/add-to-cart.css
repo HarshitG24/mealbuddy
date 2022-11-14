@@ -57,3 +57,44 @@ html {
   font-size: 2rem;
   font-weight: 500;
 }
+
+.order_summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.order_summary_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.order_summary_div_value {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-left: 0.5rem;
+}
+
+.order_summary_txt {
+  font-size: 1.5rem;
+  font-weight: 800;
+  align-items: center;
+}
+
+.order_checkout_div {
+  width: 50%;
+  background: var(--highlight-color);
+  border: none;
+  padding: 1rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--add-to-cart-background);
+  margin: auto;
+  cursor: pointer;
+}
