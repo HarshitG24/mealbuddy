@@ -10,10 +10,18 @@ router.post("/createUser", async (req, res) => {
 });
 
 //login
-
 router.post("/login", async (req, res) => {
   const status = await db.login(req?.body || {});
+  if (status.code == 200) {
+    req.session.user = status.data[0].email;
+    req.session.save();
+  }
   res.status(status.code).send();
+});
+
+//get_session_user
+router.get("/getUser", (req, res) => {
+  res.json({ user: req.session.user });
 });
 
 export default router;

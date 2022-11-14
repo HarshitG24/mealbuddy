@@ -5,6 +5,41 @@ import "./css/product.css";
 
 function Product({ elem }) {
   const { name, img, calories, price } = elem;
+
+  //AUTHOR: MIHIR MESIA
+  async function addToWishlist() {
+    const fetch_user = await fetch("/api/Account/getUser");
+    const user_data = await fetch_user.json();
+
+    if (!user_data.user) {
+      alert("Please Login");
+    } else {
+      let whishlist_data = {
+        user: user_data.user,
+        data: [
+          {
+            name: name,
+            img: img,
+            calories: calories,
+            price: price,
+          },
+        ],
+      };
+
+      const headers = new Headers({ "Content-Type": "application/json" });
+
+      const opts = {
+        method: "post",
+        headers: headers,
+        body: JSON.stringify(whishlist_data),
+      };
+
+      const resp = await fetch("/api/send_wishlist_data", opts);
+      if (resp.status != 200) {
+        alert("unable to add to wishlist");
+      }
+    }
+  }
   return (
     <div className="product_card">
       <div className="product_wishlist">
@@ -12,7 +47,7 @@ function Product({ elem }) {
           icon={faHeart}
           size="2x"
           className="product_heart"
-          onClick={(e) => {}}
+          onClick={addToWishlist}
         />
       </div>
       <span className={img}></span>

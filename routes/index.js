@@ -9,4 +9,11 @@ router.post("/createUser", async (req, res) => {
   res.status(resp).send({ code: resp });
 });
 
+//AUTHOR: MIHIR MESIA
+
+router.post("/send_wishlist_data", async (req, res) => {
+  const resp = await db.send_wishlist(req?.body || {});
+  res.status(resp).send();
+});
+
 export default router;

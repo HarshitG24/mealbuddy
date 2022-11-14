@@ -3,6 +3,8 @@ import { createServer } from "http";
 import loginRouter from "./routes/index.js";
 import createUser from "./routes/new_user.js";
 import cors from "cors";
+import session from "express-session";
+import cookieParser from "cookie-parser";
 
 const app = express();
 const httpServer = createServer(app);
@@ -17,6 +19,15 @@ const corsOpts = {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: "secret",
+    cookie: {},
+  })
+);
 app.use(express.static("frontend/build"));
 app.use(cors(corsOpts));
 
