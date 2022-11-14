@@ -12,6 +12,7 @@ import Login from "./components/login/login";
 function App() {
   const [selected, setSelected] = useState(1);
   const [showDefault, setDefault] = useState(true);
+  const [cart, setCart] = useState([]);
 
   const location = useLocation();
   return (
@@ -29,19 +30,20 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/" element={<Home setDef={setDefault} />}></Route>
+        <Route
+          path="/"
+          element={<Home setDef={setDefault} setCart={setCart} />}></Route>
         <Route path="/settings" element={<Settings />}></Route>
         <Route
           path="/createAccount"
-          element={<CreateAccount setDef={setDefault} />}
-        ></Route>
+          element={<CreateAccount setDef={setDefault} />}></Route>
         <Route path="/login" element={<Login setDef={setDefault} />}></Route>
       </Routes>
 
       {location.pathname.includes("/createAccount") ||
       location.pathname.includes("/login") ? null : (
         <div className="cart_block">
-          <AddToCart />
+          <AddToCart cart={cart} />
         </div>
       )}
     </div>

@@ -28,13 +28,13 @@ export const pizzas = [
     name: "Spicy Chicken Ranch",
     img: "css-sprite-pizza2",
     calories: "500",
-    price: "$10.99",
+    price: 10.99,
   },
   {
     name: "Veggie Paradise",
     img: "css-sprite-pizza3",
     calories: "400",
-    price: "$8.99",
+    price: 8.99,
   },
 ];
 
@@ -43,12 +43,12 @@ export const burgers = [
     name: "Veggie Burger",
     img: "css-sprite-burger1",
     calories: "220",
-    price: "$6.99",
+    price: 6.99,
   },
   {
     name: "Chichen Deluxe",
     img: "css-sprite-burger2",
     calories: "480",
-    price: "$7.99",
+    price: 7.99,
   },
 ];

@@ -3,7 +3,7 @@ import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import "./css/product.css";
 
-function Product({ elem }) {
+function Product({ elem, setCart }) {
   const { name, img, calories, price } = elem;
   return (
     <div className="product_card">
@@ -24,7 +24,17 @@ function Product({ elem }) {
           icon={faPlus}
           size="2x"
           className="product_add"
-          onClick={(e) => {}}
+          onClick={(e) => {
+            e.preventDefault();
+            setCart([
+              {
+                name,
+                img,
+                calories,
+                price,
+              },
+            ]);
+          }}
         />
       </div>
     </div>
