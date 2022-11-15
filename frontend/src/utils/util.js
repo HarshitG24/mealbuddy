@@ -72,3 +72,18 @@ export function generateCart(arr, obj) {
 }
 
 export const pizzaSizes = [6, 8, 10];
+
+export const pizzaData = [
+  {
+    title: "Add Toppings",
+    data: ["Onion", "Bell Pepper", "Tofu", "Sofritas"],
+  },
+  {
+    title: "Choose Your Crust",
+    data: ["Cheesy Bytes", "Cheese Burst", "Thin Crust", "Fresh Pan"],
+  },
+  {
+    title: "Price Details",
+    data: ["Base Price", "Extras", "Total Calories"],
+  },
+];

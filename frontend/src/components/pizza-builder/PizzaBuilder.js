@@ -2,8 +2,10 @@ import "../../Reused.css";
 import "./css/pizza_builder.css";
 import Logo from "../header/logo";
 import PizzaSize from "./PizzaSize";
-import { pizzaSizes } from "../../utils/util";
+import { pizzaData, pizzaSizes } from "../../utils/util";
 import { useState } from "react";
+import PizzaTable from "./PizzaTable";
+import pbase from "../../images/base.png";
 
 function PizzaBuilder() {
   const [size, setSize] = useState(0);
@@ -26,6 +28,19 @@ function PizzaBuilder() {
               />
             );
           })}
+        </div>
+
+        <div className="pizza_row">
+          <img src={pbase} alt="This is the base of the pizza" />
+          <PizzaTable allData={pizzaData[0]} />
+        </div>
+
+        <div className="pizza_row">
+          <PizzaTable allData={pizzaData[1]} />
+          <div>
+            <PizzaTable allData={pizzaData[2]} />
+            <button className="builder_cart">Add To Cart</button>
+          </div>
         </div>
       </div>
     </div>
