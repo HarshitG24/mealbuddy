@@ -2,6 +2,7 @@ import express from "express";
 import { createServer } from "http";
 import loginRouter from "./routes/index.js";
 import createUser from "./routes/new_user.js";
+import checkout from "./routes/add_to_cart.js";
 import cors from "cors";
 import session from "express-session";
 import cookieParser from "cookie-parser";
@@ -33,6 +34,7 @@ app.use(cors(corsOpts));
 
 app.use("/api", loginRouter);
 app.use("/api/Account", createUser);
+app.use("/api/cart", checkout);
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");

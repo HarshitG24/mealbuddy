@@ -20,6 +20,27 @@ function AddToCart({ cart, setCart }) {
     setTotalPrice(p);
     setTotalCalories(c);
   }, [cart]);
+
+  async function sendCartItemstoDb() {
+    let data = {
+      user: "hrstgajjar",
+      orders: [
+        {
+          ...cart,
+          calories: totalCalories,
+          price: totalPrice,
+        },
+      ],
+    };
+
+    const options = {
+      method: "post",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      body: JSON.stringify(data),
+    };
+    const response = await fetch("/api/cart/checkout", options);
+    console.log("response is", response);
+  }
   return (
     <div className="cart_container">
       <img src={delivery} alt="" className="delievry_img" />
@@ -50,7 +71,11 @@ function AddToCart({ cart, setCart }) {
           <p className="order_summary_div_value">{totalCalories} Calories</p>
         </div>
 
-        <button className="order_checkout_div">Proceed to Checkout</button>
+        <button
+          className="order_checkout_div"
+          onClick={() => sendCartItemstoDb()}>
+          Proceed to Checkout
+        </button>
       </div>
     </div>
   );

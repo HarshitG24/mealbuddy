@@ -7,6 +7,7 @@ const client = new MongoClient(url, {});
 const db = client.db("MealBuddy");
 const users = db.collection("users");
 const whishlist_data = db.collection("whishlist");
+const checkoutOrders = db.collection("allOrders");
 
 function dbConnector() {
   let dbObj = {};
@@ -100,6 +101,39 @@ function dbConnector() {
           data: data.data,
         });
       }
+      return 200;
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+
+  dbObj.checkoutItems = async (data) => {
+    await client.connect();
+
+    try {
+      const user = await checkoutOrders.find({ user: data.user }).toArray();
+      console.log("user is", user);
+
+      if (user.length > 0) {
+        user[0].orders = [...user[0].orders, ...data.orders];
+
+        await checkoutOrders.findOneAndUpdate(
+          { user: data.user },
+          {
+            $set: {
+              orders: user[0].orders,
+            },
+          }
+        );
+      } else {
+        await checkoutOrders.insertOne(data);
+      }
+
       return 200;
     } catch (error) {
       console.log(error);
