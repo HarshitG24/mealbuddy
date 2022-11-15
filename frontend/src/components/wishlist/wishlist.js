@@ -17,7 +17,7 @@ export default function Wishlist() {
 
   return (
     <div>
-      {wishlist.forEach((element) => {
+      {wishlist.map((element) => {
         return <Component data={element} />;
       })}
     </div>
