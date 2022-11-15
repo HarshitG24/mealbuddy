@@ -6,7 +6,6 @@ import "./css/cart-order.css";
 
 function CartOrder({ elem, cart, setCart }) {
   const { pid, name, img, calories, price, qty } = elem;
-  // const [quantity, setQty] = useState(temp);
   return (
     <div className="cart_order_container">
       <div className="cart_product_img">
