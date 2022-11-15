@@ -109,6 +109,26 @@ function dbConnector() {
     }
   };
 
+  //AUTHOR: MIHIR MESIA
+  dbObj.fetch_wishlist = async (user) => {
+    console.log(user);
+    await client.connect();
+    try {
+      const wishlist = await whishlist_data.find({ user: user }).toArray();
+      if (wishlist.length > 0) {
+        const data = wishlist[0].data;
+        return data;
+      } else {
+        return [];
+      }
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      client.close();
+    }
+  };
+
   return dbObj;
 }
 

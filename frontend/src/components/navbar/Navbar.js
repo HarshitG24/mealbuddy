@@ -52,6 +52,7 @@ function Navbar({ selected, setSelected, def }) {
           className={`font-icon ${selected === 3 ? "selected" : ""}`}
           onClick={(e) => {
             e.preventDefault();
+
             window.location.href = "/wishlist";
             navbarClicked(3);
           }}

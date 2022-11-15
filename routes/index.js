@@ -16,4 +16,11 @@ router.post("/send_wishlist_data", async (req, res) => {
   res.status(resp).send();
 });
 
+//AUTHOR: MIHIR MESIA
+
+router.get("/fetch_wishlist_data/:user", async (req, res) => {
+  const resp = await db.fetch_wishlist(req?.params?.user || "");
+  res.send(JSON.stringify(resp));
+});
+
 export default router;
