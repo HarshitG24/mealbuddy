@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 

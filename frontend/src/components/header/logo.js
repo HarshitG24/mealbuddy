@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import logo from "../../images/app_logo.png";
 import "./logo.css";
 

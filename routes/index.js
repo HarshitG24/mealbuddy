@@ -2,6 +2,7 @@ import express from "express";
 import db from "../database/dbConnector.js";
 const router = express.Router();
 
+// AUTHOR: HARSHIT GAJJAR
 router.post("/createUser", async (req, res) => {
   console.log("reached");
   console.log("req is", req?.body);

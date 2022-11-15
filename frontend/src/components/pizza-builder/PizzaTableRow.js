@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/pizza_table_row.css";
 
 function PizzaTableRow({ data }) {

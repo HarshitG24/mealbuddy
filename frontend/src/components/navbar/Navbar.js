@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

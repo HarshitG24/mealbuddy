@@ -12,6 +12,7 @@ const checkoutOrders = db.collection("allOrders");
 function dbConnector() {
   let dbObj = {};
 
+  // AUTHOR: HARSHIT GAJJAR
   dbObj.addUser = async (data) => {
     await client.connect();
 
@@ -163,6 +164,7 @@ function dbConnector() {
     }
   };
 
+  // AUTHOR: HARSHIT GAJJAR
   dbObj.getUser = async (data) => {
     await client.connect();
 

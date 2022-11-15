@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/add-to-cart.css";
 import "../home/css/product.css";
 import delivery from "../../images/delivery.png";

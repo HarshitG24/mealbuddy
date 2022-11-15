@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/pizza_table.css";
 import PizzaTableRow from "./PizzaTableRow";
 

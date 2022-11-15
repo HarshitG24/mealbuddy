@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./settings.css";

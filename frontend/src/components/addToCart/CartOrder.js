@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import sandwich from "../../images/sandwich.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";

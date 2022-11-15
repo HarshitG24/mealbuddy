@@ -1,3 +1,5 @@
+// AUTHOR: HARSHIT GAJJAR
+
 export const fontSize = "2xl";
 
 export const menu = [
