@@ -143,6 +143,53 @@ function dbConnector() {
     }
   };
 
+  dbObj.getUser = async (data) => {
+    await client.connect();
+
+    try {
+      const user = await users.find({ email: data }).toArray();
+
+      return {
+        data: user.length > 0 ? user[0] : [],
+        status: 200,
+      };
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      // client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.updateUser = async (data) => {
+    await client.connect();
+
+    try {
+      const user = await users.find({ email: data.email }).toArray();
+
+      if (user.length > 0) {
+        user[0].name = data.name;
+        user[0].password = data.password;
+
+        await users.findOneAndUpdate(
+          { email: data.email },
+          {
+            $set: {
+              name: user[0].name,
+              password: user[0].password,
+            },
+          }
+        );
+      } else {
+        return 400;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      client.close();
+    }
+  };
   return dbObj;
 }
 

@@ -1,0 +1,38 @@
+.setting_container {
+  display: flex;
+}
+
+.settings_all_data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.setting_block {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.setting_label {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.setting_input {
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  width: 50%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.setting_actions {
+  margin-top: 2rem;
+}
