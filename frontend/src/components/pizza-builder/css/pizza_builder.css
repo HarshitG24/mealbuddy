@@ -1,0 +1,19 @@
+:root {
+  --pizza-title-color: #f49001;
+}
+
+.pizza_builder_content {
+  width: 100%;
+}
+
+.pizza_builder_title {
+  font-weight: 800;
+  color: var(--pizza-title-color);
+  font-size: 5rem;
+}
+
+.pizza_size {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

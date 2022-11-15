@@ -70,3 +70,5 @@ export function generateCart(arr, obj) {
 
   return tarr;
 }
+
+export const pizzaSizes = [6, 8, 10];
