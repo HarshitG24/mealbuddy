@@ -7,4 +7,9 @@ router.get("/getUser/:email", async (req, res) => {
   res.send({ udata: resp.data });
 });
 
+router.post("/updateProfile", async (req, res) => {
+  const resp = await db.updateUser(req?.body || {});
+  res.send({ status: resp });
+});
+
 export default router;

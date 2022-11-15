@@ -33,6 +33,19 @@ function Settings() {
     };
   }, []);
 
+  async function updateUserProfile() {
+    const headers = new Headers({ "Content-Type": "application/json" });
+
+    const options = {
+      method: "post",
+      headers: headers,
+      body: JSON.stringify({ email: "mihir123@gmail.com", name, password }),
+    };
+    await fetch("/api/user/updateProfile", options);
+  }
+
+  async function deleteUserProfile() {}
+
   return (
     <div className="content_block">
       <Logo />
@@ -67,8 +80,8 @@ function Settings() {
         </div>
 
         <div className="setting_actions">
-          <button>Update Profile</button>
-          <button>Delete Profile</button>
+          <button onClick={() => updateUserProfile()}>Update Profile</button>
+          <button onClick={() => deleteUserProfile()}>Delete Profile</button>
         </div>
       </div>
     </div>

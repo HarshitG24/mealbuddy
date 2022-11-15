@@ -181,6 +181,8 @@ function dbConnector() {
             },
           }
         );
+
+        return 200;
       } else {
         return 400;
       }
