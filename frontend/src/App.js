@@ -8,6 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import AddToCart from "./components/addToCart/AddToCart";
 import CreateAccount from "./components/createAccount/createAccount";
 import Login from "./components/login/login";
+import PizzaBuilder from "./components/pizza-builder/PizzaBuilder";
 import Wishlist from "./components/wishlist/wishlist";
 
 function App() {
@@ -33,15 +34,17 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home setDef={setDefault} cart={cart} setCart={setCart} />}
-        ></Route>
+          element={
+            <Home setDef={setDefault} cart={cart} setCart={setCart} />
+          }></Route>
         <Route path="/settings" element={<Settings />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route
           path="/createAccount"
-          element={<CreateAccount setDef={setDefault} />}
-        ></Route>
+          element={<CreateAccount setDef={setDefault} />}></Route>
         <Route path="/login" element={<Login setDef={setDefault} />}></Route>
+
+        <Route path="/pizza-builder" element={<PizzaBuilder />}></Route>
       </Routes>
 
       {location.pathname.includes("/createAccount") ||

@@ -7,6 +7,7 @@ const client = new MongoClient(url, {});
 const db = client.db("MealBuddy");
 const users = db.collection("users");
 const whishlist_data = db.collection("whishlist");
+const checkoutOrders = db.collection("allOrders");
 
 function dbConnector() {
   let dbObj = {};
@@ -121,6 +122,105 @@ function dbConnector() {
       } else {
         return [];
       }
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+
+  dbObj.checkoutItems = async (data) => {
+    await client.connect();
+
+    try {
+      const user = await checkoutOrders.find({ user: data.user }).toArray();
+      console.log("user is", user);
+
+      if (user.length > 0) {
+        user[0].orders = [...user[0].orders, ...data.orders];
+
+        await checkoutOrders.findOneAndUpdate(
+          { user: data.user },
+          {
+            $set: {
+              orders: user[0].orders,
+            },
+          }
+        );
+      } else {
+        await checkoutOrders.insertOne(data);
+      }
+
+      return 200;
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      client.close();
+    }
+  };
+
+  dbObj.getUser = async (data) => {
+    await client.connect();
+
+    try {
+      const user = await users.find({ email: data }).toArray();
+
+      return {
+        data: user.length > 0 ? user[0] : [],
+        status: 200,
+      };
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      // client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.updateUser = async (data) => {
+    await client.connect();
+
+    try {
+      const user = await users.find({ email: data.email }).toArray();
+
+      if (user.length > 0) {
+        user[0].name = data.name;
+        user[0].password = data.password;
+
+        await users.findOneAndUpdate(
+          { email: data.email },
+          {
+            $set: {
+              name: user[0].name,
+              password: user[0].password,
+            },
+          }
+        );
+
+        return 200;
+      } else {
+        return 400;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.deleteUser = async (data) => {
+    await client.connect();
+
+    try {
+      await users.deleteMany({ email: data });
+      await checkoutOrders.deleteMany({ user: data });
+      return 200;
     } catch (error) {
       console.log(error);
       return 400;
