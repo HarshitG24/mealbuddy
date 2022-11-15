@@ -12,4 +12,9 @@ router.post("/updateProfile", async (req, res) => {
   res.send({ status: resp });
 });
 
+router.delete("/deleteProfile/:email", async (req, res) => {
+  const resp = await db.deleteUser(req?.params?.email || "");
+  res.send({ status: resp });
+});
+
 export default router;

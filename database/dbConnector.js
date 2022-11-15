@@ -192,6 +192,23 @@ function dbConnector() {
       client.close();
     }
   };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.deleteUser = async (data) => {
+    await client.connect();
+
+    try {
+      await users.deleteMany({ email: data });
+      await checkoutOrders.deleteMany({ user: data });
+      return 200;
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      client.close();
+    }
+  };
+
   return dbObj;
 }
 

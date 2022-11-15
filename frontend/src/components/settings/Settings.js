@@ -8,11 +8,10 @@ function Settings() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  let data = {
+    email: "mihir123@gmail.com",
+  };
   async function fetchUsers() {
-    let data = {
-      email: "mihir123@gmail.com",
-    };
-
     const resp = await fetch("/api/user/getUser/" + data.email);
     const userData = await resp.json();
 
@@ -31,7 +30,7 @@ function Settings() {
     return () => {
       // this now gets called when the component unmounts
     };
-  }, []);
+  });
 
   async function updateUserProfile() {
     const headers = new Headers({ "Content-Type": "application/json" });
@@ -44,7 +43,16 @@ function Settings() {
     await fetch("/api/user/updateProfile", options);
   }
 
-  async function deleteUserProfile() {}
+  async function deleteUserProfile() {
+    const headers = new Headers({ "Content-Type": "application/json" });
+
+    const opts = {
+      method: "delete",
+      headers: headers,
+    };
+
+    await fetch("/api/user/deleteProfile/" + data.email, opts);
+  }
 
   return (
     <div className="content_block">
