@@ -2,12 +2,12 @@
 import "./css/pizza_table.css";
 import PizzaTableRow from "./PizzaTableRow";
 
-function PizzaTable({ allData }) {
+function PizzaTable({ allData, value, setValue }) {
   const { title, data } = allData;
   return (
     <table>
       <caption>{title}</caption>
-      <PizzaTableRow data={data} />
+      <PizzaTableRow data={data} value={value} setValue={setValue} />
     </table>
   );
 }

@@ -10,3 +10,7 @@ tr > td {
   padding: 1rem;
   cursor: pointer;
 }
+
+.crust_selected {
+  background-color: orange;
+}

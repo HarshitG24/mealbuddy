@@ -82,7 +82,7 @@ export const pizzaData = [
   },
   {
     title: "Choose Your Crust",
-    data: ["Cheesy Bytes", "Cheese Burst", "Thin Crust", "Fresh Pan"],
+    data: ["Cheesy Bytes", "Thin Crust", "Fresh Pan"],
   },
   {
     title: "Price Details",

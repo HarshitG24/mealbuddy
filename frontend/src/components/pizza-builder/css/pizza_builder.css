@@ -31,6 +31,34 @@
   height: 40rem;
 }
 
+.pizza_img_parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.pizza_crust {
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  position: relative;
+}
+
+.pizza_base {
+  display: flex;
+  position: absolute;
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image2 {
+  position: absolute;
+}
+
 .builder_cart {
   width: 100%;
   background: orange;
