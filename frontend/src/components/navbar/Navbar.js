@@ -11,6 +11,7 @@ import {
   faCalculator,
 } from "@fortawesome/free-solid-svg-icons";
 import { fontSize } from "../../utils/util";
+import { Link } from "react-router-dom";
 // import { useState } from "react";
 
 function Navbar({ selected, setSelected, def }) {
@@ -22,91 +23,58 @@ function Navbar({ selected, setSelected, def }) {
 
   return (
     <div className="nav_container">
-      <a href="/">
+      <Link to="/" onClick={() => navbarClicked(1)}>
         <FontAwesomeIcon
           icon={faHouseChimney}
           size={fontSize}
           className={`font-icon ${selected === 1 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/";
-            navbarClicked(1);
-          }}
         />
-      </a>
-      <a href="/past-orders">
+      </Link>
+
+      <Link to="/past-orders" onClick={() => navbarClicked(2)}>
         <FontAwesomeIcon
           icon={faBoxOpen}
           size={fontSize}
           className={`font-icon ${selected === 2 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/past-orders";
-            navbarClicked(2);
-          }}
         />
-      </a>
-      <a href="/wishlist">
+      </Link>
+
+      <Link to="/wishlist" onClick={() => navbarClicked(3)}>
         <FontAwesomeIcon
           icon={faHeart}
           size={fontSize}
           className={`font-icon ${selected === 3 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-
-            window.location.href = "/wishlist";
-            navbarClicked(3);
-          }}
         />
-      </a>
-      <a href="/pizza-builder">
+      </Link>
+
+      <Link to="/pizza-builder" onClick={() => navbarClicked(4)}>
         <FontAwesomeIcon
           icon={faPizzaSlice}
           size={fontSize}
           className={`font-icon ${selected === 4 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/pizza-builder";
-            navbarClicked(4);
-          }}
         />
-      </a>
-      <a href="/burger-builder">
+      </Link>
+      <Link to="/burger-builder" onClick={() => navbarClicked(5)}>
         <FontAwesomeIcon
           icon={faBurger}
           size={fontSize}
           className={`font-icon ${selected === 5 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/burger-builder";
-            navbarClicked(5);
-          }}
         />
-      </a>
-      <a href="/calorie-tracker">
+      </Link>
+      <Link to="/calorie-tracker" onClick={() => navbarClicked(6)}>
         <FontAwesomeIcon
           icon={faCalculator}
           size={fontSize}
           className={`font-icon ${selected === 6 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/calorie-tracker";
-            navbarClicked(6);
-          }}
         />
-      </a>
-      <a href="/settings">
+      </Link>
+      <Link to="/settings" onClick={() => navbarClicked(7)}>
         <FontAwesomeIcon
           icon={faUser}
           size={fontSize}
-          className={`font-icon ${selected === 6 ? "selected" : ""}`}
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = "/settings";
-            navbarClicked(6);
-          }}
+          className={`font-icon ${selected === 7 ? "selected" : ""}`}
         />
-      </a>
+      </Link>
     </div>
   );
 }
