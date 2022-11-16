@@ -6,8 +6,8 @@ function PizzaTableRow({ data, value, setValue }) {
     <tbody className="pizza_tb_data">
       {data.map((e, index) => {
         return (
-          <tr key={e.bid} onClick={() => setValue(index)}>
-            <td className={index === value ? "crust_selected" : ""}>
+          <tr key={e.bid} onClick={() => setValue(e)}>
+            <td className={index === value.bid ? "crust_selected" : ""}>
               {e.name}
             </td>
           </tr>

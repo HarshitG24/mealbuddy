@@ -11,10 +11,16 @@ import crust1 from "../../images/crust1.png";
 import crust2 from "../../images/crust2.png";
 import crust3 from "../../images/crust3.png";
 import PizzaToppingTable from "./PizzaToppingTable";
+import PizzaSummaryTable from "./PizzaSummaryTable";
 
 function PizzaBuilder() {
   const [size, setSize] = useState(0);
-  const [crust, setCrust] = useState(0);
+  const [crust, setCrust] = useState({
+    bid: 0,
+    name: "Cheesy Bytes",
+    calories: "25",
+    price: 7.99,
+  });
   const [toppings, setToppings] = useState([]);
 
   return (
@@ -28,11 +34,11 @@ function PizzaBuilder() {
           {pizzaSizes.map((e, index) => {
             return (
               <PizzaSize
-                key={index}
-                size={e}
+                key={e.sid}
+                size={e.size}
                 selected={size}
                 setSize={setSize}
-                index={index}
+                index={e.sid}
               />
             );
           })}
@@ -47,9 +53,9 @@ function PizzaBuilder() {
             />
             {(() => {
               let crust_name = crust1;
-              if (crust === 1) {
+              if (crust.bid === 1) {
                 crust_name = crust2;
-              } else if (crust === 2) {
+              } else if (crust.bid === 2) {
                 crust_name = crust3;
               }
 
@@ -78,10 +84,13 @@ function PizzaBuilder() {
             value={crust}
             setValue={setCrust}
           />
-          {/* <div>
-            <PizzaTable allData={pizzaData[2]} />
-            <button className="builder_cart">Add To Cart</button>
-          </div> */}
+
+          <PizzaSummaryTable
+            allData={pizzaData[2]}
+            size={size}
+            crust={crust}
+            toppings={toppings}
+          />
         </div>
       </div>
     </div>
