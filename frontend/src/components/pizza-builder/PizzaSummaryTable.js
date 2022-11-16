@@ -4,6 +4,7 @@ import "./css/pizza_table.css";
 import "./css/pizza_table_row.css";
 
 function PizzaSummaryTable({ allData, size, crust, toppings }) {
+  console.log("the size is", size);
   const { title } = allData;
   const [basePrice, setBasePrice] = useState(0);
   const [totalCalories, setaTotalCalories] = useState(0);
@@ -14,15 +15,15 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
     let multiplier = 1;
 
     switch (size) {
-      case 6:
+      case 0:
         multiplier = 1;
         break;
 
-      case 8:
+      case 1:
         multiplier = 1.5;
         break;
 
-      case 10:
+      case 2:
         multiplier = 2;
         break;
 
@@ -31,7 +32,6 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         break;
     }
 
-    console.log("the crust is", crust);
     setBasePrice(multiplier * crust.price);
   });
 
