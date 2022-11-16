@@ -78,7 +78,33 @@ export const pizzaSizes = [6, 8, 10];
 export const pizzaData = [
   {
     title: "Add Toppings",
-    data: ["Onion", "Bell Pepper", "Tofu", "Sofritas"],
+    // data: ["Onion", "Bell Pepper", "Tofu", "Sofritas"],
+    data: [
+      {
+        tid: 1,
+        name: "Onion",
+        calories: "25",
+        price: 1.99,
+      },
+      {
+        tid: 2,
+        name: "Bell Pepper",
+        calories: "35",
+        price: 2.99,
+      },
+      {
+        tid: 3,
+        name: "Tofu",
+        calories: "75",
+        price: 3.99,
+      },
+      {
+        tid: 4,
+        name: "Sofritas",
+        calories: "45",
+        price: 4.99,
+      },
+    ],
   },
   {
     title: "Choose Your Crust",

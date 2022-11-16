@@ -10,6 +10,7 @@ import pbase from "../../images/basep.png";
 import crust1 from "../../images/crust1.png";
 import crust2 from "../../images/crust2.png";
 import crust3 from "../../images/crust3.png";
+import PizzaToppingTable from "./PizzaToppingTable";
 
 function PizzaBuilder() {
   const [size, setSize] = useState(0);
@@ -61,12 +62,13 @@ function PizzaBuilder() {
               );
             })()}
           </div>
+
           {/* Toppings */}
-          {/* <PizzaTable
+          <PizzaToppingTable
             allData={pizzaData[0]}
-            value={crust}
-            setValue={setCrust}
-          /> */}
+            topping={toppings}
+            setTopping={setToppings}
+          />
         </div>
 
         {/* Pizza Crust + Total Price */}
