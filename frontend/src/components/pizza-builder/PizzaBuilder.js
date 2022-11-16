@@ -18,7 +18,7 @@ function PizzaBuilder() {
   const [crust, setCrust] = useState({
     bid: 0,
     name: "Cheesy Bytes",
-    calories: "25",
+    calories: 625,
     price: 7.99,
   });
   const [toppings, setToppings] = useState([]);

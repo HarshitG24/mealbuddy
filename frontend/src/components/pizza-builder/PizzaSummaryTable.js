@@ -32,7 +32,21 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         break;
     }
 
-    setBasePrice(multiplier * crust.price);
+    console.log("extras is", toppings);
+
+    let extraPrice = 0;
+    let extraCalories = 0;
+
+    toppings.forEach((t) => {
+      extraPrice += t.price;
+      extraCalories += t.calories;
+    });
+
+    let basePr = multiplier * crust.price;
+    setBasePrice(basePr);
+    setExtras(extraPrice);
+    setaTotalCalories(extraCalories + multiplier * crust.calories);
+    setAmt(basePr + extraPrice);
   });
 
   return (
