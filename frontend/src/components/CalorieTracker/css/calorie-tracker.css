@@ -18,9 +18,14 @@
 .calorie_table > table {
   width: 100%;
   margin-top: 3rem;
+  padding-bottom: 5rem;
 }
 
 .table_header {
   font-weight: 800;
   font-size: 3rem;
+}
+
+.color1 {
+  background-color: "#E38627";
 }

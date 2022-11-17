@@ -154,3 +154,11 @@ export const pizzaData = [
     data: ["Base Price", "Extras", "Total Calories"],
   },
 ];
+
+export const pieColors = [
+  "#E38627",
+  "#C13C37",
+  "#6A2135",
+  "#FFE15D",
+  "#0D4C92",
+];
