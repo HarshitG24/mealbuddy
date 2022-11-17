@@ -4,7 +4,6 @@ import "./css/pizza_table.css";
 import "./css/pizza_table_row.css";
 
 function PizzaSummaryTable({ allData, size, crust, toppings }) {
-  console.log("the size is", size);
   const { title } = allData;
   const [basePrice, setBasePrice] = useState(0);
   const [totalCalories, setaTotalCalories] = useState(0);
@@ -31,8 +30,6 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         multiplier = 1;
         break;
     }
-
-    console.log("extras is", toppings);
 
     let extraPrice = 0;
     let extraCalories = 0;

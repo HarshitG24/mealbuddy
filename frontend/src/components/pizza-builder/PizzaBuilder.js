@@ -12,6 +12,10 @@ import crust2 from "../../images/crust2.png";
 import crust3 from "../../images/crust3.png";
 import PizzaToppingTable from "./PizzaToppingTable";
 import PizzaSummaryTable from "./PizzaSummaryTable";
+import onions from "../../images/onions.png";
+import olives from "../../images/black-olives.png";
+import mushroom from "../../images/mushrooms.png";
+import pepper from "../../images/green-peppers.png";
 
 function PizzaBuilder() {
   const [size, setSize] = useState(0);
@@ -22,6 +26,12 @@ function PizzaBuilder() {
     price: 7.99,
   });
   const [toppings, setToppings] = useState([]);
+  const [images, setImg] = useState({
+    onion: onions,
+    olive: olives,
+    mush: mushroom,
+    pep: pepper,
+  });
 
   return (
     <div className="content_block">
@@ -67,6 +77,17 @@ function PizzaBuilder() {
                 />
               );
             })()}
+
+            {toppings.map((t) => {
+              console.log("t.url", t.url);
+              return (
+                <img
+                  className="pizza_toppings"
+                  src={images[t.url]}
+                  alt="This is the base of the pizza"
+                />
+              );
+            })}
           </div>
 
           {/* Toppings */}
