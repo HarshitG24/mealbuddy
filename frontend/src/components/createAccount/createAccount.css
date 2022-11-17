@@ -126,6 +126,10 @@ h1 {
 .user_show_pass > label {
   margin-left: 1rem;
 }
+.header img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
 
 /* Create Account Btn */
 .user_create_account {

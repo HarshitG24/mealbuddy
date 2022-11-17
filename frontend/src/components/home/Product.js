@@ -19,6 +19,7 @@ function Product({ elem, cart, setCart }) {
         user: user_data.user,
         data: [
           {
+            pid: pid,
             name: name,
             img: img,
             calories: calories,

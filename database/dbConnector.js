@@ -23,7 +23,7 @@ function dbConnector() {
       console.log("error", error);
       return 400;
     } finally {
-      client.close();
+      // client.close();
     }
   };
 
@@ -73,17 +73,26 @@ function dbConnector() {
         .find({ user: data.user })
         .toArray();
 
+      console.log("whole array is", whishlist[0].data, data.data[0].pid);
       if (whishlist.length > 0) {
-        for (let i = 0; i < whishlist[0].data.length; i++) {
-          if (
-            whishlist[0].data[i].name === data.data.name &&
-            whishlist[0].data[i].img === data.data.img &&
-            whishlist[0].data[i].calories === data.data.calories &&
-            whishlist[0].data[i].price === data.data.price
-          ) {
-            console.log("True");
-            return 200;
+        const isFound = whishlist[0].data.some((element) => {
+          if (element.pid == data.data[0].pid) {
+            return true;
           }
+
+          return false;
+        });
+        if (isFound) {
+          return 200;
+        }
+
+        // const isFound = whishlist[0].data.find((element) => {
+        //   element.pid === data.data[0].pid;
+        // });
+
+        // console.log("isfound", isFound);
+        if (isFound) {
+          return 200;
         }
 
         whishlist[0].data = [...whishlist[0].data, ...data.data];
@@ -107,7 +116,7 @@ function dbConnector() {
       console.log(error);
       return 400;
     } finally {
-      client.close();
+      //
     }
   };
 
@@ -127,7 +136,7 @@ function dbConnector() {
       console.log(error);
       return 400;
     } finally {
-      client.close();
+      // client.close();
     }
   };
 
@@ -160,7 +169,7 @@ function dbConnector() {
       console.log(error);
       return 400;
     } finally {
-      client.close();
+      // client.close();
     }
   };
 
@@ -211,7 +220,7 @@ function dbConnector() {
     } catch (error) {
       console.log(error);
     } finally {
-      client.close();
+      // client.close();
     }
   };
 
@@ -227,7 +236,34 @@ function dbConnector() {
       console.log(error);
       return 400;
     } finally {
-      client.close();
+      // client.close();
+    }
+  };
+  // AUTHOR: MIHIR MESIA
+
+  dbObj.deleteWishlist = async (del_data) => {
+    await client.connect();
+    try {
+      const data = await whishlist_data.find({ user: del_data.user }).toArray();
+      const del_index = data[0].data.findIndex(
+        (obj) => obj.pid === del_data.pid
+      );
+      data[0].data.splice(del_index, 1);
+
+      await whishlist_data.findOneAndUpdate(
+        { user: del_data.user },
+        {
+          $set: {
+            data: data[0].data,
+          },
+        }
+      );
+      return 200;
+    } catch (error) {
+      console.log(error);
+      return 400;
+    } finally {
+      // client.close();
     }
   };
 

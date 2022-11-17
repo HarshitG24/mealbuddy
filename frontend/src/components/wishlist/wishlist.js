@@ -1,5 +1,11 @@
+//AUTHOR: MIHIR MESIA
 import { useState, useEffect } from "react";
 import Component from "./component";
+import default_img from "../../images/wishlist-empty.jpeg";
+import Logo from "../header/logo";
+import "../../Reused.css";
+import "./wishlist.css";
+import { Link } from "react-router-dom";
 
 export default function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
@@ -15,11 +21,50 @@ export default function Wishlist() {
     fetch_data();
   }, []);
 
+  async function deleteData(pid) {
+    let arr = [...wishlist];
+
+    arr = arr.filter((e) => e.pid != pid);
+    setWishlist(arr);
+    const user_name = await fetch("/api/Account/getUser");
+    const user = await user_name.json();
+    let delete_data = {
+      user: user.user,
+      pid: pid,
+    };
+
+    const headers = new Headers({ "Content-Type": "application/json" });
+
+    const opts = {
+      method: "delete",
+      headers: headers,
+      body: JSON.stringify(delete_data),
+    };
+
+    const resp = await fetch("/api/deleteWishlist", opts);
+    if (resp.status !== 200) {
+      alert("unable to delete");
+    }
+  }
+
   return (
-    <div>
-      {wishlist.map((element) => {
-        return <Component data={element} />;
-      })}
+    <div className="content_block">
+      <Logo />
+      <div className="mainarea">
+        <h1>Wishlist</h1>
+
+        <div className="wishlist_data_list">
+          {wishlist.length == 0 ? (
+            <div>
+              <img src={default_img} alt="empty_wishlist" />
+            </div>
+          ) : (
+            wishlist.map((element) => {
+              return <Component data={element} onClick={deleteData} />;
+            })
+          )}
+        </div>
+      </div>
     </div>
   );
 }

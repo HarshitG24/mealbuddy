@@ -24,4 +24,9 @@ router.get("/fetch_wishlist_data/:user", async (req, res) => {
   res.send(JSON.stringify(resp));
 });
 
+//AUTHOR: MIHIR MESIA
+router.delete("/deleteWishlist", async (req, res) => {
+  const resp = await db.deleteWishlist(req?.body || "");
+  res.send({ status: resp });
+});
 export default router;
