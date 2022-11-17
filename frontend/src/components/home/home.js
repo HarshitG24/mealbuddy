@@ -12,6 +12,7 @@ import Product from "./Product";
 function Home({ setCart, cart }) {
   const [selectedMenu, setMenu] = useState(0);
   const [product, setProduct] = useState(pizzas);
+
   return (
     <div className="content_block">
       <Logo />

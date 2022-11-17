@@ -32,6 +32,7 @@ export const pizzas = [
     img: "css-sprite-pizza2",
     calories: "500",
     price: 10.99,
+    category: "pizza",
   },
   {
     pid: "p2",
@@ -39,6 +40,7 @@ export const pizzas = [
     img: "css-sprite-pizza3",
     calories: "400",
     price: 8.99,
+    category: "pizza",
   },
 ];
 
@@ -49,6 +51,7 @@ export const burgers = [
     img: "css-sprite-burger1",
     calories: "220",
     price: 6.99,
+    category: "burger",
   },
   {
     pid: "b2",
@@ -56,6 +59,7 @@ export const burgers = [
     img: "css-sprite-burger2",
     calories: "480",
     price: 7.99,
+    category: "burger",
   },
 ];
 

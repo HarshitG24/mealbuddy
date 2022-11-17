@@ -267,6 +267,27 @@ function dbConnector() {
     }
   };
 
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.fetchAllOrders = async (email) => {
+    await client.connect();
+
+    try {
+      const orderData = await checkoutOrders.find({ user: email }).toArray();
+      return {
+        data: orderData,
+        status: 200,
+      };
+    } catch (error) {
+      console.log(error);
+      return {
+        status: 400,
+        data: [],
+      };
+    } finally {
+      client.close();
+    }
+  };
+
   return dbObj;
 }
 

@@ -24,7 +24,7 @@ function AddToCart({ cart, setCart }) {
 
   async function sendCartItemstoDb() {
     let data = {
-      user: "hrstgajjar",
+      user: "john@gmail.com",
       orders: [
         {
           ...cart,
@@ -40,7 +40,6 @@ function AddToCart({ cart, setCart }) {
       body: JSON.stringify(data),
     };
     const response = await fetch("/api/cart/checkout", options);
-    console.log("response is", response);
   }
   return (
     <div className="cart_container">

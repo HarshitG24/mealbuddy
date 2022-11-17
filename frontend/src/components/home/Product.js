@@ -6,7 +6,7 @@ import "./css/product.css";
 import { generateCart } from "../../utils/util";
 
 function Product({ elem, cart, setCart }) {
-  const { pid, name, img, calories, price } = elem;
+  const { pid, name, img, calories, price, category } = elem;
   //AUTHOR: MIHIR MESIA
   async function addToWishlist() {
     const fetch_user = await fetch("/api/Account/getUser");
@@ -43,6 +43,7 @@ function Product({ elem, cart, setCart }) {
     }
   }
 
+  // AUTHOR: HARSHIT GAJJAR
   return (
     <div className="product_card">
       <div className="product_wishlist">
@@ -70,6 +71,7 @@ function Product({ elem, cart, setCart }) {
               img,
               calories,
               price,
+              category,
               qty: 1,
             });
 

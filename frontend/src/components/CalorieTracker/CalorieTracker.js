@@ -1,9 +1,20 @@
+// AUTHOR: HARSHIT GAJJAR
 import { PieChart } from "react-minimal-pie-chart";
 import "./css/calorie-tracker.css";
 import "../../Reused.css";
 import Logo from "../header/logo";
+import { useEffect } from "react";
 
 function CalorieTracker() {
+  useEffect(() => {
+    async function fetch_data() {
+      const allOrders = await fetch("/api/calorie/getAllOrders/john@gmail.com");
+      const orderJson = await allOrders.json();
+
+      console.log("orders", orderJson);
+    }
+    fetch_data();
+  });
   return (
     <div className="content_block">
       <Logo />
