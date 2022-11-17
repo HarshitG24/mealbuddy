@@ -27,7 +27,7 @@ function AddToCart({ cart, setCart }) {
       user: "john@gmail.com",
       orders: [
         {
-          ...cart,
+          cart: [...cart],
           calories: totalCalories,
           price: totalPrice,
         },

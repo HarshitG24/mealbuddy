@@ -10,3 +10,17 @@
   width: 50rem;
   height: 50rem;
 }
+
+.calorie_table {
+  width: 100%;
+}
+
+.calorie_table > table {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.table_header {
+  font-weight: 800;
+  font-size: 3rem;
+}

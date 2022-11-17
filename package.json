@@ -32,6 +32,7 @@
     "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-html": "^7.1.0",
