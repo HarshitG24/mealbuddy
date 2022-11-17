@@ -73,16 +73,77 @@ export function generateCart(arr, obj) {
   return tarr;
 }
 
-export const pizzaSizes = [6, 8, 10];
+export const pizzaSizes = [
+  {
+    sid: 0,
+    size: 6,
+  },
+  {
+    sid: 1,
+    size: 8,
+  },
+  {
+    sid: 2,
+    size: 10,
+  },
+];
 
 export const pizzaData = [
   {
     title: "Add Toppings",
-    data: ["Onion", "Bell Pepper", "Tofu", "Sofritas"],
+    data: [
+      {
+        tid: 1,
+        name: "Onion",
+        calories: 25,
+        price: 1.99,
+        url: "onion",
+      },
+      {
+        tid: 2,
+        name: "Black Olives",
+        calories: 35,
+        price: 2.99,
+        url: "olive",
+      },
+      {
+        tid: 3,
+        name: "Mushrooms",
+        calories: 75,
+        price: 3.99,
+        url: "mush",
+      },
+      {
+        tid: 4,
+        name: "Green Peppers",
+        calories: 45,
+        price: 4.99,
+        url: "pep",
+      },
+    ],
   },
   {
     title: "Choose Your Crust",
-    data: ["Cheesy Bytes", "Cheese Burst", "Thin Crust", "Fresh Pan"],
+    data: [
+      {
+        bid: 0,
+        name: "Cheesy Bytes",
+        calories: 625,
+        price: 7.99,
+      },
+      {
+        bid: 1,
+        name: "Thin Crust",
+        calories: 235,
+        price: 6.99,
+      },
+      {
+        bid: 2,
+        name: "Fresh Pan",
+        calories: 375,
+        price: 5.99,
+      },
+    ],
   },
   {
     title: "Price Details",

@@ -11,6 +11,7 @@ import CreateAccount from "./components/createAccount/createAccount";
 import Login from "./components/login/login";
 import PizzaBuilder from "./components/pizza-builder/PizzaBuilder";
 import Wishlist from "./components/wishlist/wishlist";
+import CalorieTracker from "./components/CalorieTracker/CalorieTracker";
 
 function App() {
   const [selected, setSelected] = useState(1);
@@ -46,6 +47,7 @@ function App() {
         <Route path="/login" element={<Login setDef={setDefault} />}></Route>
 
         <Route path="/pizza-builder" element={<PizzaBuilder />}></Route>
+        <Route path="/calorie-tracker" element={<CalorieTracker />}></Route>
       </Routes>
 
       {location.pathname.includes("/createAccount") ||
