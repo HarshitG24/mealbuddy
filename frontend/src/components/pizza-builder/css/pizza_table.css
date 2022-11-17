@@ -7,3 +7,7 @@ caption {
   white-space: nowrap;
   overflow: hidden;
 }
+
+table {
+  width: 40%;
+}
