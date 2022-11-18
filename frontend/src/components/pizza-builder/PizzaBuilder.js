@@ -79,7 +79,6 @@ function PizzaBuilder() {
             })()}
 
             {toppings.map((t) => {
-              console.log("t.url", t.url);
               return (
                 <img
                   className="pizza_toppings"

@@ -14,3 +14,15 @@ tr > td {
 .crust_selected {
   background-color: orange;
 }
+
+.crust_calories {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.crust_price {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 2rem;
+}
