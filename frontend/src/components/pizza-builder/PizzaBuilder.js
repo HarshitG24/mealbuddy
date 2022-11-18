@@ -3,7 +3,7 @@ import "../../Reused.css";
 import "./css/pizza_builder.css";
 import Logo from "../header/logo";
 import PizzaSize from "./PizzaSize";
-import { pizzaData, pizzaSizes } from "../../utils/util";
+import { generateCart, pizzaData, pizzaSizes } from "../../utils/util";
 import { useState } from "react";
 import PizzaTable from "./PizzaTable";
 import pbase from "../../images/basep.png";
@@ -17,7 +17,7 @@ import olives from "../../images/black-olives.png";
 import mushroom from "../../images/mushrooms.png";
 import pepper from "../../images/green-peppers.png";
 
-function PizzaBuilder() {
+function PizzaBuilder({ cart, setCart }) {
   const [size, setSize] = useState(0);
   const [crust, setCrust] = useState({
     bid: 0,
@@ -32,6 +32,22 @@ function PizzaBuilder() {
     mush: mushroom,
     pep: pepper,
   });
+  const [totalCalories, setaTotalCalories] = useState(0);
+  const [amt, setAmt] = useState(0);
+
+  function addCustomPizza() {
+    let arr = generateCart(cart, {
+      pid: "customPizza",
+      name: "CustomPizza",
+      img: "",
+      calories: totalCalories,
+      price: amt,
+      category: "pizza",
+      qty: 1,
+    });
+
+    setCart(arr);
+  }
 
   return (
     <div className="content_block">
@@ -112,8 +128,12 @@ function PizzaBuilder() {
               size={size}
               crust={crust}
               toppings={toppings}
+              totalCalories={totalCalories}
+              setaTotalCalories={setaTotalCalories}
+              amt={amt}
+              setAmt={setAmt}
             />
-            <button>Add to Cart</button>
+            <button onClick={() => addCustomPizza()}>Add to Cart</button>
           </div>
         </div>
       </div>

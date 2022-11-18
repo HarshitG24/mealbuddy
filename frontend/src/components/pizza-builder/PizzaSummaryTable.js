@@ -3,48 +3,61 @@ import { useEffect, useState } from "react";
 import "./css/pizza_table.css";
 import "./css/pizza_table_row.css";
 
-function PizzaSummaryTable({ allData, size, crust, toppings }) {
-  console.log("toppings in summary", toppings);
+function PizzaSummaryTable({
+  allData,
+  size,
+  crust,
+  toppings,
+  totalCalories,
+  setaTotalCalories,
+  amt,
+  setAmt,
+}) {
   const { title } = allData;
   const [basePrice, setBasePrice] = useState(0);
-  const [totalCalories, setaTotalCalories] = useState(0);
   const [extras, setExtras] = useState(0);
-  const [amt, setAmt] = useState(0);
+  // const [totalCalories, setaTotalCalories] = useState(0);
+  // const [amt, setAmt] = useState(0);
 
   useEffect(() => {
-    let multiplier = 1;
+    function updateHooks() {
+      let multiplier = 1;
 
-    switch (size) {
-      case 0:
-        multiplier = 1;
-        break;
+      switch (size) {
+        case 0:
+          multiplier = 1;
+          break;
 
-      case 1:
-        multiplier = 1.5;
-        break;
+        case 1:
+          multiplier = 1.5;
+          break;
 
-      case 2:
-        multiplier = 2;
-        break;
+        case 2:
+          multiplier = 2;
+          break;
 
-      default:
-        multiplier = 1;
-        break;
+        default:
+          multiplier = 1;
+          break;
+      }
+
+      let extraPrice = 0;
+      let extraCalories = 0;
+
+      toppings.forEach((t) => {
+        extraPrice += t.price;
+        extraCalories += t.calories;
+      });
+
+      let basePr = multiplier * crust.price;
+      setBasePrice(basePr);
+      setExtras(extraPrice);
+      setaTotalCalories(extraCalories + multiplier * crust.calories);
+      let price = (basePr + extraPrice).toFixed(2);
+      setAmt(price);
     }
 
-    let extraPrice = 0;
-    let extraCalories = 0;
-
-    toppings.forEach((t) => {
-      extraPrice += t.price;
-      extraCalories += t.calories;
-    });
-
-    let basePr = multiplier * crust.price;
-    setBasePrice(basePr);
-    setExtras(extraPrice);
-    setaTotalCalories(extraCalories + multiplier * crust.calories);
-    setAmt((basePr + extraPrice).toFixed(2));
+    updateHooks();
   });
 
   return (

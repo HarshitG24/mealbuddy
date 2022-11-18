@@ -46,7 +46,9 @@ function App() {
           element={<CreateAccount setDef={setDefault} />}></Route>
         <Route path="/login" element={<Login setDef={setDefault} />}></Route>
 
-        <Route path="/pizza-builder" element={<PizzaBuilder />}></Route>
+        <Route
+          path="/pizza-builder"
+          element={<PizzaBuilder cart={cart} setCart={setCart} />}></Route>
         <Route path="/calorie-tracker" element={<CalorieTracker />}></Route>
       </Routes>
 
