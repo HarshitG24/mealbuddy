@@ -6,11 +6,10 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
   const { title, data } = allData;
 
   function handleToppingClick(e, item) {
-    e.target.classList.toggle("crust_selected");
     let arr = topping.splice(0, topping.length);
-    arr = arr.filter((elem) => elem.tid !== item.tid);
-
-    if (e.target.classList.contains("crust_selected")) {
+    if (arr.findIndex((t) => t.name === item.name) !== -1) {
+      arr = arr.filter((elem) => elem.tid !== item.tid);
+    } else {
       arr = [...arr, item];
     }
 
@@ -25,7 +24,20 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
             <tr
               key={item.tid}
               onClick={(event) => handleToppingClick(event, item)}>
-              <td>{item.name}</td>
+              <td
+                className={`${
+                  topping.findIndex((t) => t.name === item.name) !== -1
+                    ? "crust_selected"
+                    : ""
+                }`}>
+                <div>
+                  <div className="crust_price">
+                    <p>{item.name}</p>
+                    <p>${item.price}</p>
+                  </div>
+                  <p className="crust_calories">{item.calories} Cal</p>
+                </div>
+              </td>
             </tr>
           );
         })}

@@ -33,6 +33,9 @@ function PizzaBuilder() {
     pep: pepper,
   });
 
+  // const [selToppings, setAlltoppings] = useState([]);
+
+  console.log("all toppings are:", toppings);
   return (
     <div className="content_block">
       <Logo />
@@ -78,9 +81,10 @@ function PizzaBuilder() {
               );
             })()}
 
-            {toppings.map((t) => {
+            {toppings.map((t, index) => {
               return (
                 <img
+                  key={index}
                   className="pizza_toppings"
                   src={images[t.url]}
                   alt="This is the base of the pizza"
