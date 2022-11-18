@@ -51,19 +51,39 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
       <caption>{title}</caption>
       <tbody>
         <tr>
-          <td>Base Price {basePrice}</td>
+          <td>
+            <div className="summary_row">
+              <p>Base Price</p>
+              <p>{basePrice}</p>
+            </div>
+          </td>
         </tr>
 
         <tr>
-          <td>Extras {extras}</td>
+          <td>
+            <div className="summary_row">
+              <p>Extras</p>
+              <p>{extras}</p>
+            </div>
+          </td>
         </tr>
 
         <tr>
-          <td>Total Calories {totalCalories}</td>
+          <td>
+            <div className="summary_row">
+              <p>Total Calories </p>
+              <p>{totalCalories}</p>
+            </div>
+          </td>
         </tr>
 
         <tr>
-          <td>Final Amount {amt}</td>
+          <td>
+            <div className="summary_row">
+              <p>Final Amount </p>
+              <p>{amt}</p>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
