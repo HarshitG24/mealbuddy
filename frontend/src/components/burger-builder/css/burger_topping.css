@@ -1,0 +1,29 @@
+.lettuce {
+  width: 90%;
+  height: 4.5%;
+  margin: 2% auto;
+  background: linear-gradient(#14ff0a, #99c087);
+  border-radius: 20px;
+}
+
+.cheese {
+  width: 85%;
+  height: 7%;
+  margin: 2% auto;
+  background: linear-gradient(#f9f303, #c29f80);
+  border-radius: 20px;
+}
+
+.tomato {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(#fa3600, #c45e38);
+  margin: 2% auto;
+}
+
+.ranch {
+  width: 80%;
+  height: 5%;
+  background: linear-gradient(#e4d7d4, #7c6d68);
+  margin: 2% auto;
+}
