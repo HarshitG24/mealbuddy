@@ -1,0 +1,12 @@
+caption {
+  background: orange;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+table {
+  width: 40%;
+}

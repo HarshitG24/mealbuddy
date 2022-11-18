@@ -1,0 +1,16 @@
+.burger_size_block {
+  padding: 1rem;
+  /* background: #f49001; */
+  background: #fff;
+  cursor: pointer;
+}
+
+.selected_size {
+  background: #f49001;
+}
+
+.burger_size_block > span {
+  font-size: 2rem;
+  color: #000;
+  font-weight: 500;
+}

@@ -1,0 +1,15 @@
+.burger_tb_data {
+  display: table;
+  width: 100%;
+}
+
+tr > td {
+  font-size: 2rem;
+  background: #fff;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.patty_selected {
+  background-color: orange;
+}
