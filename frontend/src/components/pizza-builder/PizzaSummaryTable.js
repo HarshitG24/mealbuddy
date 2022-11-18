@@ -4,6 +4,7 @@ import "./css/pizza_table.css";
 import "./css/pizza_table_row.css";
 
 function PizzaSummaryTable({ allData, size, crust, toppings }) {
+  console.log("toppings in summary", toppings);
   const { title } = allData;
   const [basePrice, setBasePrice] = useState(0);
   const [totalCalories, setaTotalCalories] = useState(0);
@@ -43,7 +44,7 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
     setBasePrice(basePr);
     setExtras(extraPrice);
     setaTotalCalories(extraCalories + multiplier * crust.calories);
-    setAmt(basePr + extraPrice);
+    setAmt((basePr + extraPrice).toFixed(2));
   });
 
   return (
@@ -53,8 +54,8 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         <tr>
           <td>
             <div className="summary_row">
-              <p>Base Price</p>
-              <p>{basePrice}</p>
+              <p className="crust_price">Base Price</p>
+              <p className="summary_value">${basePrice}</p>
             </div>
           </td>
         </tr>
@@ -62,8 +63,8 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         <tr>
           <td>
             <div className="summary_row">
-              <p>Extras</p>
-              <p>{extras}</p>
+              <p className="crust_price">Extras</p>
+              <p className="summary_value">${extras}</p>
             </div>
           </td>
         </tr>
@@ -71,8 +72,8 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         <tr>
           <td>
             <div className="summary_row">
-              <p>Total Calories </p>
-              <p>{totalCalories}</p>
+              <p className="crust_price">Total Calories </p>
+              <p className="summary_value">{totalCalories} Cal</p>
             </div>
           </td>
         </tr>
@@ -80,8 +81,8 @@ function PizzaSummaryTable({ allData, size, crust, toppings }) {
         <tr>
           <td>
             <div className="summary_row">
-              <p>Final Amount </p>
-              <p>{amt}</p>
+              <p className="crust_price">Final Amount </p>
+              <p className="summary_value">${amt}</p>
             </div>
           </td>
         </tr>

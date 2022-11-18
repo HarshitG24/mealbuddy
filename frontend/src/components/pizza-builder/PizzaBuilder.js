@@ -33,9 +33,6 @@ function PizzaBuilder() {
     pep: pepper,
   });
 
-  // const [selToppings, setAlltoppings] = useState([]);
-
-  console.log("all toppings are:", toppings);
   return (
     <div className="content_block">
       <Logo />
@@ -109,12 +106,15 @@ function PizzaBuilder() {
             setValue={setCrust}
           />
 
-          <PizzaSummaryTable
-            allData={pizzaData[2]}
-            size={size}
-            crust={crust}
-            toppings={toppings}
-          />
+          <div className="pizza_summary_block">
+            <PizzaSummaryTable
+              allData={pizzaData[2]}
+              size={size}
+              crust={crust}
+              toppings={toppings}
+            />
+            <button>Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>
