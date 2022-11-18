@@ -37,17 +37,19 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home setDef={setDefault} cart={cart} setCart={setCart} />}
-        ></Route>
+          element={
+            <Home setDef={setDefault} cart={cart} setCart={setCart} />
+          }></Route>
         <Route path="/settings" element={<Settings />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route
           path="/createAccount"
-          element={<CreateAccount setDef={setDefault} />}
-        ></Route>
+          element={<CreateAccount setDef={setDefault} />}></Route>
         <Route path="/login" element={<Login setDef={setDefault} />}></Route>
 
-        <Route path="/pizza-builder" element={<PizzaBuilder />}></Route>
+        <Route
+          path="/pizza-builder"
+          element={<PizzaBuilder cart={cart} setCart={setCart} />}></Route>
         <Route path="/burger-builder" element={<BurgerBuilder />}></Route>
         <Route path="/calorie-tracker" element={<CalorieTracker />}></Route>
       </Routes>

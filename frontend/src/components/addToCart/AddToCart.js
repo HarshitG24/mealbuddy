@@ -61,22 +61,24 @@ function AddToCart({ cart, setCart }) {
         })}
       </div>
 
-      <div className="order_summary">
-        <div className="order_summary_div">
-          <p className="order_summary_txt">Total Price:</p>
-          <p className="order_summary_div_value">${totalPrice}</p>
-        </div>
-        <div className="order_summary_div">
-          <p className="order_summary_txt">Total Calories:</p>
-          <p className="order_summary_div_value">{totalCalories} Calories</p>
-        </div>
+      {cart.length > 0 ? (
+        <div className="order_summary">
+          <div className="order_summary_div">
+            <p className="order_summary_txt">Total Price:</p>
+            <p className="order_summary_div_value">${totalPrice}</p>
+          </div>
+          <div className="order_summary_div">
+            <p className="order_summary_txt">Total Calories:</p>
+            <p className="order_summary_div_value">{totalCalories} Calories</p>
+          </div>
 
-        <button
-          className="order_checkout_div"
-          onClick={() => sendCartItemstoDb()}>
-          Proceed to Checkout
-        </button>
-      </div>
+          <button
+            className="order_checkout_div"
+            onClick={() => sendCartItemstoDb()}>
+            Proceed to Checkout
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

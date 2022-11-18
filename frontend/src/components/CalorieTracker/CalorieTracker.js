@@ -112,4 +112,4 @@ function CalorieTracker() {
   );
 }
 
-// export default CalorieTracker;
+export default CalorieTracker;
