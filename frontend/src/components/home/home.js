@@ -5,14 +5,25 @@ import "../../Reused.css";
 import "./css/home.css";
 import Menu from "./Menu";
 import { menu, pizzas } from "../../utils/util";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./css/product.css";
 import Product from "./Product";
+import PropTypes from "prop-types";
 
 function Home({ setCart, cart }) {
   const [selectedMenu, setMenu] = useState(0);
   const [product, setProduct] = useState(pizzas);
 
+  useEffect(() => {
+    async function fetchData() {
+      const resp = await fetch("/api/home/getAllData");
+      const output = await resp.json();
+
+      console.log(output);
+    }
+
+    fetchData();
+  });
   return (
     <div className="content_block">
       <Logo />
@@ -48,5 +59,10 @@ function Home({ setCart, cart }) {
     </div>
   );
 }
+
+Home.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
 
 export default Home;

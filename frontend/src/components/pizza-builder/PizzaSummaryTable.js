@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./css/pizza_table.css";
 import "./css/pizza_table_row.css";
+import PropTypes from "prop-types";
 
 function PizzaSummaryTable({
   allData,
@@ -103,5 +104,16 @@ function PizzaSummaryTable({
     </table>
   );
 }
+
+PizzaSummaryTable.propTypes = {
+  allData: PropTypes.object.isRequired,
+  size: PropTypes.number.isRequired,
+  crust: PropTypes.object.isRequired,
+  toppings: PropTypes.array.isRequired,
+  totalCalories: PropTypes.number.isRequired,
+  setaTotalCalories: PropTypes.func.isRequired,
+  amt: PropTypes.string.isRequired,
+  setAmt: PropTypes.func.isRequired,
+};
 
 export default PizzaSummaryTable;

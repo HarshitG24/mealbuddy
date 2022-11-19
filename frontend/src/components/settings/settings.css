@@ -1,4 +1,9 @@
-/* // AUTHOR: HARSHIT GAJJAR */
+/* AUTHOR: HARSHIT GAJJAR */
+:root {
+  --btn-background: #f09312;
+  --btn-txt: #fff;
+}
+
 .setting_container {
   display: flex;
 }
@@ -35,5 +40,21 @@ input:focus {
 }
 
 .setting_actions {
+  width: 100%;
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_setting {
+  border: none;
+  background: var(--btn-background);
+  color: var(--btn-txt);
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
 }

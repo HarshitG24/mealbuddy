@@ -1,6 +1,7 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/menu.css";
 import { pizzas, burgers } from "../../utils/util";
+import PropTypes from "prop-types";
 
 function Menu({ name, img, sel, index, setMenu, setProduct }) {
   function findProduct(index) {
@@ -42,5 +43,14 @@ function Menu({ name, img, sel, index, setMenu, setProduct }) {
     </div>
   );
 }
+
+Menu.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  sel: PropTypes.bool.isRequired,
+  index: PropTypes.number.isRequired,
+  setMenu: PropTypes.func.isRequired,
+  setProduct: PropTypes.func.isRequired,
+};
 
 export default Menu;

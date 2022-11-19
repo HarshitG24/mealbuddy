@@ -1,9 +1,9 @@
 // AUTHOR: HARSHIT GAJJAR
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
-
 import "./css/product.css";
 import { generateCart } from "../../utils/util";
+import PropTypes from "prop-types";
 
 function Product({ elem, cart, setCart }) {
   const { pid, name, img, calories, price, category } = elem;
@@ -82,5 +82,11 @@ function Product({ elem, cart, setCart }) {
     </div>
   );
 }
+
+Product.propTypes = {
+  elem: PropTypes.object.isRequired,
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
 
 export default Product;

@@ -3,17 +3,21 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./settings.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import NotLoggedIn from "../NoLogIn/NotLoggedIn";
 
 function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [user, setUser] = useState({});
 
-  let data = {
-    email: "mihir123@gmail.com",
-  };
   async function fetchUsers() {
-    const resp = await fetch("/api/user/getUser/" + data.email);
+    const user_name = await fetch("/api/Account/getUser");
+    const user = await user_name.json();
+    setUser(user);
+
+    const resp = await fetch("/api/user/getUser/" + user.user);
     const userData = await resp.json();
 
     let d = userData?.udata || {};
@@ -31,7 +35,7 @@ function Settings() {
     return () => {
       // this now gets called when the component unmounts
     };
-  });
+  }, []);
 
   async function updateUserProfile() {
     const headers = new Headers({ "Content-Type": "application/json" });
@@ -39,9 +43,16 @@ function Settings() {
     const options = {
       method: "post",
       headers: headers,
-      body: JSON.stringify({ email: "mihir123@gmail.com", name, password }),
+      body: JSON.stringify({ email, name, password }),
     };
-    await fetch("/api/user/updateProfile", options);
+    const resp = await fetch("/api/user/updateProfile", options);
+    const output = await resp.json();
+
+    if (output.status === 200) {
+      alert("data updated successfully!");
+    } else {
+      alert("failed to update data");
+    }
   }
 
   async function deleteUserProfile() {
@@ -52,12 +63,18 @@ function Settings() {
       headers: headers,
     };
 
-    await fetch("/api/user/deleteProfile/" + data.email, opts);
+    const resp = await fetch("/api/user/deleteProfile/" + user.user, opts);
+    const output = await resp.json();
+
+    if (output.status === 200) {
+      <Link to="/home" />;
+    } else {
+      alert("failed to delete data");
+    }
   }
 
-  return (
-    <div className="content_block">
-      <Logo />
+  function settingsUI() {
+    return (
       <div className="settings_all_data">
         <div className="setting_block">
           <p className="setting_label">Email</p>
@@ -85,14 +102,30 @@ function Settings() {
             onChange={(e) => setPassword(e?.target?.value || "")}
             value={password}
             placeholder="Password"
+            type="password"
           />
         </div>
 
         <div className="setting_actions">
-          <button onClick={() => updateUserProfile()}>Update Profile</button>
-          <button onClick={() => deleteUserProfile()}>Delete Profile</button>
+          <button
+            className="button_setting"
+            onClick={() => updateUserProfile()}>
+            Update Profile
+          </button>
+          <button
+            className="button_setting"
+            onClick={() => deleteUserProfile()}>
+            Delete Profile
+          </button>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div className="content_block">
+      <Logo />
+      {"user" in user ? settingsUI() : <NotLoggedIn />}
     </div>
   );
 }

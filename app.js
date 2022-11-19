@@ -5,6 +5,7 @@ import createUser from "./routes/new_user.js";
 import checkout from "./routes/add_to_cart.js";
 import userRouter from "./routes/settings.js";
 import calorieRouter from "./routes/calorie_tracker.js";
+import dataRouter from "./routes/home.js";
 import cors from "cors";
 import session from "express-session";
 import cookieParser from "cookie-parser";
@@ -39,6 +40,7 @@ app.use("/api/Account", createUser);
 app.use("/api/cart", checkout);
 app.use("/api/user", userRouter);
 app.use("/api/calorie", calorieRouter);
+app.use("/api/home", dataRouter);
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");

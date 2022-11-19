@@ -3,6 +3,7 @@ import sandwich from "../../images/sandwich.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./css/cart-order.css";
+import PropTypes from "prop-types";
 
 function CartOrder({ elem, cart, setCart }) {
   const { pid, name, img, calories, price, qty } = elem;
@@ -39,5 +40,11 @@ function CartOrder({ elem, cart, setCart }) {
     </div>
   );
 }
+
+CartOrder.propTypes = {
+  elem: PropTypes.object.isRequired,
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
 
 export default CartOrder;

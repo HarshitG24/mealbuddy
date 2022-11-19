@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/checkout", async (req, res) => {
   const status = await db.checkoutItems(req?.body || {});
-  res.status(status).send();
+  res.json({ code: status });
 });
 
 export default router;

@@ -10,12 +10,12 @@ router.get("/getUser/:email", async (req, res) => {
 
 router.post("/updateProfile", async (req, res) => {
   const resp = await db.updateUser(req?.body || {});
-  res.send({ status: resp });
+  res.json({ status: resp });
 });
 
 router.delete("/deleteProfile/:email", async (req, res) => {
   const resp = await db.deleteUser(req?.params?.email || "");
-  res.send({ status: resp });
+  res.json({ status: resp });
 });
 
 export default router;
