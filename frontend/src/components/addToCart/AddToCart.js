@@ -4,10 +4,12 @@ import "../home/css/product.css";
 import delivery from "../../images/delivery.png";
 import CartOrder from "./CartOrder";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function AddToCart({ cart, setCart }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalCalories, setTotalCalories] = useState(0);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     let p = 0,
@@ -20,29 +22,62 @@ function AddToCart({ cart, setCart }) {
 
     setTotalPrice(p);
     setTotalCalories(c);
+
+    async function getCurrentUser() {
+      const user_name = await fetch("/api/Account/getUser");
+      const user = await user_name.json();
+
+      setUser(user);
+    }
+
+    getCurrentUser();
   }, [cart]);
 
-  async function sendCartItemstoDb() {
-    let data = {
-      user: "john@gmail.com",
-      orders: [
-        {
-          cart: [...cart],
-          calories: totalCalories,
-          price: totalPrice,
-        },
-      ],
-    };
+  async function sendCartItemstoDb(user) {
+    if ("user" in user) {
+      let data = {
+        user: user?.user,
+        orders: [
+          {
+            cart: [...cart],
+            calories: totalCalories,
+            price: totalPrice,
+          },
+        ],
+      };
 
-    const options = {
-      method: "post",
-      headers: new Headers({ "Content-Type": "application/json" }),
-      body: JSON.stringify(data),
-    };
-    const response = await fetch("/api/cart/checkout", options);
+      const options = {
+        method: "post",
+        headers: new Headers({ "Content-Type": "application/json" }),
+        body: JSON.stringify(data),
+      };
+      const response = await fetch("/api/cart/checkout", options);
+      const output = await response.json();
+
+      if (output.code === 200) {
+        setCart([]);
+        alert("Order sent to kitchen successfully!");
+      } else {
+        alert("error sending order to kitchen");
+      }
+    } else {
+      alert("please login!!");
+    }
   }
   return (
     <div className="cart_container">
+      <div className="login_cart_div">
+        {(user?.user || "") === "" ? (
+          <button className="login_btn_cart">
+            <Link to="/login">Login</Link>
+          </button>
+        ) : (
+          <button className="login_btn_cart" onClick={() => setUser({})}>
+            Sign Out
+          </button>
+        )}
+      </div>
+
       <img src={delivery} alt="" className="delievry_img" />
       <div className="delivery_block">
         <p className="fast_delivery">Fast Delivery</p>
@@ -74,7 +109,7 @@ function AddToCart({ cart, setCart }) {
 
           <button
             className="order_checkout_div"
-            onClick={() => sendCartItemstoDb()}>
+            onClick={() => sendCartItemstoDb(user)}>
             Proceed to Checkout
           </button>
         </div>

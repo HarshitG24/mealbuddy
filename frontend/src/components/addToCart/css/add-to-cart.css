@@ -25,6 +25,25 @@ html {
   background: var(--add-to-cart-background);
 }
 
+.login_cart_div {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login_btn_cart {
+  border: none;
+  background-color: var(--highlight-color);
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--add-to-cart-background);
+  width: 30%;
+  border-radius: 3rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
 .delievry_img {
   width: 30rem;
   height: 30rem;
