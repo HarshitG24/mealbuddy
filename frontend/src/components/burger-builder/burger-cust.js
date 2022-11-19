@@ -12,7 +12,7 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
     if (e.target.classList.contains("patty_selected")) {
       arr = [...arr, item];
     }
-    console.log(arr);
+
     setTopping(arr);
   }
   return (
@@ -25,7 +25,21 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
               key={item.tid}
               onClick={(event) => handleToppingClick(event, item)}
             >
-              <td>{item.name}</td>
+              <td
+                className={`${
+                  topping.findIndex((t) => t.name === item.name) !== -1
+                    ? "patty_selected"
+                    : ""
+                }`}
+              >
+                <div>
+                  <div className="burger_price">
+                    <p>{item.name}</p>
+                    <p>${item.price}</p>
+                  </div>
+                  <p className="burger_calories">{item.calories} Cal</p>
+                </div>
+              </td>
             </tr>
           );
         })}

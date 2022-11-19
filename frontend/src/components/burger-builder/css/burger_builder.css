@@ -197,3 +197,22 @@
   margin: 2% auto;
   border-radius: 15px;
 }
+.burger_summary_block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.burger_summary_block > button {
+  width: 40%;
+  background: #f09312;
+  border: none;
+  padding: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 3rem 0;
+  cursor: pointer;
+}

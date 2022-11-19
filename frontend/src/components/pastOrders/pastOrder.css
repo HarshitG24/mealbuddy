@@ -1,0 +1,25 @@
+.order_mainarea {
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  margin-left: 0;
+  padding: 20px 40px;
+  width: 100%;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+.header {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+}
+
+.orders_data_list {
+  width: 100%;
+}
+.orders_data_list img {
+  height: 35rem;
+}

@@ -13,6 +13,7 @@ import PizzaBuilder from "./components/pizza-builder/PizzaBuilder";
 import BurgerBuilder from "./components/burger-builder/burger-builder";
 import Wishlist from "./components/wishlist/wishlist";
 import CalorieTracker from "./components/CalorieTracker/CalorieTracker";
+import PastOrders from "./components/pastOrders/pastOrders";
 
 function App() {
   const [selected, setSelected] = useState(1);
@@ -47,8 +48,16 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login setDef={setDefault} />}></Route>
 
-        <Route path="/pizza-builder" element={<PizzaBuilder />}></Route>
-        <Route path="/burger-builder" element={<BurgerBuilder />}></Route>
+        <Route
+          path="/pizza-builder"
+          element={<PizzaBuilder cart={cart} setCart={setCart} />}
+        ></Route>
+        <Route
+          path="/burger-builder"
+          element={<BurgerBuilder cart={cart} setCart={setCart} />}
+        ></Route>
+
+        <Route path="/past-orders" element={<PastOrders />}></Route>
         <Route path="/calorie-tracker" element={<CalorieTracker />}></Route>
       </Routes>
 

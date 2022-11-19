@@ -13,3 +13,26 @@ tr > td {
 .patty_selected {
   background-color: orange;
 }
+
+.burger_calories {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.burger_price {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.summary_row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.summary_value {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
