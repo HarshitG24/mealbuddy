@@ -294,12 +294,7 @@ function dbConnector() {
     console.log("here");
     await client.connect();
     try {
-      const arr = await allData
-        .find({
-          name: "burger",
-        })
-        .toArray();
-      console.log("all arr is", arr);
+      const arr = await allData.find().toArray();
       return {
         data: arr,
         status: 200,

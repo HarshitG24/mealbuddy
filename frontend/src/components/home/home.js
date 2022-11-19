@@ -18,7 +18,7 @@ function Home({ setCart, cart }) {
       const resp = await fetch("/api/home/getAllData");
       const output = await resp.json();
 
-      console.log(output.data);
+      console.log(output);
     }
 
     fetchData();
