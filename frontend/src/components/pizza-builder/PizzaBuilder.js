@@ -16,6 +16,7 @@ import onions from "../../images/onions.png";
 import olives from "../../images/black-olives.png";
 import mushroom from "../../images/mushrooms.png";
 import pepper from "../../images/green-peppers.png";
+import PropTypes from "prop-types";
 
 function PizzaBuilder({ cart, setCart }) {
   const [size, setSize] = useState(0);
@@ -141,4 +142,8 @@ function PizzaBuilder({ cart, setCart }) {
   );
 }
 
+PizzaBuilder.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
 export default PizzaBuilder;

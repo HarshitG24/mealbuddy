@@ -12,11 +12,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { fontSize } from "../../utils/util";
 import { Link } from "react-router-dom";
-// import { useState } from "react";
+import PropTypes from "prop-types";
 
-function Navbar({ selected, setSelected, def }) {
-  // const [selected, setSelected] = useState(1);
-
+function Navbar({ selected, setSelected }) {
   function navbarClicked(i) {
     setSelected(i);
   }
@@ -78,5 +76,10 @@ function Navbar({ selected, setSelected, def }) {
     </div>
   );
 }
+
+Navbar.propTypes = {
+  selected: PropTypes.number.isRequired,
+  setSelected: PropTypes.func.isRequired,
+};
 
 export default Navbar;

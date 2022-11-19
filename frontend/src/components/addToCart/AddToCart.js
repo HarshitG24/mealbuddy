@@ -5,6 +5,7 @@ import delivery from "../../images/delivery.png";
 import CartOrder from "./CartOrder";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function AddToCart({ cart, setCart }) {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -117,5 +118,10 @@ function AddToCart({ cart, setCart }) {
     </div>
   );
 }
+
+AddToCart.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
 
 export default AddToCart;

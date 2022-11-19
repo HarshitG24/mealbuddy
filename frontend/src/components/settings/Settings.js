@@ -102,6 +102,7 @@ function Settings() {
             onChange={(e) => setPassword(e?.target?.value || "")}
             value={password}
             placeholder="Password"
+            type="password"
           />
         </div>
 

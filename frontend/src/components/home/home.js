@@ -8,6 +8,7 @@ import { menu, pizzas } from "../../utils/util";
 import { useEffect, useState } from "react";
 import "./css/product.css";
 import Product from "./Product";
+import PropTypes from "prop-types";
 
 function Home({ setCart, cart }) {
   const [selectedMenu, setMenu] = useState(0);
@@ -58,5 +59,10 @@ function Home({ setCart, cart }) {
     </div>
   );
 }
+
+Home.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
 
 export default Home;

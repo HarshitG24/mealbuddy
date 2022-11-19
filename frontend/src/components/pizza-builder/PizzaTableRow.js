@@ -1,5 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/pizza_table_row.css";
+import PropTypes from "prop-types";
 
 function PizzaTableRow({ data, value, setValue }) {
   return (
@@ -22,5 +23,11 @@ function PizzaTableRow({ data, value, setValue }) {
     </tbody>
   );
 }
+
+PizzaTableRow.propTypes = {
+  data: PropTypes.array.isRequired,
+  value: PropTypes.object.isRequired,
+  setValue: PropTypes.func.isRequired,
+};
 
 export default PizzaTableRow;

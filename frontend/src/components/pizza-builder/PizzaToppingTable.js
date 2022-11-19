@@ -1,6 +1,7 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/pizza_table.css";
 import "./css/pizza_table_row.css";
+import PropTypes from "prop-types";
 
 function PizzaToppingTable({ allData, topping, setTopping }) {
   const { title, data } = allData;
@@ -45,5 +46,11 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
     </table>
   );
 }
+
+PizzaToppingTable.propTypes = {
+  allData: PropTypes.object.isRequired,
+  topping: PropTypes.array.isRequired,
+  setTopping: PropTypes.func.isRequired,
+};
 
 export default PizzaToppingTable;
