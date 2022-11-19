@@ -8,6 +8,7 @@ const db = client.db("MealBuddy");
 const users = db.collection("users");
 const whishlist_data = db.collection("whishlist");
 const checkoutOrders = db.collection("allOrders");
+const allData = db.collection("allData");
 
 function dbConnector() {
   let dbObj = {};
@@ -285,6 +286,32 @@ function dbConnector() {
       };
     } finally {
       client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.getData = async () => {
+    console.log("here");
+    await client.connect();
+    try {
+      const arr = await allData
+        .find({
+          name: "burger",
+        })
+        .toArray();
+      console.log("all arr is", arr);
+      return {
+        data: arr,
+        status: 200,
+      };
+    } catch (error) {
+      console.log("error is", error);
+      return {
+        data: [],
+        status: 400,
+      };
+    } finally {
+      // client.close();
     }
   };
 
