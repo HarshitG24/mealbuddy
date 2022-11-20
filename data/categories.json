@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Pizza",
+    "img": "css-sprite-pizza"
+  },
+  {
+    "name": "Burgers",
+    "img": "css-sprite-burger"
+  },
+  {
+    "name": "Milkshake",
+    "img": "css-sprite-milkshake"
+  }
+]

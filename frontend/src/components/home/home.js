@@ -4,26 +4,40 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./css/home.css";
 import Menu from "./Menu";
-import { menu, pizzas } from "../../utils/util";
 import { useEffect, useState } from "react";
 import "./css/product.css";
 import Product from "./Product";
 import PropTypes from "prop-types";
 
 function Home({ setCart, cart }) {
+  const [menu, setDataMenu] = useState([]);
   const [selectedMenu, setMenu] = useState(0);
-  const [product, setProduct] = useState(pizzas);
+  const [productName, setProductName] = useState("burger");
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
+      let obj = {};
+      const resp1 = await fetch("/api/home/getCategories");
+      const output1 = await resp1.json();
+      setDataMenu(output1);
+
       const resp = await fetch("/api/home/getAllData");
       const output = await resp.json();
 
-      console.log(output);
+      output.forEach((element) => {
+        obj = {
+          ...obj,
+          [element.name]: element.data,
+        };
+      });
+
+      setProduct(obj);
     }
 
     fetchData();
-  });
+  }, []);
+
   return (
     <div className="content_block">
       <Logo />
@@ -43,15 +57,22 @@ function Home({ setCart, cart }) {
                 index={index}
                 setMenu={setMenu}
                 setProduct={setProduct}
+                setProductName={setProductName}
               />
             );
           })}
         </div>
 
         <div className="product_container">
-          {product.map((elem, index) => {
+          {(product[productName] || []).map((elem, index) => {
             return (
-              <Product elem={elem} setCart={setCart} cart={cart} key={index} />
+              <Product
+                elem={elem}
+                setCart={setCart}
+                cart={cart}
+                key={index}
+                productName={productName}
+              />
             );
           })}
         </div>

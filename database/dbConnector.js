@@ -9,6 +9,7 @@ const users = db.collection("users");
 const whishlist_data = db.collection("whishlist");
 const checkoutOrders = db.collection("allOrders");
 const allData = db.collection("allData");
+const categories = db.collection("categories");
 
 function dbConnector() {
   let dbObj = {};
@@ -291,10 +292,29 @@ function dbConnector() {
 
   // AUTHOR: HARSHIT GAJJAR
   dbObj.getData = async () => {
-    console.log("here");
     await client.connect();
     try {
       const arr = await allData.find().toArray();
+      return {
+        data: arr,
+        status: 200,
+      };
+    } catch (error) {
+      console.log("error is", error);
+      return {
+        data: [],
+        status: 400,
+      };
+    } finally {
+      // client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.getCategories = async () => {
+    await client.connect();
+    try {
+      const arr = await categories.find().toArray();
       return {
         data: arr,
         status: 200,
