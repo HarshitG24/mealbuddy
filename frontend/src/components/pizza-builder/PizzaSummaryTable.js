@@ -55,7 +55,7 @@ function PizzaSummaryTable({
       setExtras(extraPrice);
       setaTotalCalories(extraCalories + multiplier * crust.calories);
       let price = (basePr + extraPrice).toFixed(2);
-      setAmt(price);
+      setAmt(parseFloat(price));
     }
 
     updateHooks();
@@ -112,7 +112,7 @@ PizzaSummaryTable.propTypes = {
   toppings: PropTypes.array.isRequired,
   totalCalories: PropTypes.number.isRequired,
   setaTotalCalories: PropTypes.func.isRequired,
-  amt: PropTypes.string.isRequired,
+  amt: PropTypes.number.isRequired,
   setAmt: PropTypes.func.isRequired,
 };
 

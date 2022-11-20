@@ -1,0 +1,78 @@
+[
+  {
+    "sizes": [
+      {
+        "sid": 0,
+        "size": 6
+      },
+      {
+        "sid": 1,
+        "size": 8
+      },
+      {
+        "sid": 2,
+        "size": 10
+      }
+    ],
+    "crust": {
+      "title": "Choose Your Crust",
+      "data": [
+        {
+          "bid": 0,
+          "name": "Cheesy Bytes",
+          "calories": 625,
+          "price": 7.99
+        },
+        {
+          "bid": 1,
+          "name": "Thin Crust",
+          "calories": 235,
+          "price": 6.99
+        },
+        {
+          "bid": 2,
+          "name": "Fresh Pan",
+          "calories": 375,
+          "price": 5.99
+        }
+      ]
+    },
+    "topping": {
+      "title": "Add Toppings",
+      "data": [
+        {
+          "tid": 1,
+          "name": "Onion",
+          "calories": 25,
+          "price": 1.99,
+          "url": "onion"
+        },
+        {
+          "tid": 2,
+          "name": "Black Olives",
+          "calories": 35,
+          "price": 2.99,
+          "url": "olive"
+        },
+        {
+          "tid": 3,
+          "name": "Mushrooms",
+          "calories": 75,
+          "price": 3.99,
+          "url": "mush"
+        },
+        {
+          "tid": 4,
+          "name": "Green Peppers",
+          "calories": 45,
+          "price": 4.99,
+          "url": "pep"
+        }
+      ]
+    },
+    "summary": {
+      "title": "Price Details",
+      "data": ["Base Price", "Extras", "Total Calories"]
+    }
+  }
+]
