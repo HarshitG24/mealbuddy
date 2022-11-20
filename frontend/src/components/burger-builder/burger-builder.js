@@ -3,7 +3,7 @@ import "../../Reused.css";
 import "./css/burger_builder.css";
 import Logo from "../header/logo";
 import PattySize from "./pattySize";
-import { burgerData, burgerSizes } from "../../utils/util";
+import { generateCart, burgerData, burgerSizes } from "../../utils/util";
 import { useState } from "react";
 import BurgerTable from "./burger-table";
 // import pbase from "../../images/basep.png";
@@ -18,7 +18,7 @@ import BurgerSummaryTable from "./burger-summary";
 // import pepper from "../../images/green-peppers.png";
 import BurgerToppings from "./burger-topping";
 
-export default function BurgerBuilder() {
+export default function BurgerBuilder({ cart, setCart }) {
   const [size, setSize] = useState(0);
   const [toppings, setToppings] = useState([]);
   const [crust, setCrust] = useState({
@@ -28,6 +28,22 @@ export default function BurgerBuilder() {
     price: 8.99,
     className: "beef",
   });
+  const [totalCalories, setaTotalCalories] = useState(0);
+  const [amt, setAmt] = useState(0);
+
+  function addCustomBurger() {
+    let arr = generateCart(cart, {
+      pid: "MyBurger",
+      name: "MyBurger",
+      img: "",
+      calories: totalCalories,
+      price: amt,
+      category: "burger",
+      qty: 1,
+    });
+
+    setCart(arr);
+  }
 
   return (
     <div className="content_block">
@@ -76,12 +92,19 @@ export default function BurgerBuilder() {
             setValue={setCrust}
           />
 
-          <BurgerSummaryTable
-            allData={burgerData[2]}
-            size={size}
-            crust={crust}
-            toppings={toppings}
-          />
+          <div className="burger_summary_block">
+            <BurgerSummaryTable
+              allData={burgerData[2]}
+              size={size}
+              crust={crust}
+              toppings={toppings}
+              totalCalories={totalCalories}
+              setaTotalCalories={setaTotalCalories}
+              amt={amt}
+              setAmt={setAmt}
+            />
+            <button onClick={() => addCustomBurger()}>Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>

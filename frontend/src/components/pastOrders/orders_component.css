@@ -1,0 +1,58 @@
+/*AUTHOR: MIHIR MESIA */
+:root {
+  --btn-color: #f49001;
+  --btn-txt-color: #fff;
+  --delete-icon: #f14646;
+  --delete-icon-background: rgb(245, 210, 209);
+  --calorie-color: gray;
+}
+
+.past_order_container {
+  display: flex;
+  flex-wrap: wrap;
+  background: #eeedeb;
+  box-shadow: 0 8px 16px rgb(0 0 0 / 24%);
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.order_product_img {
+  flex: 0.2;
+}
+
+.order_product_left {
+  margin-left: 1rem;
+  flex: 0.4;
+}
+
+.order_product_name {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.order_price {
+  margin-left: 2rem;
+  flex: 0.2;
+}
+
+.order_price > p {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* .cart_calorie_body {
+      margin-left: 1rem;
+    } */
+
+.order_calorie_txt {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--calorie-color);
+}

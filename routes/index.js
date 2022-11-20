@@ -29,4 +29,11 @@ router.delete("/deleteWishlist", async (req, res) => {
   const resp = await db.deleteWishlist(req?.body || "");
   res.send({ status: resp });
 });
+
+//AUTHOR: MIHIR MESIA
+
+router.get("/api/fetch_recent_orders/:id", async (req, res) => {
+  const resp = await db.fetchAllOrders(req?.params?.user || "");
+  res.send(JSON.stringify(resp));
+});
 export default router;

@@ -2,12 +2,19 @@ import { useEffect, useState } from "react";
 import "./css/burger_table.css";
 import "./css/burger_table_row.css";
 
-export default function BurgerSummaryTable({ allData, size, crust, toppings }) {
+export default function BurgerSummaryTable({
+  allData,
+  size,
+  crust,
+  toppings,
+  totalCalories,
+  setaTotalCalories,
+  amt,
+  setAmt,
+}) {
   const { title } = allData;
   const [basePrice, setBasePrice] = useState(0);
-  const [totalCalories, setaTotalCalories] = useState(0);
   const [extras, setExtras] = useState(0);
-  const [amt, setAmt] = useState(0);
 
   useEffect(() => {
     let multiplier = 1;
@@ -18,7 +25,7 @@ export default function BurgerSummaryTable({ allData, size, crust, toppings }) {
         break;
 
       case 1:
-        multiplier = 1.5;
+        multiplier = 2;
         break;
 
       default:
@@ -33,12 +40,13 @@ export default function BurgerSummaryTable({ allData, size, crust, toppings }) {
       extraPrice += t.price;
       extraCalories += t.calories;
     });
-
+    let extras = extraPrice.toFixed(2);
     let basePr = multiplier * crust.price;
     setBasePrice(basePr);
-    setExtras(extraPrice);
+    setExtras(extras);
     setaTotalCalories(extraCalories + multiplier * crust.calories);
-    setAmt(basePr + extraPrice);
+    let price = (basePr + extraPrice).toFixed(2);
+    setAmt(price);
   });
 
   return (
@@ -46,19 +54,39 @@ export default function BurgerSummaryTable({ allData, size, crust, toppings }) {
       <caption>{title}</caption>
       <tbody>
         <tr>
-          <td>Base Price {basePrice}</td>
+          <td>
+            <div className="summary_row">
+              <p className="burger_price">Base Price</p>
+              <p className="summary_value">${basePrice}</p>
+            </div>
+          </td>
         </tr>
 
         <tr>
-          <td>Extras {extras}</td>
+          <td>
+            <div className="summary_row">
+              <p className="burger_price">Extras</p>
+              <p className="summary_value">${extras}</p>
+            </div>
+          </td>
         </tr>
 
         <tr>
-          <td>Total Calories {totalCalories}</td>
+          <td>
+            <div className="summary_row">
+              <p className="burger_price">Total Calories </p>
+              <p className="summary_value">{totalCalories} Cal</p>
+            </div>
+          </td>
         </tr>
 
         <tr>
-          <td>Final Amount {amt}</td>
+          <td>
+            <div className="summary_row">
+              <p className="burger_price">Final Amount </p>
+              <p className="summary_value">${amt}</p>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

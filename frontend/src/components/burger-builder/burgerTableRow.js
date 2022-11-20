@@ -9,7 +9,13 @@ export default function BurgerTableRow({ data, value, setValue }) {
         return (
           <tr key={e.bid} onClick={() => setValue(e)}>
             <td className={index === value.bid ? "patty_selected" : ""}>
-              {e.name}
+              <div>
+                <div className="burger_price">
+                  <p>{e.name}</p>
+                  <p>${e.price}</p>
+                </div>
+                <p className="burger_calories">{e.calories} Cal</p>
+              </div>
             </td>
           </tr>
         );
