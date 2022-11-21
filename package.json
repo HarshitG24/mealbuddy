@@ -9,7 +9,7 @@
     "prettier": "prettier -c ./",
     "lint": "eslint --fix --ext .js ./",
     "checkstyle": "yarn run lint && npx prettier --write .",
-    "build": "yarn run prebuild && yarn run checkstyle && cd frontend && yarn install && yarn run build",
+    "build": "yarn run prebuild && cd frontend && yarn install && yarn run build",
     "prebuild": "rm -rf frontend/build"
   },
   "keywords": [],
