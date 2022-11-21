@@ -18,7 +18,7 @@ function Home({ setCart, cart }) {
   const [productName, setProductName] = useState("pizza");
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage, setDataPerPage] = useState(20);
+  const [dataPerPage, setDataPerPage] = useState(40);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [minPrice, setMinPrice] = useState(10);
   const [maxPrice, setMaxPrice] = useState(24);
@@ -132,12 +132,14 @@ function Home({ setCart, cart }) {
               );
             })}
         </div>
-        <Pagination
-          currentData={currentData.length}
-          dataPerPage={dataPerPage}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        {(currentData || []).length > 0 ? (
+          <Pagination
+            currentData={currentData.length}
+            dataPerPage={dataPerPage}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        ) : null}
       </div>
     </div>
   );

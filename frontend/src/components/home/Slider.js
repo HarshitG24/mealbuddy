@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/slider.css";
 
 function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
@@ -14,7 +15,11 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             type="number"
             className="input-min"
             value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
+            onChange={(e) => {
+              e.target.value !== ""
+                ? setMinPrice(e.target.value)
+                : setMinPrice(1);
+            }}
           />
           <div className="seperator">-</div>
           <span>Max</span>
@@ -22,7 +27,11 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             type="number"
             className="input-max"
             value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
+            onChange={(e) => {
+              e.target.value !== ""
+                ? setMaxPrice(e.target.value)
+                : setMaxPrice(24);
+            }}
           />
         </div>
       </div>

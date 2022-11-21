@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/slider.css";
 
 function CalorieSlider({
@@ -19,7 +20,12 @@ function CalorieSlider({
             type="number"
             className="input-min"
             value={minCalorie}
-            onChange={(e) => setMinCalorie(e.target.value)}
+            onChange={(e) => {
+              console.log("val", e.target.value);
+              e.target.value !== ""
+                ? setMinCalorie(e.target.value)
+                : setMaxCalorie(1);
+            }}
           />
           <div className="seperator">-</div>
           <span>Max</span>
@@ -27,7 +33,11 @@ function CalorieSlider({
             type="number"
             className="input-max"
             value={maxCalorie}
-            onChange={(e) => setMaxCalorie(e.target.value)}
+            onChange={(e) => {
+              e.target.value !== ""
+                ? setMaxCalorie(e.target.value)
+                : setMaxCalorie(400);
+            }}
           />
         </div>
       </div>
