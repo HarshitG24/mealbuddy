@@ -13,13 +13,10 @@ import CalorieSlider from "./CalorieSlider";
 import Search from "./Search";
 
 function Home({ setCart, cart }) {
-  // const [menu, setDataMenu] = useState([]);
-  // const [selectedMenu, setMenu] = useState(0);
   const [productName, setProductName] = useState("pizza");
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage, setDataPerPage] = useState(40);
-  // const [currentPrice, setCurrentPrice] = useState(0);
   const [minPrice, setMinPrice] = useState(10);
   const [maxPrice, setMaxPrice] = useState(24);
   const [minCalorie, setMinCalorie] = useState(100);
@@ -63,7 +60,7 @@ function Home({ setCart, cart }) {
         f.calories >= minCalorie &&
         f.calories <= maxCalorie
     );
-  // ?.slice(indexFirst, indexLast);
+
   return (
     <div className="content_block">
       <Logo />
@@ -72,7 +69,7 @@ function Home({ setCart, cart }) {
 
       <div className="menu_content">
         <p className="menu_title">Menu</p>
-        <Search search={search} setSearch={setSearch} />
+        <Search setSearch={setSearch} />
         {/* <div className="menu_list">
           {menu.map((element, index) => {
             return (
