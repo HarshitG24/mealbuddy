@@ -10,7 +10,8 @@
     "lint": "eslint --fix --ext .js ./",
     "checkstyle": "yarn run lint && npx prettier --write .",
     "build": "yarn run prebuild && yarn run checkstyle && cd frontend && yarn install && yarn run build",
-    "prebuild": "rm -rf frontend/build"
+    "prebuild": "rm -rf frontend/build",
+    "postinstall": "cd Frontend && npm run build && yarn start"
   },
   "keywords": [],
   "author": "",
