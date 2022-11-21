@@ -87,7 +87,7 @@ function AddToCart({ cart, setCart }) {
       </div>
 
       <div className="your_order">
-        <p>Your Order</p>
+        {cart.length > 0 ? <p>Your Order</p> : null}
 
         {/* Cart orders */}
         {cart.map((elem, index) => {
@@ -101,7 +101,7 @@ function AddToCart({ cart, setCart }) {
         <div className="order_summary">
           <div className="order_summary_div">
             <p className="order_summary_txt">Total Price:</p>
-            <p className="order_summary_div_value">${totalPrice}</p>
+            <p className="order_summary_div_value">${totalPrice.toFixed(2)}</p>
           </div>
           <div className="order_summary_div">
             <p className="order_summary_txt">Total Calories:</p>

@@ -10,12 +10,19 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .menu_title {
   font-size: 3rem;
   font-weight: 700;
   padding: 4rem 0;
+}
+
+.home_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Product */

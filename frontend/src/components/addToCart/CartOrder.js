@@ -1,17 +1,22 @@
 // AUTHOR: HARSHIT GAJJAR
-import sandwich from "../../images/sandwich.png";
+import burger from "../../images/burger-cart.png";
+import pizza from "../../images/pizza-cart.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./css/cart-order.css";
 import PropTypes from "prop-types";
 
 function CartOrder({ elem, cart, setCart }) {
-  const { pid, name, img, calories, price, qty } = elem;
+  const { pid, name, calories, price, qty, category } = elem;
   // const [quantity, setQty] = useState(temp);
   return (
     <div className="cart_order_container">
       <div className="cart_product_img">
-        <img src={sandwich} alt="This is the icon for product added" />
+        <img
+          src={category === "pizza" ? pizza : burger}
+          alt="This is the icon for product added"
+          // className="cart_img"
+        />
       </div>
       <div className="cart_product_left">
         <p className="cart_product_name">{name}</p>

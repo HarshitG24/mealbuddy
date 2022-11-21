@@ -21,6 +21,8 @@ async function comparePassword(plaintextPassword, hash) {
   const result = await bcrypt.compare(plaintextPassword, hash);
   return result;
 }
+const categories = db.collection("categories");
+const pizzaData = db.collection("BuildPizza");
 
 function dbConnector() {
   let dbObj = {};
@@ -314,7 +316,6 @@ function dbConnector() {
 
   // AUTHOR: HARSHIT GAJJAR
   dbObj.getData = async () => {
-    console.log("here");
     await client.connect();
     try {
       const arr = await allData.find().toArray();
@@ -324,6 +325,47 @@ function dbConnector() {
       };
     } catch (error) {
       console.log("error is", error);
+      return {
+        data: [],
+        status: 400,
+      };
+    } finally {
+      // client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.getCategories = async () => {
+    await client.connect();
+    try {
+      const arr = await categories.find().toArray();
+      return {
+        data: arr,
+        status: 200,
+      };
+    } catch (error) {
+      console.log("error is", error);
+      return {
+        data: [],
+        status: 400,
+      };
+    } finally {
+      // client.close();
+    }
+  };
+
+  // AUTHOR: HARSHIT GAJJAR
+  dbObj.getPizzaData = async () => {
+    await client.connect();
+
+    try {
+      const arr = await pizzaData.find().toArray();
+      return {
+        data: arr,
+        status: 200,
+      };
+    } catch (error) {
+      console.log(error);
       return {
         data: [],
         status: 400,

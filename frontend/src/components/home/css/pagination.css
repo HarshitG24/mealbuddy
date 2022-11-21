@@ -1,0 +1,29 @@
+.pagination_container {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.pagination_ul {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.pagination_ul > li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected_ul {
+  /* background: orange; */
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: orange;
+}

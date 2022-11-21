@@ -3,31 +3,23 @@ import "./css/menu.css";
 import { pizzas, burgers } from "../../utils/util";
 import PropTypes from "prop-types";
 
-function Menu({ name, img, sel, index, setMenu, setProduct }) {
+function Menu({ name, img, sel, index, setMenu, setProductName }) {
   function findProduct(index) {
     switch (index) {
       case 0:
-        setProduct(pizzas);
+        setProductName("burger");
         return;
 
       case 1:
-        setProduct(burgers);
+        setProductName("milkshake");
         return;
 
       case 2:
-        setProduct(burgers);
-        return;
-
-      case 3:
-        setProduct(burgers);
-        return;
-
-      case 4:
-        setProduct(burgers);
+        setProductName("pizza");
         return;
 
       default:
-        setProduct(pizzas);
+        setProductName("burger");
         return;
     }
   }
@@ -50,7 +42,7 @@ Menu.propTypes = {
   sel: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,
   setMenu: PropTypes.func.isRequired,
-  setProduct: PropTypes.func.isRequired,
+  setProductName: PropTypes.func.isRequired,
 };
 
 export default Menu;

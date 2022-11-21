@@ -42,6 +42,18 @@ span {
   display: inline-block;
 }
 
+.product_img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.product_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .product_card {
   padding: 1rem;
   background: #fff;
@@ -51,6 +63,8 @@ span {
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
+  width: 25rem;
+  margin-bottom: 3rem;
   /* justify-content: center;
   align-items: center; */
 }
@@ -87,6 +101,7 @@ span {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .product_price {
