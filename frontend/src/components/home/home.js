@@ -101,14 +101,14 @@ function Home({ setCart, cart }) {
           <label>{currentPrice}</label> */}
           <div className="home_filter">
             <Slider
-              minPrice={minPrice}
-              maxPrice={maxPrice}
+              minPrice={parseInt(minPrice)}
+              maxPrice={parseInt(maxPrice)}
               setMinPrice={setMinPrice}
               setMaxPrice={setMaxPrice}
             />
             <CalorieSlider
-              minCalorie={minCalorie}
-              maxCalorie={maxCalorie}
+              minCalorie={parseInt(minCalorie)}
+              maxCalorie={parseInt(maxCalorie)}
               setMinCalorie={setMinCalorie}
               setMaxCalorie={setMaxCalorie}
             />

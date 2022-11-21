@@ -22,7 +22,6 @@ function CalorieSlider({
             className="input-min"
             value={minCalorie}
             onChange={(e) => {
-              console.log("val", e.target.value);
               e.target.value !== ""
                 ? setMinCalorie(e.target.value)
                 : setMaxCalorie(1);

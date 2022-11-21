@@ -18,7 +18,7 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             value={minPrice}
             onChange={(e) => {
               e.target.value !== ""
-                ? setMinPrice(e.target.value)
+                ? setMinPrice(parseInt(e.target.value))
                 : setMinPrice(1);
             }}
           />
@@ -30,7 +30,7 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             value={maxPrice}
             onChange={(e) => {
               e.target.value !== ""
-                ? setMaxPrice(e.target.value)
+                ? setMaxPrice(parseInt(e.target.value))
                 : setMaxPrice(24);
             }}
           />
