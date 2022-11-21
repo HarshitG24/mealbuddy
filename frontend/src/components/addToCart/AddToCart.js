@@ -87,7 +87,7 @@ function AddToCart({ cart, setCart }) {
       </div>
 
       <div className="your_order">
-        <p>Your Order</p>
+        {cart.length > 0 ? <p>Your Order</p> : null}
 
         {/* Cart orders */}
         {cart.map((elem, index) => {
