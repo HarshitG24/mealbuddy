@@ -1,0 +1,9 @@
+.search_input_home {
+  border: none;
+  background: #fff;
+  width: 30rem;
+  height: 3rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

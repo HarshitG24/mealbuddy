@@ -42,6 +42,11 @@ span {
   display: inline-block;
 }
 
+.product_img {
+  width: 20rem;
+  height: 20rem;
+}
+
 .product_content {
   display: flex;
   justify-content: center;

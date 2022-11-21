@@ -3,7 +3,6 @@ import Promotion from "./promotion";
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./css/home.css";
-import Menu from "./Menu";
 import { useEffect, useState } from "react";
 import "./css/product.css";
 import Product from "./Product";
@@ -11,6 +10,7 @@ import PropTypes from "prop-types";
 import Pagination from "./Pagination";
 import Slider from "./Slider";
 import CalorieSlider from "./CalorieSlider";
+import Search from "./Search";
 
 function Home({ setCart, cart }) {
   // const [menu, setDataMenu] = useState([]);
@@ -19,18 +19,16 @@ function Home({ setCart, cart }) {
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage, setDataPerPage] = useState(40);
-  const [currentPrice, setCurrentPrice] = useState(0);
+  // const [currentPrice, setCurrentPrice] = useState(0);
   const [minPrice, setMinPrice] = useState(10);
   const [maxPrice, setMaxPrice] = useState(24);
   const [minCalorie, setMinCalorie] = useState(100);
   const [maxCalorie, setMaxCalorie] = useState(400);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       let obj = {};
-      // const resp1 = await fetch("/api/home/getCategories");
-      // const output1 = await resp1.json();
-      // setDataMenu(output1);
 
       const resp = await fetch("/api/home/getAllData");
       const output = await resp.json();
@@ -42,7 +40,6 @@ function Home({ setCart, cart }) {
         };
       });
 
-      console.log("obj is", obj);
       setProduct(obj.pizza);
     }
 
@@ -51,8 +48,12 @@ function Home({ setCart, cart }) {
 
   const indexLast = currentPage * dataPerPage;
   const indexFirst = indexLast - dataPerPage;
-  const totalData = [...product];
-  console.log("total", totalData.length);
+  let totalData = [...product];
+  if (search !== "") {
+    totalData = totalData.filter((n) =>
+      n.name?.toLowerCase().includes(search?.toLowerCase())
+    );
+  }
   const currentData = totalData
     ?.slice(0, product.length)
     ?.filter(
@@ -63,7 +64,6 @@ function Home({ setCart, cart }) {
         f.calories <= maxCalorie
     );
   // ?.slice(indexFirst, indexLast);
-  console.log(currentData.length, currentPrice);
   return (
     <div className="content_block">
       <Logo />
@@ -72,6 +72,7 @@ function Home({ setCart, cart }) {
 
       <div className="menu_content">
         <p className="menu_title">Menu</p>
+        <Search search={search} setSearch={setSearch} />
         {/* <div className="menu_list">
           {menu.map((element, index) => {
             return (
