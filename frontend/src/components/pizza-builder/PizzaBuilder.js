@@ -60,7 +60,6 @@ function PizzaBuilder({ cart, setCart }) {
       const resp = await fetch("/api/pizza/getPizzaData");
       const output = await resp.json();
 
-      console.log("output is", output);
       let obj = output[0];
       setCrust(obj.crust.data[0]);
       setAllPizzaData(output[0]);
@@ -91,42 +90,44 @@ function PizzaBuilder({ cart, setCart }) {
         </div>
 
         <div className="pizza_row">
-          <div className="pizza_img_parent">
-            <img
-              className="image2"
-              src={pbase}
-              alt="This is the base of the pizza"
-            />
-            {(() => {
-              let crust_name = crust1;
-              if (Object.keys(crust).length > 0) {
-                if (crust.bid === 1) {
-                  crust_name = crust2;
-                } else if (crust.bid === 2) {
-                  crust_name = crust3;
+          {Object.keys(allPizzaData).length > 0 ? (
+            <div className="pizza_img_parent">
+              <img
+                className="image2"
+                src={pbase}
+                alt="This is the base of the pizza"
+              />
+              {(() => {
+                let crust_name = crust1;
+                if (Object.keys(crust).length > 0) {
+                  if (crust.bid === 1) {
+                    crust_name = crust2;
+                  } else if (crust.bid === 2) {
+                    crust_name = crust3;
+                  }
                 }
-              }
 
-              return (
-                <img
-                  className="image1"
-                  src={crust_name}
-                  alt="This is the base of the pizza"
-                />
-              );
-            })()}
+                return (
+                  <img
+                    className="image1"
+                    src={crust_name}
+                    alt="This is the base of the pizza"
+                  />
+                );
+              })()}
 
-            {toppings.map((t, index) => {
-              return (
-                <img
-                  key={index}
-                  className="pizza_toppings"
-                  src={getToppingImg(t.url)}
-                  alt="This is the base of the pizza"
-                />
-              );
-            })}
-          </div>
+              {toppings.map((t, index) => {
+                return (
+                  <img
+                    key={index}
+                    className="pizza_toppings"
+                    src={getToppingImg(t.url)}
+                    alt="This is the base of the pizza"
+                  />
+                );
+              })}
+            </div>
+          ) : null}
 
           {/* Toppings */}
           {Object.keys(allPizzaData).length > 0 ? (
