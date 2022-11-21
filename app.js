@@ -53,6 +53,6 @@ app.use((req, res, next) => {
   next();
 });
 
-httpServer.listen(process.env.DEP_LINK || 4200);
+httpServer.listen(4200);
 
 export default app;
