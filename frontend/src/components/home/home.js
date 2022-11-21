@@ -8,19 +8,23 @@ import { useEffect, useState } from "react";
 import "./css/product.css";
 import Product from "./Product";
 import PropTypes from "prop-types";
+import Pagination from "./Pagination";
 
 function Home({ setCart, cart }) {
-  const [menu, setDataMenu] = useState([]);
-  const [selectedMenu, setMenu] = useState(0);
-  const [productName, setProductName] = useState("burger");
+  // const [menu, setDataMenu] = useState([]);
+  // const [selectedMenu, setMenu] = useState(0);
+  const [productName, setProductName] = useState("pizza");
   const [product, setProduct] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dataPerPage, setDataPerPage] = useState(20);
+  const [currentPrice, setCurrentPrice] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
       let obj = {};
-      const resp1 = await fetch("/api/home/getCategories");
-      const output1 = await resp1.json();
-      setDataMenu(output1);
+      // const resp1 = await fetch("/api/home/getCategories");
+      // const output1 = await resp1.json();
+      // setDataMenu(output1);
 
       const resp = await fetch("/api/home/getAllData");
       const output = await resp.json();
@@ -32,12 +36,17 @@ function Home({ setCart, cart }) {
         };
       });
 
-      setProduct(obj);
+      console.log("obj is", obj);
+      setProduct(obj.pizza);
     }
 
     fetchData();
   }, []);
 
+  const indexLast = currentPage * dataPerPage;
+  const indexFirst = indexLast - dataPerPage;
+  const currentData = product?.slice(indexFirst, indexLast);
+  console.log(currentData);
   return (
     <div className="content_block">
       <Logo />
@@ -46,7 +55,7 @@ function Home({ setCart, cart }) {
 
       <div className="menu_content">
         <p className="menu_title">Menu</p>
-        <div className="menu_list">
+        {/* <div className="menu_list">
           {menu.map((element, index) => {
             return (
               <Menu
@@ -61,10 +70,10 @@ function Home({ setCart, cart }) {
               />
             );
           })}
-        </div>
+        </div> */}
 
         <div className="product_container">
-          {(product[productName] || []).map((elem, index) => {
+          {(currentData || []).map((elem, index) => {
             return (
               <Product
                 elem={elem}
@@ -76,6 +85,12 @@ function Home({ setCart, cart }) {
             );
           })}
         </div>
+        <Pagination
+          currentData={product.length}
+          dataPerPage={dataPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );
