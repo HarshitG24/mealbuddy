@@ -32,8 +32,16 @@ router.delete("/deleteWishlist", async (req, res) => {
 
 //AUTHOR: MIHIR MESIA
 
-router.get("/api/fetch_recent_orders/:id", async (req, res) => {
-  const resp = await db.fetchAllOrders(req?.params?.user || "");
-  res.send(JSON.stringify(resp));
+router.get("/fetch_recent_orders/:id", async (req, res) => {
+  const resp = await db.fetchAllOrders(req?.params?.id || "");
+  res.send(JSON.stringify(resp.data));
 });
+
+//AUTHOR: MIHIR MESIA
+
+router.get("/getBurgerData", async (req, res) => {
+  const resp = await db.getBurgerData();
+  res.status(resp.status).json(resp.data);
+});
+
 export default router;

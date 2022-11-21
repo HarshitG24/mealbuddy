@@ -1,6 +1,7 @@
 //AUTHOR: MIHIR MESIA
 
 import "./css/burger_table_row.css";
+import PropTypes from "prop-types";
 
 export default function BurgerTableRow({ data, value, setValue }) {
   return (
@@ -23,3 +24,9 @@ export default function BurgerTableRow({ data, value, setValue }) {
     </tbody>
   );
 }
+
+BurgerTableRow.propTypes = {
+  data: PropTypes.array.isRequired,
+  value: PropTypes.object.isRequired,
+  setValue: PropTypes.func.isRequired,
+};

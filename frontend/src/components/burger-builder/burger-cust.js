@@ -1,5 +1,6 @@
 import "./css/burger_table.css";
 import "./css/burger_table_row.css";
+import PropTypes from "prop-types";
 
 export default function BurgerCustTable({ allData, topping, setTopping }) {
   const { title, data } = allData;
@@ -47,3 +48,9 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
     </table>
   );
 }
+
+BurgerCustTable.propTypes = {
+  allData: PropTypes.object.isRequired,
+  topping: PropTypes.array.isRequired,
+  setTopping: PropTypes.func.isRequired,
+};

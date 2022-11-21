@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./css/burger_table.css";
 import "./css/burger_table_row.css";
+import PropTypes from "prop-types";
 
 export default function BurgerSummaryTable({
   allData,
@@ -92,3 +93,14 @@ export default function BurgerSummaryTable({
     </table>
   );
 }
+
+BurgerSummaryTable.propTypes = {
+  allData: PropTypes.object.isRequired,
+  size: PropTypes.number.isRequired,
+  crust: PropTypes.object.isRequired,
+  toppings: PropTypes.array.isRequired,
+  totalCalories: PropTypes.number.isRequired,
+  setaTotalCalories: PropTypes.func.isRequired,
+  amt: PropTypes.string.isRequired,
+  setAmt: PropTypes.func.isRequired,
+};

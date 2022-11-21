@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 import { MongoClient } from "mongodb";
-
+import bcrypt from "bcrypt";
 const url = process.env.MONGO_URL;
 const client = new MongoClient(url, {});
 const db = client.db("MealBuddy");
@@ -9,6 +9,18 @@ const users = db.collection("users");
 const whishlist_data = db.collection("whishlist");
 const checkoutOrders = db.collection("allOrders");
 const allData = db.collection("allData");
+const BurgerData = db.collection("BuildBurger");
+
+async function hashPassword(plaintextPassword) {
+  const hash = await bcrypt.hash(plaintextPassword, 10);
+  return hash;
+}
+
+// compare password
+async function comparePassword(plaintextPassword, hash) {
+  const result = await bcrypt.compare(plaintextPassword, hash);
+  return result;
+}
 const categories = db.collection("categories");
 const pizzaData = db.collection("BuildPizza");
 
@@ -34,6 +46,8 @@ function dbConnector() {
   dbObj.createUser = async (userData) => {
     await client.connect();
     try {
+      const pass = await hashPassword(userData.password);
+      userData.password = pass.toString();
       await users.insertOne(userData);
       return 200;
     } catch (error) {
@@ -51,16 +65,29 @@ function dbConnector() {
       const user = await users
         .find({
           email: userData.email,
-          password: userData.password,
         })
         .toArray();
-      return {
-        data: user.length ? user : [],
-        code: user.length > 0 ? 200 : 500,
-      };
+      if (user.length > 0) {
+        const result = await comparePassword(
+          userData.password,
+          user[0].password
+        );
+        console.log(result);
+        if (result === true) {
+          return {
+            data: user,
+            code: 200,
+          };
+        } else {
+          console.log("wrong credentials");
+          return { code: 400 };
+        }
+      } else {
+        return { code: 400 };
+      }
     } catch (error) {
       console.log(error);
-      return 400;
+      return { code: 400 };
     } finally {
       // client.close();
     }
@@ -76,7 +103,6 @@ function dbConnector() {
         .find({ user: data.user })
         .toArray();
 
-      console.log("whole array is", whishlist[0].data, data.data[0].pid);
       if (whishlist.length > 0) {
         const isFound = whishlist[0].data.some((element) => {
           if (element.pid == data.data[0].pid) {
@@ -94,9 +120,6 @@ function dbConnector() {
         // });
 
         // console.log("isfound", isFound);
-        if (isFound) {
-          return 200;
-        }
 
         whishlist[0].data = [...whishlist[0].data, ...data.data];
 
@@ -337,6 +360,28 @@ function dbConnector() {
 
     try {
       const arr = await pizzaData.find().toArray();
+      return {
+        data: arr,
+        status: 200,
+      };
+    } catch (error) {
+      console.log(error);
+      return {
+        data: [],
+        status: 400,
+      };
+    } finally {
+      // client.close();
+    }
+  };
+
+  //AUTHOR: MIHIR MESIA
+
+  dbObj.getBurgerData = async () => {
+    await client.connect();
+
+    try {
+      const arr = await BurgerData.find().toArray();
       return {
         data: arr,
         status: 200,
