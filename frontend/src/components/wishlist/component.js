@@ -2,9 +2,8 @@
 import "./component.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-export default function Component(props) {
-  const data = props.data;
-
+import PropTypes from "prop-types";
+export default function Component({ data, onClick }) {
   return (
     <div>
       <div className="wishlist_order_container">
@@ -28,7 +27,7 @@ export default function Component(props) {
             className="wishlist_delete"
             onClick={(e) => {
               e.preventDefault();
-              props.onClick(props.pid);
+              onClick(data.pid);
             }}
           />
         </div>
@@ -36,3 +35,8 @@ export default function Component(props) {
     </div>
   );
 }
+
+Component.propTypes = {
+  data: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

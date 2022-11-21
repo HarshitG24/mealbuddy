@@ -1,6 +1,7 @@
 //AUTHOR MIHIR MESIA
 
 import "./css/patty_size.css";
+import PropTypes from "prop-types";
 
 export default function PattySize({ size, selected, setSize, index }) {
   function selectSize() {
@@ -17,3 +18,10 @@ export default function PattySize({ size, selected, setSize, index }) {
     </div>
   );
 }
+
+PattySize.propTypes = {
+  size: PropTypes.number.isRequired,
+  selected: PropTypes.number.isRequired,
+  setSize: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+};

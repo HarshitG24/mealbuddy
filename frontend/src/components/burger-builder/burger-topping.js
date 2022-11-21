@@ -1,6 +1,11 @@
 import "./css/burger_topping.css";
-export default function BurgerToppings(props) {
-  return props.data.map((element) => {
+import PropTypes from "prop-types";
+export default function BurgerToppings({ data }) {
+  return data.map((element) => {
     return <div className={element.className}></div>;
   });
 }
+
+BurgerToppings.propTypes = {
+  data: PropTypes.array.isRequired,
+};

@@ -6,9 +6,10 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./pastOrder.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function PastOrders() {
-  const [wishlist, setWishlist] = useState([]);
+  const [past_orders, setPastOrders] = useState([]);
 
   useEffect(() => {
     async function fetch_data() {
@@ -16,7 +17,15 @@ export default function PastOrders() {
       const user = await user_name.json();
       const fetched_data = await fetch("/api/fetch_recent_orders/" + user.user);
       const data = await fetched_data.json();
-      setWishlist(data);
+      const cart = [];
+      data.map((element) => {
+        element.orders.map((e) => {
+          e.cart.map((cart_data) => {
+            cart.push(cart_data);
+          });
+        });
+      });
+      setPastOrders(cart);
     }
     fetch_data();
   }, []);
@@ -51,15 +60,15 @@ export default function PastOrders() {
     <div className="content_block">
       <Logo />
       <div className="order_mainarea">
-        <h1>Wishlist</h1>
+        <h1>Order History</h1>
 
         <div className="orders_data_list">
-          {wishlist.length == 0 ? (
+          {past_orders.length == 0 ? (
             <div>
               <img src={default_img} alt="no_orders" />
             </div>
           ) : (
-            wishlist.map((element) => {
+            past_orders.map((element) => {
               return <OrderComponent data={element} />;
             })
           )}

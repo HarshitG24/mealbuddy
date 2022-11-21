@@ -16,6 +16,7 @@ router.post("/login", async (req, res) => {
     req.session.user = status.data[0].email;
     req.session.save();
   }
+  console.log(status.code);
   res.status(status.code).send();
 });
 

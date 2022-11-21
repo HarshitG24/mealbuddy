@@ -162,86 +162,86 @@ export const pieColors = [
   "#FFE15D",
   "#0D4C92",
 ];
-export const burgerSizes = [
-  {
-    sid: 0,
-    size: "Single Patty",
-  },
-  {
-    sid: 1,
-    size: "Double Patty",
-  },
-];
+// export const burgerSizes = [
+//   {
+//     sid: 0,
+//     size: "Single Patty",
+//   },
+//   {
+//     sid: 1,
+//     size: "Double Patty",
+//   },
+// ];
 
-export const burgerData = [
-  {
-    title: "Add Toppings",
-    data: [
-      {
-        tid: 1,
-        name: "Lettuce",
-        calories: 15,
-        price: 1.49,
-        className: "lettuce",
-      },
-      {
-        tid: 2,
-        name: "Extra Cheese",
-        calories: 65,
-        price: 3.99,
-        className: "cheese",
-      },
-      {
-        tid: 3,
-        name: "Tomato",
-        calories: 25,
-        price: 1.99,
-        className: "tomato",
-      },
-      {
-        tid: 4,
-        name: "Extra Ranch",
-        calories: 30,
-        price: 4.99,
-        className: "ranch",
-      },
-    ],
-  },
-  {
-    title: "Choose Your Patty",
-    data: [
-      {
-        bid: 0,
-        name: "Super Deluxe Beef",
-        calories: 525,
-        price: 9.99,
-        className: "beef",
-      },
-      {
-        bid: 1,
-        name: "Chicken",
-        calories: 450,
-        price: 7.99,
-        className: "chicken",
-      },
-      {
-        bid: 2,
-        name: "Pork",
-        calories: 545,
-        price: 8.99,
-        className: "pork",
-      },
-      {
-        bid: 3,
-        name: "Veggie",
-        calories: 380,
-        price: 5.99,
-        className: "veggie",
-      },
-    ],
-  },
-  {
-    title: "Price Details",
-    data: ["Base Price", "Extras", "Total Calories"],
-  },
-];
+// export const burgerData = [
+//   {
+//     title: "Add Toppings",
+//     data: [
+//       {
+//         tid: 1,
+//         name: "Lettuce",
+//         calories: 15,
+//         price: 1.49,
+//         className: "lettuce",
+//       },
+//       {
+//         tid: 2,
+//         name: "Extra Cheese",
+//         calories: 65,
+//         price: 3.99,
+//         className: "cheese",
+//       },
+//       {
+//         tid: 3,
+//         name: "Tomato",
+//         calories: 25,
+//         price: 1.99,
+//         className: "tomato",
+//       },
+//       {
+//         tid: 4,
+//         name: "Extra Ranch",
+//         calories: 30,
+//         price: 4.99,
+//         className: "ranch",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Choose Your Patty",
+//     data: [
+//       {
+//         bid: 0,
+//         name: "Super Deluxe Beef",
+//         calories: 525,
+//         price: 9.99,
+//         className: "beef",
+//       },
+//       {
+//         bid: 1,
+//         name: "Chicken",
+//         calories: 450,
+//         price: 7.99,
+//         className: "chicken",
+//       },
+//       {
+//         bid: 2,
+//         name: "Pork",
+//         calories: 545,
+//         price: 8.99,
+//         className: "pork",
+//       },
+//       {
+//         bid: 3,
+//         name: "Veggie",
+//         calories: 380,
+//         price: 5.99,
+//         className: "veggie",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Price Details",
+//     data: ["Base Price", "Extras", "Total Calories"],
+//   },
+// ];

@@ -23,7 +23,7 @@ export default function Login() {
     if (resp.status == 200 && resp.statusText == "OK") {
       window.location.replace("/");
     } else {
-      alert("error creating account");
+      alert("please check your credentials");
     }
   }
   return (
@@ -72,7 +72,7 @@ export default function Login() {
 
           <div className="login_no_account">
             <p>Don't have an account?</p>
-            <a href="./newuser.html">Create Account</a>
+            <a href="/createAccount">Create Account</a>
           </div>
         </div>
       </div>

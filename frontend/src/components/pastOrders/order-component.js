@@ -1,9 +1,6 @@
 import "./orders_component.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-export default function OrderComponent(props) {
-  const data = props.data;
-
+import PropTypes from "prop-types";
+export default function OrderComponent({ data }) {
   return (
     <div>
       <div className="past_order_container">
@@ -24,3 +21,7 @@ export default function OrderComponent(props) {
     </div>
   );
 }
+
+OrderComponent.propTypes = {
+  data: PropTypes.object.isRequired,
+};
