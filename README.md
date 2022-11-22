@@ -2,7 +2,7 @@
  Harshit Gajjar Mihir Mesia
 
 **Website Link**
-[Slides](https://mealbuddy-x92q.onrender.com/)
+[Link](https://mealbuddy-x92q.onrender.com/)
 
 **Design Document**
 [Design Document](https://docs.google.com/presentation/d/1pbwqfanXbBBvygGy7RpWY47h24gk93kbKrWLz83vDgo/edit?usp=sharing)
@@ -19,7 +19,7 @@
 5. Run **yarn install**
 6. Run **yarn start**
 7. cd frontend
-8. 5. Run **yarn install**
+8. Run **yarn install**
 9. Run **yarn start**
 10. It will take you to localhost://3000
 
@@ -50,6 +50,14 @@ Note (for local running): for the app to work on local, replace the line 39 on p
 [CS5610 Web Development Course](https://johnguerra.co/classes/webDevelopment_fall_2022/)
 
 ## Screenshots
+<img width="1706" alt="Screen Shot 2022-11-21 at 9 26 54 PM" src="https://user-images.githubusercontent.com/35658851/203232147-9a5d7e31-db5a-44ee-b60b-7ed163870f5e.png">
+<img width="1707" alt="Screen Shot 2022-11-21 at 9 30 36 PM" src="https://user-images.githubusercontent.com/35658851/203232144-21d03f61-2a57-4226-bd6e-86cec8ef93c4.png">
+<img width="1708" alt="Screen Shot 2022-11-21 at 9 30 46 PM" src="https://user-images.githubusercontent.com/35658851/203232138-d1f19662-f3b5-4092-b882-804918c5d1c5.png">
+<img width="1707" alt="Screen Shot 2022-11-21 at 9 31 38 PM" src="https://user-images.githubusercontent.com/35658851/203232122-9bb91d6f-551e-4223-aa14-070890b87984.png">
+<img width="1703" alt="Screen Shot 2022-11-21 at 9 32 44 PM" src="https://user-images.githubusercontent.com/35658851/203232110-d091a54a-aca8-424b-9ca4-a7794deab51d.png">
+<img width="1707" alt="Screen Shot 2022-11-21 at 9 33 03 PM" src="https://user-images.githubusercontent.com/35658851/203232103-55e41a9f-4433-4f89-b0f5-a6998e981fd2.png">
+<img width="1705" alt="Screen Shot 2022-11-21 at 9 33 18 PM" src="https://user-images.githubusercontent.com/35658851/203232094-9cb978a9-a5a5-4cfd-b5c8-8f605bfda778.png">
+
 
 ## Branching
 We followed the concept of pair progarmming while working on this project
