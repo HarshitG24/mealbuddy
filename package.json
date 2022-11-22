@@ -10,7 +10,8 @@
     "lint": "eslint --fix --ext .js ./",
     "checkstyle": "yarn run lint && npx prettier --write .",
     "build": "yarn run prebuild && cd frontend && yarn install && yarn run build",
-    "prebuild": "rm -rf frontend/build"
+    "prebuild": "rm -rf frontend/build",
+    "installDb": "mongoimport -d MealBuddy -c allData --jsonArray --file ./data/pizza.json && mongoimport -d MealBuddy -c BuildPizza --jsonArray --file ./data/pizza-builder.json && mongoimport -d MealBuddy -c BuildBurger --jsonArray --file ./data/burger-builder.json"
   },
   "keywords": [],
   "author": "",

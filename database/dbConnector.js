@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { MongoClient } from "mongodb";
 import bcrypt from "bcrypt";
-const url = process.env.MONGO_URL;
+const url = process.env.MONGO_URL || "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url, {});
 const db = client.db("MealBuddy");
 const users = db.collection("users");
