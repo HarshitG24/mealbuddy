@@ -1,11 +1,18 @@
 import "./orders_component.css";
 import PropTypes from "prop-types";
+import pizza from "../../images/pizza-cart.png";
+import burger from "../../images/burger-cart.png";
+
 export default function OrderComponent({ data }) {
   return (
     <div>
       <div className="past_order_container">
         <div className="order_product_img">
-          <img src={data.img} alt="This is the icon for product added" />
+          <img
+            src={data.category === "pizza" ? pizza : burger}
+            alt="This is the icon for product added"
+            className="past_order_img"
+          />
         </div>
         <div className="order_product_left">
           <p className="order_product_name">{data.name}</p>
@@ -15,7 +22,7 @@ export default function OrderComponent({ data }) {
           </div>
         </div>
         <div className="order_price">
-          <p>{data.price}</p>
+          <p>${data.price}</p>
         </div>
       </div>
     </div>

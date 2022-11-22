@@ -65,7 +65,11 @@ export default function PastOrders() {
         <div className="orders_data_list">
           {past_orders.length == 0 ? (
             <div>
-              <img src={default_img} alt="no_orders" />
+              <img
+                src={default_img}
+                alt="no_orders"
+                className="orders_data_list_img"
+              />
             </div>
           ) : (
             past_orders.map((element) => {

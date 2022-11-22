@@ -20,7 +20,6 @@ h1 {
 .orders_data_list {
   width: 100%;
 }
-.orders_data_list img {
-  width: 6.4rem;
-  height: 6.4rem;
+.orders_data_list_img {
+  width: 70rem;
 }

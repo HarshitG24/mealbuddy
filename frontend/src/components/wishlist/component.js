@@ -2,13 +2,19 @@
 import "./component.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import pizza from "../../images/pizza-cart.png";
+
 import PropTypes from "prop-types";
 export default function Component({ data, onClick }) {
   return (
     <div>
       <div className="wishlist_order_container">
         <div className="wishlist_product_img">
-          <img src={data.img} alt="This is the icon for product added" />
+          <img
+            src={pizza}
+            alt="This is the icon for product added"
+            className="wishlist_pizza_img"
+          />
         </div>
         <div className="wishlist_product_left">
           <p className="wishlist_product_name">{data.name}</p>
@@ -18,7 +24,7 @@ export default function Component({ data, onClick }) {
           </div>
         </div>
         <div className="wishlist_price">
-          <p>{data.price}</p>
+          <p>${data.price}</p>
         </div>
         <div className="delete_wishlist">
           <FontAwesomeIcon

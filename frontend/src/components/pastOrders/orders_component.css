@@ -56,3 +56,8 @@
   font-weight: 400;
   color: var(--calorie-color);
 }
+
+.past_order_img {
+  width: 6.4rem;
+  height: 6.4rem;
+}
