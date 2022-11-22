@@ -65,8 +65,7 @@ export default function Login() {
           <button
             id="clickme"
             className="login_btn"
-            onClick={check_credentials}
-          >
+            onClick={check_credentials}>
             Login
           </button>
 
@@ -79,3 +78,5 @@ export default function Login() {
     </div>
   );
 }
+
+Login.propTypes = {};

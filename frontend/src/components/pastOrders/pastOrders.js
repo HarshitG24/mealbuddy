@@ -6,7 +6,6 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./pastOrder.css";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 
 export default function PastOrders() {
   const [past_orders, setPastOrders] = useState([]);
@@ -81,3 +80,5 @@ export default function PastOrders() {
     </div>
   );
 }
+
+PastOrders.propTypes = {};

@@ -5,7 +5,6 @@ import default_img from "../../images/wishlist-empty.jpeg";
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./wishlist.css";
-import { Link } from "react-router-dom";
 
 export default function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
@@ -74,3 +73,5 @@ export default function Wishlist() {
     </div>
   );
 }
+
+Wishlist.propTypes = {};
