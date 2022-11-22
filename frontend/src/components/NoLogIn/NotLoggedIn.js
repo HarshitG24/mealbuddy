@@ -1,5 +1,4 @@
 // AUTHOR: HARSHIT GAJJAR
-import PropTypes from "prop-types";
 
 function NotLoggedIn() {
   return (

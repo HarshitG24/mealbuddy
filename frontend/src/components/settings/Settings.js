@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
 import Spinner from "../Spinner/Spinner";
-import PropTypes from "prop-types";
 
 function Settings() {
   const [email, setEmail] = useState("");

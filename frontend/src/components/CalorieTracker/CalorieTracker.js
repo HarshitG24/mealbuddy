@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { pieColors } from "../../utils/util";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
 import Spinner from "../Spinner/Spinner";
-import PropTypes from "prop-types";
 
 function CalorieTracker() {
   const [categories, setCategories] = useState([]);

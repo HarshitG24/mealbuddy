@@ -1,6 +1,5 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./spinner.css";
-import PropTypes from "prop-types";
 
 function Spinner() {
   return (

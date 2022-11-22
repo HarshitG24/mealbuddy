@@ -8,14 +8,12 @@ import PropTypes from "prop-types";
 
 function CartOrder({ elem, cart, setCart }) {
   const { pid, name, calories, price, qty, category } = elem;
-  // const [quantity, setQty] = useState(temp);
   return (
     <div className="cart_order_container">
       <div className="cart_product_img">
         <img
           src={category === "pizza" ? pizza : burger}
           alt="This is the icon for product added"
-          // className="cart_img"
         />
       </div>
       <div className="cart_product_left">
