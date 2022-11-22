@@ -1,5 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./spinner.css";
+import PropTypes from "prop-types";
 
 function Spinner() {
   return (
@@ -8,5 +9,7 @@ function Spinner() {
     </div>
   );
 }
+
+Spinner.propTypes = {};
 
 export default Spinner;

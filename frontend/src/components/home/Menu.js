@@ -1,6 +1,5 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/menu.css";
-import { pizzas, burgers } from "../../utils/util";
 import PropTypes from "prop-types";
 
 function Menu({ name, img, sel, index, setMenu, setProductName }) {

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
 import Spinner from "../Spinner/Spinner";
+import PropTypes from "prop-types";
 
 function Settings() {
   const [email, setEmail] = useState("");
@@ -15,18 +16,25 @@ function Settings() {
   const [loading, setLoading] = useState(false);
 
   async function fetchUsers() {
-    const user_name = await fetch("/api/account/getUser");
-    const user = await user_name.json();
-    setUser(user);
+    try {
+      setLoading(true);
+      const user_name = await fetch("/api/account/getUser");
+      const user = await user_name.json();
+      setUser(user);
 
-    const resp = await fetch("/api/user/getUser/" + user.user);
-    const userData = await resp.json();
+      const resp = await fetch("/api/user/getUser/" + user.user);
+      const userData = await resp.json();
 
-    let d = userData?.udata || {};
+      let d = userData?.udata || {};
 
-    setEmail(d?.email || "");
-    setPassword(d?.password || "");
-    setName(d?.name || "");
+      setEmail(d?.email || "");
+      setPassword(d?.password || "");
+      setName(d?.name || "");
+
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -111,14 +119,12 @@ function Settings() {
         <div className="setting_actions">
           <button
             className="button_setting"
-            onClick={() => updateUserProfile()}
-          >
+            onClick={() => updateUserProfile()}>
             Update Profile
           </button>
           <button
             className="button_setting"
-            onClick={() => deleteUserProfile()}
-          >
+            onClick={() => deleteUserProfile()}>
             Delete Profile
           </button>
         </div>
@@ -133,5 +139,7 @@ function Settings() {
     </div>
   );
 }
+
+Settings.propTypes = {};
 
 export default Settings;

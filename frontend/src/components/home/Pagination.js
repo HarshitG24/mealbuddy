@@ -1,5 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/pagination.css";
+import PropTypes from "prop-types";
 
 function Pagination({ currentData, dataPerPage, currentPage, setCurrentPage }) {
   const pageNumber = [];
@@ -24,5 +25,12 @@ function Pagination({ currentData, dataPerPage, currentPage, setCurrentPage }) {
     </div>
   );
 }
+
+Pagination.propTypes = {
+  currentData: PropTypes.number.isRequired,
+  dataPerPage: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
+};
 
 export default Pagination;

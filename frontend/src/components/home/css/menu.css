@@ -29,39 +29,3 @@
   width: 20rem;
   height: 20rem;
 }
-
-/* Sprites css */
-.css-sprite-soda {
-  background: url("../../../sprites/css-sprite-combined.png") 0px -0px;
-  width: 64px;
-  height: 64px;
-  display: inline-block;
-}
-
-.css-sprite-sandwich {
-  background: url("../../../sprites/css-sprite-combined.png") -64px -0px;
-  width: 64px;
-  height: 64px;
-  display: inline-block;
-}
-
-.css-sprite-milkshake {
-  background: url("../../../sprites/css-sprite-combined.png") -128px -0px;
-  width: 64px;
-  height: 64px;
-  display: inline-block;
-}
-
-.css-sprite-burger {
-  background: url("../../../sprites/css-sprite-combined.png") -192px -0px;
-  width: 64px;
-  height: 64px;
-  display: inline-block;
-}
-
-.css-sprite-pizza {
-  background: url("../../../sprites/css-sprite-combined.png") -256px -0px;
-  width: 64px;
-  height: 64px;
-  display: inline-block;
-}

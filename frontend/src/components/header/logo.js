@@ -1,6 +1,7 @@
 // AUTHOR: HARSHIT GAJJAR
 import logo from "../../images/app_logo.png";
 import "./logo.css";
+import PropTypes from "prop-types";
 
 function Logo() {
   return (
@@ -10,5 +11,7 @@ function Logo() {
     </div>
   );
 }
+
+Logo.propTypes = {};
 
 export default Logo;

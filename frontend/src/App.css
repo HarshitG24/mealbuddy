@@ -23,35 +23,4 @@ html {
   width: 100%;
   height: 100vh;
   overflow: auto;
-  /* flex-wrap: wrap; */
 }
-
-/* main {
-  margin: 0 3rem;
-  margin-top: 5rem;
-}
-
-.nav_block {
-  width: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.content_block {
-  width: 65%;
-}
-
-.cart_block {
-  width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo_block {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-} */

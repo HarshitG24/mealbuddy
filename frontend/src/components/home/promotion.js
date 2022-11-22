@@ -1,6 +1,7 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/promotion.css";
 import delivery from "../../images/pizza-deliver.png";
+import PropTypes from "prop-types";
 
 function Promotion() {
   return (
@@ -24,5 +25,7 @@ function Promotion() {
     </div>
   );
 }
+
+Promotion.propTypes = {};
 
 export default Promotion;

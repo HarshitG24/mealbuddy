@@ -1,4 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
+import PropTypes from "prop-types";
+
 function NotLoggedIn() {
   return (
     <div>
@@ -6,5 +8,7 @@ function NotLoggedIn() {
     </div>
   );
 }
+
+NotLoggedIn.propTypes = {};
 
 export default NotLoggedIn;

@@ -73,41 +73,12 @@ function Home({ setCart, cart }) {
     return (
       <div>
         <Logo />
-        {/* Your content starts here */}
         <Promotion />
 
         <div className="menu_content">
           <p className="menu_title">Menu</p>
           <Search setSearch={setSearch} />
-          {/* <div className="menu_list">
-          {menu.map((element, index) => {
-            return (
-              <Menu
-                name={element.name}
-                img={element.img}
-                key={index}
-                sel={selectedMenu === index}
-                index={index}
-                setMenu={setMenu}
-                setProduct={setProduct}
-                setProductName={setProductName}
-              />
-            );
-          })}
-        </div> */}
           <div>
-            {/* <label htmlFor="volume">Volume</label>
-          <input
-            type="range"
-            id="volume"
-            name="volume"
-            min="0"
-            max="50"
-            onChange={(e) => {
-              setCurrentPrice(e.target.value);
-            }}
-          />
-          <label>{currentPrice}</label> */}
             <div className="home_filter">
               <Slider
                 minPrice={parseInt(minPrice)}
