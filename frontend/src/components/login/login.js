@@ -20,7 +20,7 @@ export default function Login() {
     };
 
     const resp = await fetch("/api/account/login", opts);
-    if (resp.status == 200 && resp.statusText == "OK") {
+    if (resp.status == 200) {
       window.location.replace("/");
     } else {
       alert("please check your credentials");
