@@ -12,7 +12,7 @@ export default function Wishlist() {
 
   useEffect(() => {
     async function fetch_data() {
-      const user_name = await fetch("/api/Account/getUser");
+      const user_name = await fetch("/api/account/getUser");
       const user = await user_name.json();
       const fetched_data = await fetch("/api/fetch_wishlist_data/" + user.user);
       const data = await fetched_data.json();
@@ -26,7 +26,7 @@ export default function Wishlist() {
 
     arr = arr.filter((e) => e.pid != pid);
     setWishlist(arr);
-    const user_name = await fetch("/api/Account/getUser");
+    const user_name = await fetch("/api/account/getUser");
     const user = await user_name.json();
     let delete_data = {
       user: user.user,

@@ -13,7 +13,7 @@ function Settings() {
   const [user, setUser] = useState({});
 
   async function fetchUsers() {
-    const user_name = await fetch("/api/Account/getUser");
+    const user_name = await fetch("/api/account/getUser");
     const user = await user_name.json();
     setUser(user);
 
@@ -109,12 +109,14 @@ function Settings() {
         <div className="setting_actions">
           <button
             className="button_setting"
-            onClick={() => updateUserProfile()}>
+            onClick={() => updateUserProfile()}
+          >
             Update Profile
           </button>
           <button
             className="button_setting"
-            onClick={() => deleteUserProfile()}>
+            onClick={() => deleteUserProfile()}
+          >
             Delete Profile
           </button>
         </div>

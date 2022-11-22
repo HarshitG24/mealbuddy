@@ -17,7 +17,7 @@ function CalorieTracker() {
     let obj = {};
 
     async function fetch_data() {
-      const user_name = await fetch("/api/Account/getUser");
+      const user_name = await fetch("/api/account/getUser");
       const user = await user_name.json();
       setUser(user);
 

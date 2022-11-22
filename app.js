@@ -37,7 +37,7 @@ app.use(express.static("frontend/build"));
 app.use(cors(corsOpts));
 
 app.use("/api", loginRouter);
-app.use("/api/Account", createUser);
+app.use("/api/account", createUser);
 app.use("/api/cart", checkout);
 app.use("/api/user", userRouter);
 app.use("/api/calorie", calorieRouter);
