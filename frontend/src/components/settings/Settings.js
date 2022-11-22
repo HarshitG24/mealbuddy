@@ -76,7 +76,7 @@ function Settings() {
     const output = await resp.json();
 
     if (output.status === 200) {
-      <Link to="/home" />;
+      alert("successfully deleted data! Please visit the home page");
     } else {
       alert("failed to delete data");
     }
