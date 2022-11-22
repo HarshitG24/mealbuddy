@@ -1,5 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/slider.css";
+import PropTypes from "prop-types";
 
 function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
   return (
@@ -17,7 +18,7 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             value={minPrice}
             onChange={(e) => {
               e.target.value !== ""
-                ? setMinPrice(e.target.value)
+                ? setMinPrice(parseInt(e.target.value))
                 : setMinPrice(1);
             }}
           />
@@ -29,38 +30,21 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             value={maxPrice}
             onChange={(e) => {
               e.target.value !== ""
-                ? setMaxPrice(e.target.value)
+                ? setMaxPrice(parseInt(e.target.value))
                 : setMaxPrice(24);
             }}
           />
         </div>
       </div>
-      {/* <div className="slider">
-        <div className="progress"></div>
-      </div> */}
-      {/* <div className="range-input">
-        <input
-          type="range"
-          className="range-min"
-          min="0"
-          max="200"
-          value={minPrice}
-          onChange={(e) => {
-            console.log(e.target.classList);
-            setMinPrice(e.target.value);
-          }}
-        />
-        <input
-          type="range"
-          className="range-min"
-          min="0"
-          max="200"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-        />
-      </div> */}
     </div>
   );
 }
+
+Slider.propTypes = {
+  minPrice: PropTypes.number.isRequired,
+  maxPrice: PropTypes.number.isRequired,
+  setMinPrice: PropTypes.func.isRequired,
+  setMaxPrice: PropTypes.func.isRequired,
+};
 
 export default Slider;

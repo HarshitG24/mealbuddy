@@ -5,26 +5,34 @@ import "./settings.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
+import Spinner from "../Spinner/Spinner";
 
 function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
 
   async function fetchUsers() {
-    const user_name = await fetch("/api/Account/getUser");
-    const user = await user_name.json();
-    setUser(user);
+    try {
+      setLoading(true);
+      const user_name = await fetch("/api/Account/getUser");
+      const user = await user_name.json();
+      setUser(user);
 
-    const resp = await fetch("/api/user/getUser/" + user.user);
-    const userData = await resp.json();
+      const resp = await fetch("/api/user/getUser/" + user.user);
+      const userData = await resp.json();
 
-    let d = userData?.udata || {};
+      let d = userData?.udata || {};
 
-    setEmail(d?.email || "");
-    setPassword(d?.password || "");
-    setName(d?.name || "");
+      setEmail(d?.email || "");
+      setPassword(d?.password || "");
+      setName(d?.name || "");
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -125,7 +133,7 @@ function Settings() {
   return (
     <div className="content_block">
       <Logo />
-      {"user" in user ? settingsUI() : <NotLoggedIn />}
+      {"user" in user ? loading ? <Spinner /> : settingsUI() : <NotLoggedIn />}
     </div>
   );
 }

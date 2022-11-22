@@ -2,66 +2,66 @@
 
 export const fontSize = "2xl";
 
-export const menu = [
-  {
-    name: "Pizza",
-    img: "css-sprite-pizza",
-  },
-  {
-    name: "Burgers",
-    img: "css-sprite-burger",
-  },
-  {
-    name: "Sandwich",
-    img: "css-sprite-sandwich",
-  },
-  {
-    name: "Smoothy",
-    img: "css-sprite-milkshake",
-  },
-  {
-    name: "Soda",
-    img: "css-sprite-soda",
-  },
-];
+// export const menu = [
+//   {
+//     name: "Pizza",
+//     img: "css-sprite-pizza",
+//   },
+//   {
+//     name: "Burgers",
+//     img: "css-sprite-burger",
+//   },
+//   {
+//     name: "Sandwich",
+//     img: "css-sprite-sandwich",
+//   },
+//   {
+//     name: "Smoothy",
+//     img: "css-sprite-milkshake",
+//   },
+//   {
+//     name: "Soda",
+//     img: "css-sprite-soda",
+//   },
+// ];
 
-export const pizzas = [
-  {
-    pid: "p1",
-    name: "Spicy Chicken Ranch",
-    img: "css-sprite-pizza2",
-    calories: 500,
-    price: 10.99,
-    category: "pizza",
-  },
-  {
-    pid: "p2",
-    name: "Veggie Paradise",
-    img: "css-sprite-pizza3",
-    calories: 400,
-    price: 8.99,
-    category: "pizza",
-  },
-];
+// export const pizzas = [
+//   {
+//     pid: "p1",
+//     name: "Spicy Chicken Ranch",
+//     img: "css-sprite-pizza2",
+//     calories: 500,
+//     price: 10.99,
+//     category: "pizza",
+//   },
+//   {
+//     pid: "p2",
+//     name: "Veggie Paradise",
+//     img: "css-sprite-pizza3",
+//     calories: 400,
+//     price: 8.99,
+//     category: "pizza",
+//   },
+// ];
 
-export const burgers = [
-  {
-    pid: "b1",
-    name: "Veggie Burger",
-    img: "css-sprite-burger1",
-    calories: 220,
-    price: 6.99,
-    category: "burger",
-  },
-  {
-    pid: "b2",
-    name: "Chichen Deluxe",
-    img: "css-sprite-burger2",
-    calories: 480,
-    price: 7.99,
-    category: "burger",
-  },
-];
+// export const burgers = [
+//   {
+//     pid: "b1",
+//     name: "Veggie Burger",
+//     img: "css-sprite-burger1",
+//     calories: 220,
+//     price: 6.99,
+//     category: "burger",
+//   },
+//   {
+//     pid: "b2",
+//     name: "Chichen Deluxe",
+//     img: "css-sprite-burger2",
+//     calories: 480,
+//     price: 7.99,
+//     category: "burger",
+//   },
+// ];
 
 export function generateCart(arr, obj) {
   let tarr = [...arr];
@@ -77,83 +77,83 @@ export function generateCart(arr, obj) {
   return tarr;
 }
 
-export const pizzaSizes = [
-  {
-    sid: 0,
-    size: 6,
-  },
-  {
-    sid: 1,
-    size: 8,
-  },
-  {
-    sid: 2,
-    size: 10,
-  },
-];
+// export const pizzaSizes = [
+//   {
+//     sid: 0,
+//     size: 6,
+//   },
+//   {
+//     sid: 1,
+//     size: 8,
+//   },
+//   {
+//     sid: 2,
+//     size: 10,
+//   },
+// ];
 
-export const pizzaData = [
-  {
-    title: "Add Toppings",
-    data: [
-      {
-        tid: 1,
-        name: "Onion",
-        calories: 25,
-        price: 1.99,
-        url: "onion",
-      },
-      {
-        tid: 2,
-        name: "Black Olives",
-        calories: 35,
-        price: 2.99,
-        url: "olive",
-      },
-      {
-        tid: 3,
-        name: "Mushrooms",
-        calories: 75,
-        price: 3.99,
-        url: "mush",
-      },
-      {
-        tid: 4,
-        name: "Green Peppers",
-        calories: 45,
-        price: 4.99,
-        url: "pep",
-      },
-    ],
-  },
-  {
-    title: "Choose Your Crust",
-    data: [
-      {
-        bid: 0,
-        name: "Cheesy Bytes",
-        calories: 625,
-        price: 7.99,
-      },
-      {
-        bid: 1,
-        name: "Thin Crust",
-        calories: 235,
-        price: 6.99,
-      },
-      {
-        bid: 2,
-        name: "Fresh Pan",
-        calories: 375,
-        price: 5.99,
-      },
-    ],
-  },
-  {
-    title: "Price Details",
-    data: ["Base Price", "Extras", "Total Calories"],
-  },
-];
+// export const pizzaData = [
+//   {
+//     title: "Add Toppings",
+//     data: [
+//       {
+//         tid: 1,
+//         name: "Onion",
+//         calories: 25,
+//         price: 1.99,
+//         url: "onion",
+//       },
+//       {
+//         tid: 2,
+//         name: "Black Olives",
+//         calories: 35,
+//         price: 2.99,
+//         url: "olive",
+//       },
+//       {
+//         tid: 3,
+//         name: "Mushrooms",
+//         calories: 75,
+//         price: 3.99,
+//         url: "mush",
+//       },
+//       {
+//         tid: 4,
+//         name: "Green Peppers",
+//         calories: 45,
+//         price: 4.99,
+//         url: "pep",
+//       },
+//     ],
+//   },
+//   {
+//     title: "Choose Your Crust",
+//     data: [
+//       {
+//         bid: 0,
+//         name: "Cheesy Bytes",
+//         calories: 625,
+//         price: 7.99,
+//       },
+//       {
+//         bid: 1,
+//         name: "Thin Crust",
+//         calories: 235,
+//         price: 6.99,
+//       },
+//       {
+//         bid: 2,
+//         name: "Fresh Pan",
+//         calories: 375,
+//         price: 5.99,
+//       },
+//     ],
+//   },
+//   {
+//     title: "Price Details",
+//     data: ["Base Price", "Extras", "Total Calories"],
+//   },
+// ];
 
 export const pieColors = [
   "#E38627",

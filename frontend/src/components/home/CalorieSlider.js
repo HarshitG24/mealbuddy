@@ -1,5 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
 import "./css/slider.css";
+import PropTypes from "prop-types";
 
 function CalorieSlider({
   minCalorie,
@@ -21,7 +22,6 @@ function CalorieSlider({
             className="input-min"
             value={minCalorie}
             onChange={(e) => {
-              console.log("val", e.target.value);
               e.target.value !== ""
                 ? setMinCalorie(e.target.value)
                 : setMaxCalorie(1);
@@ -44,5 +44,12 @@ function CalorieSlider({
     </div>
   );
 }
+
+CalorieSlider.propTypes = {
+  minCalorie: PropTypes.number.isRequired,
+  maxCalorie: PropTypes.number.isRequired,
+  setMinCalorie: PropTypes.func.isRequired,
+  setMaxCalorie: PropTypes.func.isRequired,
+};
 
 export default CalorieSlider;

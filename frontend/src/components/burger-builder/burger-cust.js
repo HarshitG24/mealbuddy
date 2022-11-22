@@ -6,11 +6,10 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
   const { title, data } = allData;
 
   function handleToppingClick(e, item) {
-    e.target.classList.toggle("patty_selected");
     let arr = topping.splice(0, topping.length);
-    arr = arr.filter((elem) => elem.tid !== item.tid);
-
-    if (e.target.classList.contains("patty_selected")) {
+    if (arr.findIndex((t) => t.name === item.name) !== -1) {
+      arr = arr.filter((elem) => elem.tid !== item.tid);
+    } else {
       arr = [...arr, item];
     }
 

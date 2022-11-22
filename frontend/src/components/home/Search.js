@@ -1,7 +1,9 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/search.css";
 import { useCallback } from "react";
+import PropTypes from "prop-types";
 
-function Search({ search, setSearch }) {
+function Search({ setSearch }) {
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
@@ -32,5 +34,9 @@ function Search({ search, setSearch }) {
     </div>
   );
 }
+
+Search.propTypes = {
+  setSearch: PropTypes.func.isRequired,
+};
 
 export default Search;

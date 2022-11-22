@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./css/pagination.css";
 
 function Pagination({ currentData, dataPerPage, currentPage, setCurrentPage }) {
