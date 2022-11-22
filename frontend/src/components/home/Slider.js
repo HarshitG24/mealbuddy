@@ -2,7 +2,13 @@
 import "./css/slider.css";
 import PropTypes from "prop-types";
 
-function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
+function Slider({
+  minPrice,
+  maxPrice,
+  setMinPrice,
+  setMaxPrice,
+  setCurrentPage,
+}) {
   return (
     <div className="wrapper">
       <header>
@@ -17,6 +23,7 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             className="input-min"
             value={minPrice}
             onChange={(e) => {
+              setCurrentPage(1);
               e.target.value !== ""
                 ? setMinPrice(parseInt(e.target.value))
                 : setMinPrice(1);
@@ -29,6 +36,7 @@ function Slider({ minPrice, maxPrice, setMinPrice, setMaxPrice }) {
             className="input-max"
             value={maxPrice}
             onChange={(e) => {
+              setCurrentPage(1);
               e.target.value !== ""
                 ? setMaxPrice(parseInt(e.target.value))
                 : setMaxPrice(24);
@@ -45,6 +53,7 @@ Slider.propTypes = {
   maxPrice: PropTypes.number.isRequired,
   setMinPrice: PropTypes.func.isRequired,
   setMaxPrice: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };
 
 export default Slider;

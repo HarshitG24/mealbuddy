@@ -3,8 +3,9 @@ import "./css/search.css";
 import { useCallback } from "react";
 import PropTypes from "prop-types";
 
-function Search({ setSearch }) {
+function Search({ setSearch, setCurrentPage }) {
   const handleChange = (event) => {
+    setCurrentPage(1);
     setSearch(event.target.value);
   };
 
@@ -37,6 +38,7 @@ function Search({ setSearch }) {
 
 Search.propTypes = {
   setSearch: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };
 
 export default Search;
