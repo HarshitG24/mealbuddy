@@ -56,6 +56,6 @@ app.use((req, res, next) => {
   next();
 });
 
-httpServer.listen(4200, "0.0.0.0");
+httpServer.listen(4200);
 
 export default app;
