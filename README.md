@@ -31,6 +31,22 @@
 
 Note (for local running): for the app to work on local, replace the line 39 on package.json of frontend with this **http://localhost:4200** instead of **https://mealbuddy.onrender.com**
 
+## Submission
+We have made the submission before November 22, 2022, aiming for the bonus points. We have made the google submission and also the other necessary requirements.
+
+## CRUD OPERATIONS
+**Harshit Gajjar**
+1. **CREATE** -> Whenever a user clicks on "Proceed to checkout" btn in the cart (right side), a new collection is created named "allOrders", if not exist. If exists it will be updated.
+2. **Read** -> On the home page of the app, 1k synthetic records of pizza is read from a collection named "allData"
+3. **Update** -> On settings page, user can update their name and password, so the necessary row is updated in collection named "users"
+4. **Delete** -> On settings page, user have the option to delete their profile, so we remove their entry from the collection named "users".
+
+**Mihir Mesia**
+1. **CREATE** -> User can create a account and a new collection called "users" is created
+2. **Read** -> On the Burger-builder page, all the data shown is fetched from collection named "BuildBurger"
+3. **Update** -> On home page, user can add a Pizza to wishlist. If the collection named "whishlist" doesn't existed it's created, else it is updated
+4. **Delete** -> On wishlist page, user have the option to delete their whislist, so we remove the entry from "whishlist" collection.
+
 ## Features
 1. Login Page -> The user can login to the MealBuddy app or create account
 2. Create Account Page -> The User can register in the website.
