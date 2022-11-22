@@ -6,16 +6,28 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./wishlist.css";
 
+import Spinner from "../Spinner/Spinner";
+
 export default function Wishlist() {
   const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetch_data() {
-      const user_name = await fetch("/api/account/getUser");
-      const user = await user_name.json();
-      const fetched_data = await fetch("/api/fetch_wishlist_data/" + user.user);
-      const data = await fetched_data.json();
-      setWishlist(data);
+      setLoading(true);
+      try {
+        const user_name = await fetch("/api/account/getUser");
+        const user = await user_name.json();
+        console.log(user.user);
+        const fetched_data = await fetch(
+          "/api/fetch_wishlist_data/" + user.user
+        );
+        const data = await fetched_data.json();
+        setWishlist(data);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
     }
     fetch_data();
   }, []);
@@ -23,7 +35,7 @@ export default function Wishlist() {
   async function deleteData(pid) {
     let arr = [...wishlist];
 
-    arr = arr.filter((e) => e.pid != pid);
+    arr = arr.filter((e) => e.pid !== pid);
     setWishlist(arr);
     const user_name = await fetch("/api/account/getUser");
     const user = await user_name.json();
@@ -46,11 +58,12 @@ export default function Wishlist() {
     }
   }
 
-  return (
-    <div className="content_block">
-      <Logo />
-      <div className="mainarea">
-        <h1>Wishlist</h1>
+  function wishlist_showUI() {
+    return (
+      <div>
+        <Logo />
+        <div className="mainarea">
+          <h1>Wishlist</h1>
 
         <div className="wishlist_data_list">
           {wishlist.length === 0 ? (

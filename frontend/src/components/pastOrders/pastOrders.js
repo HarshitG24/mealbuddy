@@ -5,58 +5,42 @@ import default_img from "../../images/wishlist-empty.jpeg";
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./pastOrder.css";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import Spinner from "../Spinner/Spinner";
 
 export default function PastOrders() {
   const [past_orders, setPastOrders] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetch_data() {
-      const user_name = await fetch("/api/account/getUser");
-      const user = await user_name.json();
-      const fetched_data = await fetch("/api/fetch_recent_orders/" + user.user);
-      const data = await fetched_data.json();
-      const cart = [];
-      data.map((element) => {
-        element.orders.map((e) => {
-          e.cart.map((cart_data) => {
-            cart.push(cart_data);
+      setLoading(true);
+      try {
+        const user_name = await fetch("/api/account/getUser");
+        const user = await user_name.json();
+        const fetched_data = await fetch(
+          "/api/fetch_recent_orders/" + user.user
+        );
+        const data = await fetched_data.json();
+        const cart = [];
+        data.map((element) => {
+          element.orders.map((e) => {
+            e.cart.map((cart_data) => {
+              cart.push(cart_data);
+            });
           });
         });
-      });
-      setPastOrders(cart);
+        setPastOrders(cart);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
     }
     fetch_data();
   }, []);
 
-  //   async function deleteData(pid) {
-  //     let arr = [...wishlist];
-
-  //     arr = arr.filter((e) => e.pid != pid);
-  //     setWishlist(arr);
-  //     const user_name = await fetch("/api/Account/getUser");
-  //     const user = await user_name.json();
-  //     let delete_data = {
-  //       user: user.user,
-  //       pid: pid,
-  //     };
-
-  //     const headers = new Headers({ "Content-Type": "application/json" });
-
-  //     const opts = {
-  //       method: "delete",
-  //       headers: headers,
-  //       body: JSON.stringify(delete_data),
-  //     };
-
-  //     const resp = await fetch("/api/deleteWishlist", opts);
-  //     if (resp.status !== 200) {
-  //       alert("unable to delete");
-  //     }
-  //   }
-
   return (
-    <div className="content_block">
+    <div>
       <Logo />
       <div className="order_mainarea">
         <h1>Order History</h1>

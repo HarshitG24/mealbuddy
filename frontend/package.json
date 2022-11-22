@@ -36,5 +36,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4200"
+  "proxy": "https://mealbuddy.onrender.com",
+  "devDependencies": {
+    "eslint-config-react": "^1.1.7"
+  }
 }
