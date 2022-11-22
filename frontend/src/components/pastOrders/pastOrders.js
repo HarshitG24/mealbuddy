@@ -13,7 +13,7 @@ export default function PastOrders() {
 
   useEffect(() => {
     async function fetch_data() {
-      const user_name = await fetch("/api/Account/getUser");
+      const user_name = await fetch("/api/account/getUser");
       const user = await user_name.json();
       const fetched_data = await fetch("/api/fetch_recent_orders/" + user.user);
       const data = await fetched_data.json();
