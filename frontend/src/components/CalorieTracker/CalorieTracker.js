@@ -6,73 +6,83 @@ import Logo from "../header/logo";
 import { useEffect, useState } from "react";
 import { pieColors } from "../../utils/util";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
+import Spinner from "../Spinner/Spinner";
 
 function CalorieTracker() {
   const [categories, setCategories] = useState([]);
   const [tData, setData] = useState({});
   const [pieData, setPieData] = useState([]);
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     let obj = {};
 
     async function fetch_data() {
-      const user_name = await fetch("/api/Account/getUser");
-      const user = await user_name.json();
-      setUser(user);
+      try {
+        const user_name = await fetch("/api/Account/getUser");
+        const user = await user_name.json();
+        setUser(user);
 
-      if ("user" in user) {
-        const allOrders = await fetch("/api/calorie/getAllOrders/" + user.user);
-        const orderJson = await allOrders.json();
+        if ("user" in user) {
+          const allOrders = await fetch(
+            "/api/calorie/getAllOrders/" + user.user
+          );
+          const orderJson = await allOrders.json();
 
-        orderJson.data[0].orders.forEach((elem) => {
-          elem.cart.forEach((c) => {
-            if (c.category in obj) {
-              obj = {
-                ...obj,
-                [c.category]: {
-                  ...[c.category],
-                  count: obj[c.category].count + c.qty,
-                  calories: obj[c.category].calories + c.calories * c.qty,
-                },
-              };
-            } else {
-              obj = {
-                ...obj,
-                [c.category]: {
-                  count: c.qty,
-                  calories: c.calories * c.qty,
-                },
-              };
-            }
+          orderJson.data[0].orders.forEach((elem) => {
+            elem.cart.forEach((c) => {
+              if (c.category in obj) {
+                obj = {
+                  ...obj,
+                  [c.category]: {
+                    ...[c.category],
+                    count: obj[c.category].count + c.qty,
+                    calories: obj[c.category].calories + c.calories * c.qty,
+                  },
+                };
+              } else {
+                obj = {
+                  ...obj,
+                  [c.category]: {
+                    count: c.qty,
+                    calories: c.calories * c.qty,
+                  },
+                };
+              }
+            });
           });
-        });
 
-        let arr = Object.keys(obj);
+          let arr = Object.keys(obj);
 
-        let pieDataArr = [];
-        let totalCalories = 0;
+          let pieDataArr = [];
+          let totalCalories = 0;
 
-        arr.forEach((e, index) => {
-          totalCalories += obj[e].calories;
-          pieDataArr.push({
-            title: e,
-            value: obj[e].calories,
-            color: pieColors[index],
+          arr.forEach((e, index) => {
+            totalCalories += obj[e].calories;
+            pieDataArr.push({
+              title: e,
+              value: obj[e].calories,
+              color: pieColors[index],
+            });
           });
-        });
 
-        pieDataArr = pieDataArr.map((p) => {
-          return {
-            ...p,
-            value: Math.round((p.value / totalCalories) * 100),
-          };
-        });
+          pieDataArr = pieDataArr.map((p) => {
+            return {
+              ...p,
+              value: Math.round((p.value / totalCalories) * 100),
+            };
+          });
 
-        console.log(pieDataArr);
-        setPieData(pieDataArr);
-        setCategories(arr);
-        setData(obj);
+          console.log(pieDataArr);
+          setPieData(pieDataArr);
+          setCategories(arr);
+          setData(obj);
+          setLoading(false);
+        }
+      } catch (error) {
+        setLoading(false);
       }
     }
 
@@ -125,7 +135,15 @@ function CalorieTracker() {
   return (
     <div className="content_block">
       <Logo />
-      {"user" in user ? calorieTrackerUI() : <NotLoggedIn />}
+      {"user" in user ? (
+        loading ? (
+          <Spinner />
+        ) : (
+          calorieTrackerUI()
+        )
+      ) : (
+        <NotLoggedIn />
+      )}
     </div>
   );
 }
