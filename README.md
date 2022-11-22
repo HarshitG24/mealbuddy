@@ -4,8 +4,11 @@
 **Website Link**
 [Link](https://mealbuddy-x92q.onrender.com/)
 
+**Slides**
+[Slides](https://docs.google.com/presentation/d/13leVTSvY1sIaHzoZYnJ5vLZ7HNV_9DFMHV48U03RE7U/edit?usp=sharing)
+
 **Design Document**
-[Design Document](https://docs.google.com/presentation/d/1pbwqfanXbBBvygGy7RpWY47h24gk93kbKrWLz83vDgo/edit?usp=sharing)
+[Design Document](https://docs.google.com/document/d/1DDK2ADNOKnGaH6Qo7wP_p3DGL8feCABHwNzO892O0y8/edit)
 
 **Project Objective:**
  A Fast food delivery application for user’s to order delicious , mouth-watering fast foods such as Pizza and Burger. The website allows users to customize their own pizza/burger and place the order. The website shows the calories for each food item, to help users track the calories they would intake. The users can see their recent order, wishlist, calories consumed so far and much more. The project is intended to get experience working with MongoDB, Express, React and nodeJS, making a MERN stack web application.
