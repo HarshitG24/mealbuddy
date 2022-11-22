@@ -24,7 +24,7 @@ export default function CreateAccount() {
       body: JSON.stringify(newUser),
     };
 
-    const resp = await fetch("/api/Account/createUser", opts);
+    const resp = await fetch("/api/account/createUser", opts);
     if (resp.status == 200 && resp.statusText == "OK") {
       window.location.replace("/login");
     } else {

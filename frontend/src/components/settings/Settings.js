@@ -15,24 +15,18 @@ function Settings() {
   const [loading, setLoading] = useState(false);
 
   async function fetchUsers() {
-    try {
-      setLoading(true);
-      const user_name = await fetch("/api/Account/getUser");
-      const user = await user_name.json();
-      setUser(user);
+    const user_name = await fetch("/api/account/getUser");
+    const user = await user_name.json();
+    setUser(user);
 
-      const resp = await fetch("/api/user/getUser/" + user.user);
-      const userData = await resp.json();
+    const resp = await fetch("/api/user/getUser/" + user.user);
+    const userData = await resp.json();
 
-      let d = userData?.udata || {};
+    let d = userData?.udata || {};
 
-      setEmail(d?.email || "");
-      setPassword(d?.password || "");
-      setName(d?.name || "");
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-    }
+    setEmail(d?.email || "");
+    setPassword(d?.password || "");
+    setName(d?.name || "");
   }
 
   useEffect(() => {
@@ -117,12 +111,14 @@ function Settings() {
         <div className="setting_actions">
           <button
             className="button_setting"
-            onClick={() => updateUserProfile()}>
+            onClick={() => updateUserProfile()}
+          >
             Update Profile
           </button>
           <button
             className="button_setting"
-            onClick={() => deleteUserProfile()}>
+            onClick={() => deleteUserProfile()}
+          >
             Delete Profile
           </button>
         </div>

@@ -19,7 +19,7 @@ export default function Login() {
       body: JSON.stringify(user_cred),
     };
 
-    const resp = await fetch("/api/Account/login", opts);
+    const resp = await fetch("/api/account/login", opts);
     if (resp.status == 200 && resp.statusText == "OK") {
       window.location.replace("/");
     } else {
