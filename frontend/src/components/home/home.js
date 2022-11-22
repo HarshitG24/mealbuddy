@@ -77,7 +77,7 @@ function Home({ setCart, cart }) {
 
         <div className="menu_content">
           <p className="menu_title">Menu</p>
-          <Search setSearch={setSearch} />
+          <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
           <div>
             <div className="home_filter">
               <Slider
@@ -85,12 +85,14 @@ function Home({ setCart, cart }) {
                 maxPrice={parseInt(maxPrice)}
                 setMinPrice={setMinPrice}
                 setMaxPrice={setMaxPrice}
+                setCurrentPage={setCurrentPage}
               />
               <CalorieSlider
                 minCalorie={parseInt(minCalorie)}
                 maxCalorie={parseInt(maxCalorie)}
                 setMinCalorie={setMinCalorie}
                 setMaxCalorie={setMaxCalorie}
+                setCurrentPage={setCurrentPage}
               />
             </div>
           </div>

@@ -7,6 +7,7 @@ function CalorieSlider({
   maxCalorie,
   setMinCalorie,
   setMaxCalorie,
+  setCurrentPage,
 }) {
   return (
     <div className="wrapper">
@@ -22,6 +23,7 @@ function CalorieSlider({
             className="input-min"
             value={minCalorie}
             onChange={(e) => {
+              setCurrentPage(1);
               e.target.value !== ""
                 ? setMinCalorie(e.target.value)
                 : setMaxCalorie(1);
@@ -34,6 +36,7 @@ function CalorieSlider({
             className="input-max"
             value={maxCalorie}
             onChange={(e) => {
+              setCurrentPage(1);
               e.target.value !== ""
                 ? setMaxCalorie(e.target.value)
                 : setMaxCalorie(400);
@@ -50,6 +53,7 @@ CalorieSlider.propTypes = {
   maxCalorie: PropTypes.number.isRequired,
   setMinCalorie: PropTypes.func.isRequired,
   setMaxCalorie: PropTypes.func.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };
 
 export default CalorieSlider;
