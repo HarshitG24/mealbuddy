@@ -14,25 +14,27 @@
 ## Installation and running it in local monodb compass (it uses mongoimport)
 1. Clone the repository
 2. Open it in your favourite editor
-3. PENDING...
+3. Start the mongo local server
+4. Run **yarn run installDb**
+5. Run **yarn install**
+6. Run **yarn start**
+7. cd frontend
+8. 5. Run **yarn install**
+9. Run **yarn start**
+10. It will take you to localhost://3000
+
+Note (for local running): for the app to work on local, replace the line 39 on package.json of frontend with this **http://localhost:4200** instead of **https://mealbuddy.onrender.com**
 
 ## Features
-1. Login Page (index.html) -> The user can login to the QuizScript app or create account
-2. Create Account Page (newuser.html) -> The User can register in the website.
-3. Categories Page (categories.html) -> This page shows the various categories the user can choose from to take quiz
-4. SinglePlayer Quiz Page (singlequiz.html) -> After choosing a category, user can take the quiz and get result
-5. Multiplayer Quiz Page (mulquiz.html) -> User need to select a category and also match with another player to start the quiz and get the result
-6. SinglePlayer Result Page (singleResult.html) -> After completing the quiz, they can see their score and their performance
-7. Multiplayer Result Page (mulresult.html) -> After completing the quiz, they can see which player won and who has how many points
-8. Dashboard page (dashboard.html) -> User can see the summary of all the single and multiplayer quizes taken by them
-
-## Running the multiplayer quiz
-For best experience, please close both the browsers, restart the server, start it fresh for it work best
-1. Start the server
-2. Open the app in 2 different browsers
-3. Log in using 2 different credentials
-4. Hover over a category in each browser, click on multiplayer quiz
-5. Do the same on other browser and make sure that category selected is same for it work.
+1. Login Page -> The user can login to the MealBuddy app or create account
+2. Create Account Page -> The User can register in the website.
+3. Home Page -> This page shows the 1k synthetic records of pizza for users to choose and play around with filters
+4. Past Orders Page  -> Shows the history of all orders made by the loggedin user
+5. Wishlist Page  -> Shows all the pizza which are wishlist by user
+6. Pizza Builder Page  -> User can make their own pizza and see real time effects of addition of toppings with images
+7. Burger builder Page -> User can make their own burger and see real time effects of addition of toppings with css
+8. Calories page -> User can see the pie chart of the calories consumed by them
+9. Settings Page -> Allows user to update their details
 
 
 ## Tech Requirements
