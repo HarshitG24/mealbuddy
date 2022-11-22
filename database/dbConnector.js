@@ -27,21 +27,6 @@ const pizzaData = db.collection("BuildPizza");
 function dbConnector() {
   let dbObj = {};
 
-  // AUTHOR: HARSHIT GAJJAR
-  dbObj.addUser = async (data) => {
-    await client.connect();
-
-    try {
-      await users.insertOne(data);
-      return 200;
-    } catch (error) {
-      console.log("error", error);
-      return 400;
-    } finally {
-      // client.close();
-    }
-  };
-
   //AUTHOR: MIHIR MESIA
   dbObj.createUser = async (userData) => {
     await client.connect();
