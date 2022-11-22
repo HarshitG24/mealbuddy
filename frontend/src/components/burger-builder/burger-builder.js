@@ -10,6 +10,7 @@ import BurgerCustTable from "./burger-cust";
 import BurgerSummaryTable from "./burger-summary";
 import BurgerToppings from "./burger-topping";
 import PropTypes from "prop-types";
+import Spinner from "../Spinner/Spinner";
 
 export default function BurgerBuilder({ cart, setCart }) {
   const [allBurgerData, setAllBurgerData] = useState({});
@@ -18,6 +19,7 @@ export default function BurgerBuilder({ cart, setCart }) {
   const [toppings, setToppings] = useState([]);
   const [totalCalories, setaTotalCalories] = useState(0);
   const [amt, setAmt] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   function addCustomBurger() {
     let arr = generateCart(cart, {
@@ -34,84 +36,98 @@ export default function BurgerBuilder({ cart, setCart }) {
   }
   useEffect(() => {
     async function getBurgerData() {
-      const resp = await fetch("/api/getBurgerData");
-      const output = await resp.json();
+      setLoading(true);
+      try {
+        const resp = await fetch("/api/getBurgerData");
+        const output = await resp.json();
 
-      let obj = output[0];
-      setPatty(obj.patty.data[0]);
-      setAllBurgerData(output[0]);
+        let obj = output[0];
+        setPatty(obj.patty.data[0]);
+        setAllBurgerData(output[0]);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
     }
 
     getBurgerData();
   }, []);
-  return (
-    <div className="content_block">
-      <Logo />
-      <div className="burger_builder_content">
-        <h1 className="burger_builder_title">Burger Builder</h1>
 
-        {/* SIZE - Inches */}
-        {Object.keys(allBurgerData).length > 0 ? (
-          <div className="burger_size">
-            {allBurgerData.sizes.map((e, index) => {
-              return (
-                <PattySize
-                  key={e.sid}
-                  size={e.size}
-                  selected={size}
-                  setSize={setSize}
-                  index={e.sid}
-                />
-              );
-            })}
-          </div>
-        ) : null}
+  function burgerBuilderUI() {
+    return (
+      <div>
+        <Logo />
+        <div className="burger_builder_content">
+          <h1 className="burger_builder_title">Burger Builder</h1>
 
-        <div className="burger_row">
-          <div className="burger">
-            <div className="BreadTop">
-              <div className="seeds2"></div>
-              <div className="seeds2"></div>
-            </div>
-            <BurgerToppings data={toppings}></BurgerToppings>
-            <div className={patty.className}></div>
-            <div className="BreadBottom"></div>
-          </div>
-          {/* Cutomizations */}
+          {/* SIZE - Inches */}
           {Object.keys(allBurgerData).length > 0 ? (
-            <BurgerCustTable
-              allData={allBurgerData.topping}
-              topping={toppings}
-              setTopping={setToppings}
-            />
+            <div className="burger_size">
+              {allBurgerData.sizes.map((e, index) => {
+                return (
+                  <PattySize
+                    key={e.sid}
+                    size={e.size}
+                    selected={size}
+                    setSize={setSize}
+                    index={e.sid}
+                  />
+                );
+              })}
+            </div>
+          ) : null}
+
+          <div className="burger_row">
+            <div className="burger">
+              <div className="BreadTop">
+                <div className="seeds2"></div>
+                <div className="seeds2"></div>
+              </div>
+              <BurgerToppings data={toppings}></BurgerToppings>
+              <div className={patty.className}></div>
+              <div className="BreadBottom"></div>
+            </div>
+            {/* Cutomizations */}
+            {Object.keys(allBurgerData).length > 0 ? (
+              <BurgerCustTable
+                allData={allBurgerData.topping}
+                topping={toppings}
+                setTopping={setToppings}
+              />
+            ) : null}
+          </div>
+
+          {/* Burger Patty + Total Price */}
+          {Object.keys(allBurgerData).length > 0 ? (
+            <div className="burger_row">
+              <BurgerTable
+                allData={allBurgerData.patty}
+                value={patty}
+                setValue={setPatty}
+              />
+
+              <div className="burger_summary_block">
+                <BurgerSummaryTable
+                  allData={allBurgerData.summary}
+                  size={size}
+                  crust={patty}
+                  toppings={toppings}
+                  totalCalories={totalCalories}
+                  setaTotalCalories={setaTotalCalories}
+                  amt={amt}
+                  setAmt={setAmt}
+                />
+                <button onClick={() => addCustomBurger()}>Add to Cart</button>
+              </div>
+            </div>
           ) : null}
         </div>
-
-        {/* Burger Patty + Total Price */}
-        {Object.keys(allBurgerData).length > 0 ? (
-          <div className="burger_row">
-            <BurgerTable
-              allData={allBurgerData.patty}
-              value={patty}
-              setValue={setPatty}
-            />
-
-            <div className="burger_summary_block">
-              <BurgerSummaryTable
-                allData={allBurgerData.summary}
-                size={size}
-                crust={patty}
-                toppings={toppings}
-                totalCalories={totalCalories}
-                setaTotalCalories={setaTotalCalories}
-                amt={amt}
-                setAmt={setAmt}
-              />
-              <button onClick={() => addCustomBurger()}>Add to Cart</button>
-            </div>
-          </div>
-        ) : null}
       </div>
+    );
+  }
+  return (
+    <div className="content_block">
+      {loading ? <Spinner /> : burgerBuilderUI()}
     </div>
   );
 }

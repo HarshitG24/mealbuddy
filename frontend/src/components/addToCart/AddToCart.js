@@ -34,6 +34,13 @@ function AddToCart({ cart, setCart }) {
     getCurrentUser();
   }, [cart]);
 
+  //AUTHOR: MIHIR MESIA
+
+  async function logout(e) {
+    const logout = await fetch("/api/account/logout");
+    // window.location.replace("/");
+  }
+
   async function sendCartItemstoDb(user) {
     if ("user" in user) {
       let data = {
@@ -73,7 +80,13 @@ function AddToCart({ cart, setCart }) {
             <Link to="/login">Login</Link>
           </button>
         ) : (
-          <button className="login_btn_cart" onClick={() => setUser({})}>
+          <button
+            className="login_btn_cart"
+            onClick={() => {
+              setUser({});
+              logout();
+            }}
+          >
             Sign Out
           </button>
         )}
