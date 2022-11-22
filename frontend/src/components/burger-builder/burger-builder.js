@@ -87,7 +87,7 @@ export default function BurgerBuilder({ cart, setCart }) {
           ) : null}
         </div>
 
-        {/* Pizza Crust + Total Price */}
+        {/* Burger Patty + Total Price */}
         {Object.keys(allBurgerData).length > 0 ? (
           <div className="burger_row">
             <BurgerTable
