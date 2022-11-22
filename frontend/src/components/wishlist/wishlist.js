@@ -65,24 +65,25 @@ export default function Wishlist() {
         <div className="mainarea">
           <h1>Wishlist</h1>
 
-        <div className="wishlist_data_list">
-          {wishlist.length === 0 ? (
-            <div>
-              <img
-                src={default_img}
-                alt="empty_wishlist"
-                className="wishlist_data_img"
-              />
-            </div>
-          ) : (
-            wishlist.map((element, index) => {
-              return (
-                <Component key={index} data={element} onClick={deleteData} />
-              );
-            })
-          )}
+          <div className="wishlist_data_list">
+            {wishlist.length === 0 ? (
+              <div>
+                <img src={default_img} alt="empty_wishlist" />
+              </div>
+            ) : (
+              wishlist.map((element) => {
+                return <Component data={element} onClick={deleteData} />;
+              })
+            )}
+          </div>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div className="content_block">
+      {loading ? <Spinner /> : wishlist_showUI()}
     </div>
   );
 }

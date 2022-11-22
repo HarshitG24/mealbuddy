@@ -1,4 +1,5 @@
 //AUTHOR: MIHIR MESIA
+//AUTHOR: MIHIR MESIA
 import { useState, useEffect } from "react";
 import OrderComponent from "./order-component";
 import default_img from "../../images/wishlist-empty.jpeg";
@@ -7,11 +8,9 @@ import "../../Reused.css";
 import "./pastOrder.css";
 import PropTypes from "prop-types";
 import Spinner from "../Spinner/Spinner";
-
 export default function PastOrders() {
   const [past_orders, setPastOrders] = useState([]);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     async function fetch_data() {
       setLoading(true);
@@ -38,29 +37,30 @@ export default function PastOrders() {
     }
     fetch_data();
   }, []);
-
-  return (
-    <div>
-      <Logo />
-      <div className="order_mainarea">
-        <h1>Order History</h1>
-
-        <div className="orders_data_list">
-          {past_orders.length == 0 ? (
-            <div>
-              <img
-                src={default_img}
-                alt="no_orders"
-                className="orders_data_list_img"
-              />
-            </div>
-          ) : (
-            past_orders.map((element) => {
-              return <OrderComponent data={element} />;
-            })
-          )}
+  function pastOrdersUI() {
+    return (
+      <div>
+        <Logo />
+        <div className="order_mainarea">
+          <h1>Order History</h1>
+          <div className="orders_data_list">
+            {past_orders.length == 0 ? (
+              <div>
+                <img src={default_img} alt="no_orders" />
+              </div>
+            ) : (
+              past_orders.map((element) => {
+                return <OrderComponent data={element} />;
+              })
+            )}
+          </div>
         </div>
       </div>
+    );
+  }
+  return (
+    <div className="content_block">
+      {loading ? <Spinner /> : pastOrdersUI()}
     </div>
   );
 }
