@@ -25,7 +25,7 @@ export default function CreateAccount() {
     };
 
     const resp = await fetch("/api/account/createUser", opts);
-    if (resp.status == 200 && resp.statusText == "OK") {
+    if (resp.status == 200) {
       window.location.replace("/login");
     } else {
       alert("error creating account");
