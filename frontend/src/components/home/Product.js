@@ -12,7 +12,7 @@ function Product({ elem, cart, setCart, productName }) {
   const { pid, name, img, calories, price, category } = elem;
   //AUTHOR: MIHIR MESIA
   async function addToWishlist() {
-    const fetch_user = await fetch("/api/Account/getUser");
+    const fetch_user = await fetch("/api/account/getUser");
     const user_data = await fetch_user.json();
 
     if (!user_data.user) {

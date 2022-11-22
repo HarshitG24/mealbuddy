@@ -19,8 +19,8 @@ export default function Login() {
       body: JSON.stringify(user_cred),
     };
 
-    const resp = await fetch("/api/Account/login", opts);
-    if (resp.status == 200 && resp.statusText == "OK") {
+    const resp = await fetch("/api/account/login", opts);
+    if (resp.status == 200) {
       window.location.replace("/");
     } else {
       alert("please check your credentials");

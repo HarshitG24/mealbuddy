@@ -25,7 +25,7 @@ function AddToCart({ cart, setCart }) {
     setTotalCalories(c);
 
     async function getCurrentUser() {
-      const user_name = await fetch("/api/Account/getUser");
+      const user_name = await fetch("/api/account/getUser");
       const user = await user_name.json();
 
       setUser(user);
@@ -110,7 +110,8 @@ function AddToCart({ cart, setCart }) {
 
           <button
             className="order_checkout_div"
-            onClick={() => sendCartItemstoDb(user)}>
+            onClick={() => sendCartItemstoDb(user)}
+          >
             Proceed to Checkout
           </button>
         </div>
