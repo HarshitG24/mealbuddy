@@ -1,3 +1,4 @@
+// AUTHOR: HARSHIT GAJJAR
 import "./spinner.css";
 
 function Spinner() {
