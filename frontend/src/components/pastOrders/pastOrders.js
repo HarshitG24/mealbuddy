@@ -2,7 +2,7 @@
 //AUTHOR: MIHIR MESIA
 import { useState, useEffect } from "react";
 import OrderComponent from "./order-component";
-import default_img from "../../images/wishlist-empty.jpeg";
+import default_img from "../../images/empty-cart-img.png";
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./pastOrder.css";

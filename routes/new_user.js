@@ -28,7 +28,6 @@ router.get("/getUser", (req, res) => {
 //AUTHOR: MIHIR MESIA
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
-    db.closeConnection();
     res.redirect("/"); // will always fire after session is destroyed
   });
 });

@@ -48,11 +48,14 @@ function Settings() {
 
   async function updateUserProfile() {
     const headers = new Headers({ "Content-Type": "application/json" });
+    const pass = await fetch("/api/getHashed/" + password);
+    const new_pass = await pass.json();
+    const new_pass1 = new_pass.data.toString();
 
     const options = {
       method: "post",
       headers: headers,
-      body: JSON.stringify({ email, name, password }),
+      body: JSON.stringify({ email, name, password: new_pass1 }),
     };
     const resp = await fetch("/api/user/updateProfile", options);
     const output = await resp.json();
@@ -118,12 +121,14 @@ function Settings() {
         <div className="setting_actions">
           <button
             className="button_setting"
-            onClick={() => updateUserProfile()}>
+            onClick={() => updateUserProfile()}
+          >
             Update Profile
           </button>
           <button
             className="button_setting"
-            onClick={() => deleteUserProfile()}>
+            onClick={() => deleteUserProfile()}
+          >
             Delete Profile
           </button>
         </div>

@@ -1,5 +1,10 @@
 import express from "express";
 import db from "../database/dbConnector.js";
+import bcrypt from "bcrypt";
+async function hashPassword(plaintextPassword) {
+  const hash = await bcrypt.hash(plaintextPassword, 10);
+  return hash;
+}
 const router = express.Router();
 
 //AUTHOR: MIHIR MESIA
@@ -36,4 +41,10 @@ router.get("/getBurgerData", async (req, res) => {
   res.status(resp.status).json(resp.data);
 });
 
+//AUTHOR: MIHIR MESIA
+
+router.get("/getHashed/:pass", async (req, res) => {
+  const pass = await hashPassword(req.params.pass);
+  res.json({ data: pass });
+});
 export default router;
