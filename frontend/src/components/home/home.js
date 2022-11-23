@@ -14,16 +14,16 @@ import Search from "./Search";
 import Spinner from "../Spinner/Spinner";
 
 function Home({ setCart, cart }) {
-  const [productName, setProductName] = useState("pizza");
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage, setDataPerPage] = useState(40);
   const [minPrice, setMinPrice] = useState(10);
   const [maxPrice, setMaxPrice] = useState(24);
   const [minCalorie, setMinCalorie] = useState(100);
   const [maxCalorie, setMaxCalorie] = useState(400);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
+  const productName = "pizza";
+  const dataPerPage = 40;
 
   useEffect(() => {
     async function fetchData() {
