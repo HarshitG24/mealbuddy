@@ -1,3 +1,6 @@
+## Submission
+**We have made the submission before November 22, 2022, aiming for the bonus points. We have made the google submission and also the other necessary requirements.**
+
 **Author:**
  Harshit Gajjar Mihir Mesia
 
@@ -31,8 +34,6 @@
 
 Note (for local running): for the app to work on local, replace the line 39 on package.json of frontend with this **http://localhost:4200** instead of **https://mealbuddy.onrender.com**
 
-## Submission
-We have made the submission before November 22, 2022, aiming for the bonus points. We have made the google submission and also the other necessary requirements.
 
 ## CRUD OPERATIONS
 **Harshit Gajjar**
