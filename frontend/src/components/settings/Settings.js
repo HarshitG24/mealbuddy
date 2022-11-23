@@ -3,7 +3,6 @@ import Logo from "../header/logo";
 import "../../Reused.css";
 import "./settings.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
 import Spinner from "../Spinner/Spinner";
 
@@ -40,10 +39,6 @@ function Settings() {
     (async () => {
       await fetchUsers();
     })();
-
-    return () => {
-      // this now gets called when the component unmounts
-    };
   }, []);
 
   async function updateUserProfile() {
