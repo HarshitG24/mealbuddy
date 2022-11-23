@@ -1,5 +1,5 @@
 ## Submission
-**We have made the submission before November 22, 2022, aiming for the bonus points. We have made the google submission and also the other necessary requirements.**
+**We have made the submission by November 22, 2022, aiming for the bonus points. We have made the google submission and also the other necessary requirements.**
 
 **Author:**
  Harshit Gajjar Mihir Mesia
