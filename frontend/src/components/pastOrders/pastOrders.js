@@ -44,6 +44,7 @@ export default function PastOrders() {
         <div className="order_mainarea">
           <h1>Order History</h1>
           <div className="orders_data_list">
+      // conditions well handled
             {past_orders.length == 0 ? (
               <div>
                 <img src={default_img} alt="no_orders" />
