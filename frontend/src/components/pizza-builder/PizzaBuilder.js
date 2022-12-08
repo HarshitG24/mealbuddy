@@ -153,6 +153,7 @@ function PizzaBuilder({ cart, setCart }) {
               <PizzaTable
                 allData={allPizzaData.crust}
                 value={crust}
+                size={size}
                 setValue={setCrust}
               />
 

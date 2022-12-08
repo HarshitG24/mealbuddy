@@ -2,7 +2,30 @@
 import "./css/pizza_table_row.css";
 import PropTypes from "prop-types";
 
-function PizzaTableRow({ data, value, setValue }) {
+function PizzaTableRow({ data, value, setValue, size }) {
+  function updateCrustPrice(size) {
+    let multiplier = 1;
+
+    switch (size) {
+      case 0:
+        multiplier = 1;
+        break;
+
+      case 1:
+        multiplier = 1.5;
+        break;
+
+      case 2:
+        multiplier = 2;
+        break;
+
+      default:
+        multiplier = 1;
+        break;
+    }
+
+    return multiplier;
+  }
   return (
     <tbody className="pizza_tb_data">
       {data.map((e, index) => {
@@ -12,7 +35,7 @@ function PizzaTableRow({ data, value, setValue }) {
               <div>
                 <div className="crust_price">
                   <p>{e.name}</p>
-                  <p>${e.price}</p>
+                  <p>${(e.price * updateCrustPrice(size)).toFixed(2)}</p>
                 </div>
                 <p className="crust_calories">{e.calories} Cal</p>
               </div>

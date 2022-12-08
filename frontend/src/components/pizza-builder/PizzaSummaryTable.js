@@ -69,7 +69,7 @@ function PizzaSummaryTable({
           <td>
             <div className="summary_row">
               <p className="crust_price">Base Price</p>
-              <p className="summary_value">${basePrice}</p>
+              <p className="summary_value">${basePrice.toFixed(2)}</p>
             </div>
           </td>
         </tr>
