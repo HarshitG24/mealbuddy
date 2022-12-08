@@ -85,8 +85,7 @@ function AddToCart({ cart, setCart }) {
             onClick={() => {
               setUser({});
               logout();
-            }}
-          >
+            }}>
             Sign Out
           </button>
         )}
@@ -123,8 +122,7 @@ function AddToCart({ cart, setCart }) {
 
           <button
             className="order_checkout_div"
-            onClick={() => sendCartItemstoDb(user)}
-          >
+            onClick={() => sendCartItemstoDb(user)}>
             Proceed to Checkout
           </button>
         </div>

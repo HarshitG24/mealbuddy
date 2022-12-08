@@ -27,7 +27,7 @@ function CartOrder({ elem, cart, setCart }) {
         </div>
       </div>
       <div className="add_to_cart_price">
-        <p>${qty * price}</p>
+        <p>${(qty * price).toFixed(2)}</p>
       </div>
 
       <div className="delete_cart">
