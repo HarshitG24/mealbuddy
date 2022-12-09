@@ -63,8 +63,10 @@ function PizzaSummaryTable({
 
   return (
     <table>
-      <td className="table_title">{title}</td>
       <tbody>
+        <tr className="table_title">
+          <td className="table_title_value">{title}</td>
+        </tr>
         <tr>
           <td>
             <div className="summary_row">

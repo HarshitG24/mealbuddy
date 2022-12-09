@@ -28,7 +28,9 @@ function PizzaTableRow({ data, value, setValue, size, title }) {
   }
   return (
     <tbody className="pizza_tb_data">
-      <td className="table_title">{title}</td>
+      <tr className="table_title">
+        <td className="table_title_value">{title}</td>
+      </tr>
       {data.map((e, index) => {
         return (
           <tr key={e.bid} onClick={() => setValue(e)}>
