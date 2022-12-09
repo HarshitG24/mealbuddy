@@ -27,6 +27,7 @@ function Product({ elem, cart, setCart, productName }) {
             img: img,
             calories: calories,
             price: price,
+            category: category,
           },
         ],
       };
@@ -42,6 +43,8 @@ function Product({ elem, cart, setCart, productName }) {
       const resp = await fetch("/api/send_wishlist_data", opts);
       if (resp.status !== 200) {
         alert("unable to add to wishlist");
+      } else {
+        alert("Successfully added to wishlist");
       }
     }
   }

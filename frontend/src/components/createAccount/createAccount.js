@@ -6,6 +6,10 @@ export default function CreateAccount() {
   const user_email = useRef();
   const user_password = useRef();
 
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
   async function createUser() {
     const name = user_name.current.value;
     const email = user_email.current.value;
@@ -15,20 +19,23 @@ export default function CreateAccount() {
       email: email,
       password: password,
     };
-
-    const headers = new Headers({ "Content-Type": "application/json" });
-
-    const opts = {
-      method: "post",
-      headers: headers,
-      body: JSON.stringify(newUser),
-    };
-
-    const resp = await fetch("/api/account/createUser", opts);
-    if (resp.status == 200) {
-      window.location.replace("/login");
+    if (!isValidEmail(email)) {
+      alert("Please Enter valid email");
     } else {
-      alert("error creating account");
+      const headers = new Headers({ "Content-Type": "application/json" });
+
+      const opts = {
+        method: "post",
+        headers: headers,
+        body: JSON.stringify(newUser),
+      };
+
+      const resp = await fetch("/api/account/createUser", opts);
+      if (resp.status == 200) {
+        window.location.replace("/login");
+      } else {
+        alert("error creating account");
+      }
     }
   }
 
@@ -49,6 +56,7 @@ export default function CreateAccount() {
               Full Name
             </label>
           </div>
+
           <div className="user_input_group">
             <input
               type="email"
@@ -77,7 +85,8 @@ export default function CreateAccount() {
             <button
               id="create"
               className="user_create_account"
-              onClick={createUser}>
+              onClick={createUser}
+            >
               Create Account
             </button>
           </div>

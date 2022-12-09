@@ -41,7 +41,10 @@ function App() {
           element={<Home setDef={setDefault} cart={cart} setCart={setCart} />}
         ></Route>
         <Route path="/settings" element={<Settings />}></Route>
-        <Route path="/wishlist" element={<Wishlist />}></Route>
+        <Route
+          path="/wishlist"
+          element={<Wishlist cart={cart} setCart={setCart} />}
+        ></Route>
         <Route
           path="/createAccount"
           element={<CreateAccount setDef={setDefault} />}

@@ -62,7 +62,6 @@
   color: var(--delete-icon);
   background: var(--delete-icon-background);
   padding: 0.8rem;
-  margin-left: 0.5rem;
   border-radius: 0.3rem;
   cursor: pointer;
 }
@@ -100,7 +99,26 @@
   flex: 0.2;
 }
 
+.add_to_cart_wishlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+  flex: 0.2;
+}
+
+.wishlist_cart {
+  color: var(--delete-icon);
+  background: var(--delete-icon-background);
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
 .wishlist_pizza_img {
   width: 6.4rem;
   height: 6.4rem;
+}
+
+button {
+  border: none;
 }

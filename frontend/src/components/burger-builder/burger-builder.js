@@ -84,6 +84,11 @@ export default function BurgerBuilder({ cart, setCart }) {
                 <div className="seeds2"></div>
               </div>
               <BurgerToppings data={toppings}></BurgerToppings>
+              {size == 1 ? (
+                <div className={patty.className}></div>
+              ) : (
+                <div></div>
+              )}
               <div className={patty.className}></div>
               <div className="BreadBottom"></div>
             </div>
@@ -104,6 +109,7 @@ export default function BurgerBuilder({ cart, setCart }) {
                 allData={allBurgerData.patty}
                 value={patty}
                 setValue={setPatty}
+                size={size}
               />
 
               <div className="burger_summary_block">

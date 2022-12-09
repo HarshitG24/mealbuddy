@@ -5,10 +5,11 @@ import default_img from "../../images/wishlist-empty.jpeg";
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./wishlist.css";
+import PropTypes from "prop-types";
 
 import Spinner from "../Spinner/Spinner";
 
-export default function Wishlist() {
+export default function Wishlist({ cart, setCart }) {
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -72,7 +73,14 @@ export default function Wishlist() {
               </div>
             ) : (
               wishlist.map((element) => {
-                return <Component data={element} onClick={deleteData} />;
+                return (
+                  <Component
+                    data={element}
+                    onClick={deleteData}
+                    cart={cart}
+                    setCart={setCart}
+                  />
+                );
               })
             )}
           </div>
@@ -88,4 +96,7 @@ export default function Wishlist() {
   );
 }
 
-Wishlist.propTypes = {};
+Wishlist.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
