@@ -25,9 +25,14 @@ input:focus {
   outline: none;
 }
 
+input:disabled {
+  background-color: #dfdfdf;
+}
+
 .setting_label {
   font-size: 2rem;
   font-weight: 800;
+  color: #421e1e;
 }
 
 .setting_input {
@@ -50,11 +55,16 @@ input:focus {
 .button_setting {
   border: none;
   background: var(--btn-background);
-  color: var(--btn-txt);
+  color: #421e1e;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 1rem;
   border-radius: 2rem;
   cursor: pointer;
+}
+
+.delete_btn {
+  background: #cc3636;
+  color: #fff;
 }

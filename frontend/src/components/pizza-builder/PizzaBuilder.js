@@ -78,101 +78,98 @@ function PizzaBuilder({ cart, setCart }) {
   function PizzaBuilderUI() {
     return (
       <div>
-        <Logo />
-        <div className="pizza_builder_content">
-          <h1 className="pizza_builder_title">Pizza Builder</h1>
-
-          {/* SIZE - Inches */}
-          <div className="pizza_size">
-            {(allPizzaData?.sizes || []).map((e, index) => {
-              return (
-                <PizzaSize
-                  key={e.sid}
-                  size={e.size}
-                  selected={size}
-                  setSize={setSize}
-                  index={e.sid}
-                />
-              );
-            })}
-          </div>
-
-          <div className="pizza_row">
-            {Object.keys(allPizzaData).length > 0 ? (
-              <div className="pizza_img_parent">
-                <img
-                  className="image2"
-                  src={pbase}
-                  alt="This is the base of the pizza"
-                />
-                {(() => {
-                  let crust_name = crust1;
-                  if (Object.keys(crust).length > 0) {
-                    if (crust.bid === 1) {
-                      crust_name = crust2;
-                    } else if (crust.bid === 2) {
-                      crust_name = crust3;
-                    }
-                  }
-
-                  return (
-                    <img
-                      className="image1"
-                      src={crust_name}
-                      alt="This is the base of the pizza"
-                    />
-                  );
-                })()}
-
-                {toppings.map((t, index) => {
-                  return (
-                    <img
-                      key={index}
-                      className="pizza_toppings"
-                      src={getToppingImg(t.url)}
-                      alt="This is the base of the pizza"
-                    />
-                  );
-                })}
-              </div>
-            ) : null}
-
-            {/* Toppings */}
-            {Object.keys(allPizzaData).length > 0 ? (
-              <PizzaToppingTable
-                allData={allPizzaData.topping}
-                topping={toppings}
-                setTopping={setToppings}
-              />
-            ) : null}
-          </div>
-
-          {/* Pizza Crust + Total Price */}
-          {Object.keys(allPizzaData).length > 0 ? (
-            <div className="pizza_row">
-              <PizzaTable
-                allData={allPizzaData.crust}
-                value={crust}
-                size={size}
-                setValue={setCrust}
-              />
-
-              <div className="pizza_summary_block">
-                <PizzaSummaryTable
-                  allData={allPizzaData.summary}
-                  size={size}
-                  crust={crust}
-                  toppings={toppings}
-                  totalCalories={totalCalories}
-                  setaTotalCalories={setaTotalCalories}
-                  amt={amt}
-                  setAmt={setAmt}
-                />
-                <button onClick={() => addCustomPizza()}>Add to Cart</button>
-              </div>
+        <header>
+          <Logo />
+        </header>
+        <main>
+          <div className="pizza_builder_content">
+            <h1 className="pizza_builder_title">Pizza Builder</h1>
+            {/* SIZE - Inches */}
+            <div className="pizza_size">
+              {(allPizzaData?.sizes || []).map((e, index) => {
+                return (
+                  <PizzaSize
+                    key={e.sid}
+                    size={e.size}
+                    selected={size}
+                    setSize={setSize}
+                    index={e.sid}
+                  />
+                );
+              })}
             </div>
-          ) : null}
-        </div>
+            <div className="pizza_row">
+              {Object.keys(allPizzaData).length > 0 ? (
+                <div className="pizza_img_parent">
+                  <img
+                    className="image2"
+                    src={pbase}
+                    alt="This is the base of the pizza"
+                  />
+                  {(() => {
+                    let crust_name = crust1;
+                    if (Object.keys(crust).length > 0) {
+                      if (crust.bid === 1) {
+                        crust_name = crust2;
+                      } else if (crust.bid === 2) {
+                        crust_name = crust3;
+                      }
+                    }
+                    return (
+                      <img
+                        className="image1"
+                        src={crust_name}
+                        alt="This is the base of the pizza"
+                      />
+                    );
+                  })()}
+                  {toppings.map((t, index) => {
+                    return (
+                      <img
+                        key={index}
+                        className="pizza_toppings"
+                        src={getToppingImg(t.url)}
+                        alt="This is the base of the pizza"
+                      />
+                    );
+                  })}
+                </div>
+              ) : null}
+              {/* Toppings */}
+              {Object.keys(allPizzaData).length > 0 ? (
+                <PizzaToppingTable
+                  allData={allPizzaData.topping}
+                  topping={toppings}
+                  setTopping={setToppings}
+                />
+              ) : null}
+            </div>
+            {/* Pizza Crust + Total Price */}
+            {Object.keys(allPizzaData).length > 0 ? (
+              <div className="pizza_row">
+                <PizzaTable
+                  allData={allPizzaData.crust}
+                  value={crust}
+                  size={size}
+                  setValue={setCrust}
+                />
+                <div className="pizza_summary_block">
+                  <PizzaSummaryTable
+                    allData={allPizzaData.summary}
+                    size={size}
+                    crust={crust}
+                    toppings={toppings}
+                    totalCalories={totalCalories}
+                    setaTotalCalories={setaTotalCalories}
+                    amt={amt}
+                    setAmt={setAmt}
+                  />
+                  <button onClick={() => addCustomPizza()}>Add to Cart</button>
+                </div>
+              </div>
+            ) : null}
+          </div>
+        </main>
       </div>
     );
   }

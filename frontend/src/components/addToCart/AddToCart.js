@@ -73,12 +73,12 @@ function AddToCart({ cart, setCart }) {
     }
   }
   return (
-    <div className="cart_container">
+    <aside className="cart_container">
       <div className="login_cart_div">
         {(user?.user || "") === "" ? (
-          <button className="login_btn_cart">
-            <Link to="/login">Login</Link>
-          </button>
+          <Link className="login_btn_cart" to="/login">
+            Login
+          </Link>
         ) : (
           <button
             className="login_btn_cart"
@@ -127,7 +127,7 @@ function AddToCart({ cart, setCart }) {
           </button>
         </div>
       ) : null}
-    </div>
+    </aside>
   );
 }
 

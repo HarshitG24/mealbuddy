@@ -91,7 +91,7 @@ function CalorieTracker() {
 
   function calorieTrackerUI() {
     return (
-      <div>
+      <main>
         <div className="pie_chart_container">
           <h1>Calorie Tracker</h1>
           <div className="pie_chart">
@@ -103,7 +103,7 @@ function CalorieTracker() {
               }}
               data={pieData}
               labelStyle={() => {
-                return { fontSize: "5px" };
+                return { fontSize: "5px", fill: "white" };
               }}
             />
           </div>
@@ -128,13 +128,15 @@ function CalorieTracker() {
             </tbody>
           </table>
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
     <div className="content_block">
-      <Logo />
+      <header>
+        <Logo />
+      </header>
       {"user" in user ? (
         loading ? (
           <Spinner />
@@ -142,7 +144,9 @@ function CalorieTracker() {
           calorieTrackerUI()
         )
       ) : (
-        <NotLoggedIn />
+        <main>
+          <NotLoggedIn />
+        </main>
       )}
     </div>
   );

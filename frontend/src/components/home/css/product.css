@@ -1,15 +1,15 @@
 /* AUTHOR: HARSHIT GAJJAR */
 :root {
   --add-to-cart: #f49001;
-  --calorie-color: gray;
+  --calorie-color: #767676;
   --plus-color: #fff;
   --heart-color: #f14646;
   --heart-background: rgb(245, 210, 209);
 }
 
-span {
+/* span {
   margin-top: 2rem;
-}
+} */
 
 .product_img {
   width: 20rem;
@@ -56,6 +56,7 @@ span {
   font-size: 1.5rem;
   font-weight: 800;
   margin-top: 1rem;
+  color: #421e1e;
 }
 
 .product_calories {
@@ -78,6 +79,7 @@ span {
   font-size: 1.4rem;
   font-weight: 700;
   height: 100%;
+  color: #421e1e;
 }
 
 .product_add {

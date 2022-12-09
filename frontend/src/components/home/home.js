@@ -71,59 +71,62 @@ function Home({ setCart, cart }) {
   function homeUI() {
     return (
       <div>
-        <div className="top-row">
-          <div>
-            <Logo />
-          </div>
-          <div>
-            <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
-          </div>
-        </div>
-        <div className="menu_content">
-          <div>
-            <div className="home_filter">
-              <Slider
-                minPrice={parseInt(minPrice)}
-                maxPrice={parseInt(maxPrice)}
-                setMinPrice={setMinPrice}
-                setMaxPrice={setMaxPrice}
-                setCurrentPage={setCurrentPage}
-              />
-              <CalorieSlider
-                minCalorie={parseInt(minCalorie)}
-                maxCalorie={parseInt(maxCalorie)}
-                setMinCalorie={setMinCalorie}
-                setMaxCalorie={setMaxCalorie}
-                setCurrentPage={setCurrentPage}
-              />
+        <header>
+          <div className="top-row">
+            <div>
+              <Logo />
+            </div>
+            <div>
+              <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
             </div>
           </div>
+        </header>
 
-          {(currentData || []).length > 0 ? (
-            <Pagination
-              currentData={currentData.length}
-              dataPerPage={dataPerPage}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            />
-          ) : null}
-
-          <div className="product_container">
-            {(currentData || [])
-              .slice(indexFirst, indexLast)
-              .map((elem, index) => {
-                return (
-                  <Product
-                    elem={elem}
-                    setCart={setCart}
-                    cart={cart}
-                    key={index}
-                    productName={productName}
-                  />
-                );
-              })}
+        <main>
+          <div className="menu_content">
+            <div>
+              <div className="home_filter">
+                <Slider
+                  minPrice={parseInt(minPrice)}
+                  maxPrice={parseInt(maxPrice)}
+                  setMinPrice={setMinPrice}
+                  setMaxPrice={setMaxPrice}
+                  setCurrentPage={setCurrentPage}
+                />
+                <CalorieSlider
+                  minCalorie={parseInt(minCalorie)}
+                  maxCalorie={parseInt(maxCalorie)}
+                  setMinCalorie={setMinCalorie}
+                  setMaxCalorie={setMaxCalorie}
+                  setCurrentPage={setCurrentPage}
+                />
+              </div>
+            </div>
+            {(currentData || []).length > 0 ? (
+              <Pagination
+                currentData={currentData.length}
+                dataPerPage={dataPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+              />
+            ) : null}
+            <div className="product_container">
+              {(currentData || [])
+                .slice(indexFirst, indexLast)
+                .map((elem, index) => {
+                  return (
+                    <Product
+                      elem={elem}
+                      setCart={setCart}
+                      cart={cart}
+                      key={index}
+                      productName={productName}
+                    />
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     );
   }

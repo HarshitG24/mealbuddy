@@ -18,28 +18,30 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
   }
   return (
     <table>
-      <caption>{title}</caption>
+      <td className="table_title">{title}</td>
       <tbody>
         {data.map((item) => {
           return (
+            // <button className="topping_btn">
             <tr
-              key={item.tid}
-              onClick={(event) => handleToppingClick(event, item)}>
+              onClick={(event) => handleToppingClick(event, item)}
+              key={item.tid}>
               <td
-                className={`${
+                className={`table_data ${
                   topping.findIndex((t) => t.name === item.name) !== -1
                     ? "crust_selected"
                     : ""
                 }`}>
-                <div>
+                <button className="topping_btn">
                   <div className="crust_price">
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                   </div>
                   <p className="crust_calories">{item.calories} Cal</p>
-                </div>
+                </button>
               </td>
             </tr>
+            // </button>
           );
         })}
       </tbody>

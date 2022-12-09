@@ -19,11 +19,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #421e1e;
 }
 
 .selected_ul {
-  color: #fff;
+  color: #421e1e;
   width: 2.5rem;
   height: 2.5rem;
-  background: orange;
+  background: #f49001;
 }

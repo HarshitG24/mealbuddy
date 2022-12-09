@@ -50,12 +50,12 @@ html {
   position: relative;
 }
 
-h1 {
+/* h1 {
   width: 100%;
   text-align: center;
   color: #c46919;
   margin: 2rem;
-}
+} */
 
 /* Login */
 .user_input_group {

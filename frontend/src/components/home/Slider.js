@@ -13,7 +13,7 @@ function Slider({
     <div className="wrapper">
       <header>
         <h2>Price Range</h2>
-        <p>Use slider or enter min and max price</p>
+        <p>Enter min and max price</p>
       </header>
       <div className="price-input">
         <div className="field">
@@ -22,6 +22,7 @@ function Slider({
             type="number"
             className="input-min"
             value={minPrice}
+            aria-label="min price"
             onChange={(e) => {
               setCurrentPage(1);
               e.target.value !== ""
@@ -35,6 +36,7 @@ function Slider({
             type="number"
             className="input-max"
             value={maxPrice}
+            aria-label="max price"
             onChange={(e) => {
               setCurrentPage(1);
               e.target.value !== ""

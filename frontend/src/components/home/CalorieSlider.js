@@ -22,6 +22,7 @@ function CalorieSlider({
             type="number"
             className="input-min"
             value={minCalorie}
+            aria-label="min calories"
             onChange={(e) => {
               setCurrentPage(1);
               e.target.value !== ""
@@ -35,6 +36,7 @@ function CalorieSlider({
             type="number"
             className="input-max"
             value={maxCalorie}
+            aria-label="max calories"
             onChange={(e) => {
               setCurrentPage(1);
               e.target.value !== ""

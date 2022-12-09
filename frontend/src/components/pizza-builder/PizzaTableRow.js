@@ -2,7 +2,7 @@
 import "./css/pizza_table_row.css";
 import PropTypes from "prop-types";
 
-function PizzaTableRow({ data, value, setValue, size }) {
+function PizzaTableRow({ data, value, setValue, size, title }) {
   function updateCrustPrice(size) {
     let multiplier = 1;
 
@@ -28,17 +28,21 @@ function PizzaTableRow({ data, value, setValue, size }) {
   }
   return (
     <tbody className="pizza_tb_data">
+      <td className="table_title">{title}</td>
       {data.map((e, index) => {
         return (
           <tr key={e.bid} onClick={() => setValue(e)}>
-            <td className={index === value.bid ? "crust_selected" : ""}>
-              <div>
+            <td
+              className={
+                index === value.bid ? "crust_selected table_data" : "table_data"
+              }>
+              <button className="topping_btn">
                 <div className="crust_price">
                   <p>{e.name}</p>
                   <p>${(e.price * updateCrustPrice(size)).toFixed(2)}</p>
                 </div>
                 <p className="crust_calories">{e.calories} Cal</p>
-              </div>
+              </button>
             </td>
           </tr>
         );

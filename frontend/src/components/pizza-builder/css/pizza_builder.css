@@ -9,8 +9,10 @@
 
 .pizza_builder_title {
   font-weight: 800;
-  color: var(--pizza-title-color);
+  color: #cc3636;
   font-size: 5rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .pizza_size {
@@ -88,10 +90,10 @@
 
 .pizza_summary_block > button {
   width: 40%;
-  background: #f09312;
+  background: #f49001;
   border: none;
   padding: 1rem;
-  color: #fff;
+  color: #421e1e;
   font-size: 2rem;
   font-weight: 800;
   margin: 3rem 0;
