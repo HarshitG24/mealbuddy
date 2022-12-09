@@ -1,13 +1,15 @@
 /* AUTHOR: HARSHIT GAJJAR */
-caption {
+table {
+  width: 40%;
+}
+
+.table_title {
+  width: 100%;
   background: orange;
   padding: 1rem;
   font-size: 2rem;
   font-weight: 700;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
-}
-
-table {
-  width: 40%;
 }

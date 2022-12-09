@@ -2,7 +2,7 @@
 import "./css/pizza_table_row.css";
 import PropTypes from "prop-types";
 
-function PizzaTableRow({ data, value, setValue, size }) {
+function PizzaTableRow({ data, value, setValue, size, title }) {
   function updateCrustPrice(size) {
     let multiplier = 1;
 
@@ -28,6 +28,7 @@ function PizzaTableRow({ data, value, setValue, size }) {
   }
   return (
     <tbody className="pizza_tb_data">
+      <td className="table_title">{title}</td>
       {data.map((e, index) => {
         return (
           <tr key={e.bid} onClick={() => setValue(e)}>

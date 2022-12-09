@@ -18,7 +18,7 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
   }
   return (
     <table>
-      <caption>{title}</caption>
+      <td className="table_title">{title}</td>
       <tbody>
         {data.map((item) => {
           return (

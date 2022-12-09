@@ -7,12 +7,12 @@ function PizzaTable({ allData, value, setValue, size }) {
   const { title, data } = allData;
   return (
     <table>
-      <caption>{title}</caption>
       <PizzaTableRow
         data={data}
         value={value}
         setValue={setValue}
         size={size}
+        title={title}
       />
     </table>
   );
