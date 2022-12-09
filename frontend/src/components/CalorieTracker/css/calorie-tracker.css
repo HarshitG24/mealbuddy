@@ -6,7 +6,12 @@
   flex-direction: column;
 }
 
+.pie_chart_container > h1 {
+  color: #cc3636;
+}
+
 .pie_chart {
+  margin-top: 4rem;
   width: 50rem;
   height: 50rem;
 }
@@ -24,6 +29,7 @@
 .table_header {
   font-weight: 800;
   font-size: 3rem;
+  color: #421e1e;
 }
 
 .color1 {
