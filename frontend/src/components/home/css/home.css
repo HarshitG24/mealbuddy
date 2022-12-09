@@ -1,4 +1,12 @@
 /* AUTHOR: HARSHIT GAJJAR */
+.top-row {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background: plum; */
+}
 .menu_list {
   display: flex;
   width: 100%;

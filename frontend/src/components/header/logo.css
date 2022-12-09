@@ -6,8 +6,10 @@
 }
 
 .logo_size {
-  width: 5%;
-  height: 5%;
+  /* width: 10%;
+  height: 10%; */
+  width: 8rem;
+  height: 8rem;
 }
 
 .company_name {

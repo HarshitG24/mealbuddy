@@ -28,7 +28,7 @@ function Search({ setSearch, setCurrentPage }) {
       <input
         type="text"
         name="search"
-        placeholder="Enter Something."
+        placeholder="Search Pizzas..."
         onChange={optimizedVersion}
         className="search_input_home"
       />

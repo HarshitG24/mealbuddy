@@ -1,5 +1,4 @@
 // AUTHOR: HARSHIT GAJJAR
-import Promotion from "./promotion";
 import Logo from "../header/logo";
 import "../../Reused.css";
 import "./css/home.css";
@@ -72,12 +71,15 @@ function Home({ setCart, cart }) {
   function homeUI() {
     return (
       <div>
-        <Logo />
-        <Promotion />
-
+        <div className="top-row">
+          <div>
+            <Logo />
+          </div>
+          <div>
+            <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
+          </div>
+        </div>
         <div className="menu_content">
-          <p className="menu_title">Menu</p>
-          <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
           <div>
             <div className="home_filter">
               <Slider
@@ -97,6 +99,15 @@ function Home({ setCart, cart }) {
             </div>
           </div>
 
+          {(currentData || []).length > 0 ? (
+            <Pagination
+              currentData={currentData.length}
+              dataPerPage={dataPerPage}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          ) : null}
+
           <div className="product_container">
             {(currentData || [])
               .slice(indexFirst, indexLast)
@@ -112,14 +123,6 @@ function Home({ setCart, cart }) {
                 );
               })}
           </div>
-          {(currentData || []).length > 0 ? (
-            <Pagination
-              currentData={currentData.length}
-              dataPerPage={dataPerPage}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            />
-          ) : null}
         </div>
       </div>
     );
