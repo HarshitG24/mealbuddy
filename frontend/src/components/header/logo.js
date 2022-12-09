@@ -6,7 +6,7 @@ function Logo() {
   return (
     <div className="logo_container">
       <img src={logo} alt="This is the logo" className="logo_size" />
-      <p className="company_name">MealBuddy</p>
+      <h1 className="company_name">MealBuddy</h1>
     </div>
   );
 }

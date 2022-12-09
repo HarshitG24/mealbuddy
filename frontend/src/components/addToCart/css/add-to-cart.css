@@ -42,11 +42,12 @@ html {
   padding: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--add-to-cart-background);
+  color: #7d0800;
   width: 30%;
   border-radius: 3rem;
   margin-top: 1rem;
   cursor: pointer;
+  text-align: center;
 }
 
 .delievry_img {
@@ -64,7 +65,7 @@ html {
 }
 
 .highlight {
-  color: var(--highlight-color);
+  color: #e07531;
 }
 
 .fast_delivery {
