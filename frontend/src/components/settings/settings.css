@@ -50,7 +50,7 @@ input:focus {
 .button_setting {
   border: none;
   background: var(--btn-background);
-  color: #7d0800;
+  color: #421e1e;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
