@@ -44,7 +44,10 @@ header p {
 }
 
 .field span {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

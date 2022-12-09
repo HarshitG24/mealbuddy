@@ -13,7 +13,7 @@ function Slider({
     <div className="wrapper">
       <header>
         <h2>Price Range</h2>
-        <p>Use slider or enter min and max price</p>
+        <p>Enter min and max price</p>
       </header>
       <div className="price-input">
         <div className="field">
