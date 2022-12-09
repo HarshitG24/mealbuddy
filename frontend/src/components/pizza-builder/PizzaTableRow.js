@@ -32,14 +32,17 @@ function PizzaTableRow({ data, value, setValue, size, title }) {
       {data.map((e, index) => {
         return (
           <tr key={e.bid} onClick={() => setValue(e)}>
-            <td className={index === value.bid ? "crust_selected" : ""}>
-              <div>
+            <td
+              className={
+                index === value.bid ? "crust_selected table_data" : "table_data"
+              }>
+              <button className="topping_btn">
                 <div className="crust_price">
                   <p>{e.name}</p>
                   <p>${(e.price * updateCrustPrice(size)).toFixed(2)}</p>
                 </div>
                 <p className="crust_calories">{e.calories} Cal</p>
-              </div>
+              </button>
             </td>
           </tr>
         );
