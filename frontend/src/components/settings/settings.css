@@ -50,11 +50,16 @@ input:focus {
 .button_setting {
   border: none;
   background: var(--btn-background);
-  color: var(--btn-txt);
+  color: #7d0800;
   padding: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 1rem;
   border-radius: 2rem;
   cursor: pointer;
+}
+
+.delete_btn {
+  background: #cc3636;
+  color: #fff;
 }

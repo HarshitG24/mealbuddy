@@ -120,7 +120,7 @@ html {
   padding: 1rem;
   font-weight: 800;
   font-size: 1.5rem;
-  color: var(--add-to-cart-background);
+  color: #7d0800;
   margin: auto;
   cursor: pointer;
 }

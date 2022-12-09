@@ -82,11 +82,12 @@ function Settings() {
 
   function settingsUI() {
     return (
-      <div className="settings_all_data">
+      <main className="settings_all_data">
         <div className="setting_block">
           <p className="setting_label">Email</p>
           <input
             className="setting_input"
+            aria-label="input field for email"
             onChange={(e) => setEmail(e?.target?.value || "")}
             value={email}
             placeholder="Email"
@@ -97,6 +98,7 @@ function Settings() {
           <p className="setting_label">Name</p>
           <input
             className="setting_input"
+            aria-label="input field for name"
             onChange={(e) => setName(e?.target?.value || "")}
             value={name}
             placeholder="Name"
@@ -106,6 +108,7 @@ function Settings() {
           <p className="setting_label">Password</p>
           <input
             className="setting_input"
+            aria-label="input field for password"
             onChange={(e) => setPassword(e?.target?.value || "")}
             value={password}
             placeholder="Password"
@@ -116,24 +119,24 @@ function Settings() {
         <div className="setting_actions">
           <button
             className="button_setting"
-            onClick={() => updateUserProfile()}
-          >
+            onClick={() => updateUserProfile()}>
             Update Profile
           </button>
           <button
-            className="button_setting"
-            onClick={() => deleteUserProfile()}
-          >
+            className="button_setting delete_btn"
+            onClick={() => deleteUserProfile()}>
             Delete Profile
           </button>
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
     <div className="content_block">
-      <Logo />
+      <header>
+        <Logo />
+      </header>
       {"user" in user ? loading ? <Spinner /> : settingsUI() : <NotLoggedIn />}
     </div>
   );
