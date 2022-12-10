@@ -1,4 +1,5 @@
 /* AUTHOR: HARSHIT GAJJAR */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
 :root {
   --highlight-color: #f09312;
   --add-to-cart-background: #fff;
@@ -28,6 +29,7 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
   background: var(--add-to-cart-background);
+  font-family: "Spectral", "serif";
 }
 
 .login_cart_div {
@@ -40,7 +42,7 @@ html {
   border: none;
   background-color: var(--highlight-color);
   padding: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   color: #421e1e;
   width: 30%;

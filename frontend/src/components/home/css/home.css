@@ -1,4 +1,10 @@
 /* AUTHOR: HARSHIT GAJJAR */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
+
+.home_body {
+  font-family: "Spectral", "serif";
+}
+
 .top-row {
   display: flex;
   /* flex-wrap: wrap; */

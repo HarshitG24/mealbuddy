@@ -70,7 +70,7 @@ function Home({ setCart, cart }) {
 
   function homeUI() {
     return (
-      <div>
+      <div className="home_body">
         <header>
           <div className="top-row">
             <div>

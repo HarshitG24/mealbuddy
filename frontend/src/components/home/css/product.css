@@ -57,7 +57,7 @@
 }
 
 .product_name {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-top: 1rem;
   color: #421e1e;
@@ -65,7 +65,7 @@
 
 .product_calories {
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--calorie-color);
   margin-top: 0.4rem;
 }
@@ -80,7 +80,7 @@
 
 .product_price {
   margin-top: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   height: 100%;
   color: #421e1e;
