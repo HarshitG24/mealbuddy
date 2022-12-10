@@ -7,11 +7,11 @@
 }
 
 .selected_size {
-  background: #f49001;
+  background: #f09312;
 }
 
 .pizza_size_block > span {
   font-size: 2rem;
-  color: #000;
+  color: #421e1e;
   font-weight: 500;
 }

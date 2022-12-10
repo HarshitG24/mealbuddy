@@ -1,6 +1,6 @@
 /* AUTHOR: HARSHIT GAJJAR */
 :root {
-  --pizza-title-color: #f49001;
+  --pizza-title-color: #f09312;
 }
 
 .pizza_builder_content {
@@ -63,7 +63,7 @@
 
 .builder_cart {
   width: 100%;
-  background: orange;
+  background: #f09312;
   border: none;
   padding: 1rem;
   color: #fff;
@@ -90,7 +90,7 @@
 
 .pizza_summary_block > button {
   width: 40%;
-  background: #f49001;
+  background: #f09312;
   border: none;
   padding: 1rem;
   color: #421e1e;
