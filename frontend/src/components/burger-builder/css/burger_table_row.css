@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
 .burger_tb_data {
   display: table;
   width: 100%;
 }
 
 .patty_data {
-  font-size: 2rem;
+  font-size: 2.5rem;
   background: #fff;
   cursor: pointer;
   color: #421e1e;
+  font-family: "Spectral", "serif";
 }
 
 .patty_selected {
@@ -16,10 +18,11 @@
 }
 
 .burger_calories {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   font-weight: 400;
   text-align: left;
   color: #421e1e;
+  font-family: "Spectral", "serif";
 }
 
 .burger_price {
@@ -28,20 +31,22 @@
   font-weight: 800;
   font-size: 2rem;
   color: #421e1e;
+  font-family: "Spectral", "serif";
 }
 
 .summary_row {
   display: flex;
   justify-content: space-between;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background: #fff;
   padding: 1rem;
 }
 
 .summary_value {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 400;
+  font-family: "Spectral", "serif";
 }
 
 .patty_button {

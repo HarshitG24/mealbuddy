@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,600&family=Nova+Mono&display=swap");
 :root {
   --pizza-title-color: #f49001;
 }
@@ -12,6 +13,7 @@
   font-size: 5rem;
   text-align: center;
   margin-bottom: 2rem;
+  font-family: "Alegreya", "serif";
 }
 
 .burger_size {
