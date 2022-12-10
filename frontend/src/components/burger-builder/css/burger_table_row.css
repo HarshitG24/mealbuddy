@@ -41,12 +41,14 @@
   font-size: 2.5rem;
   background: #fff;
   padding: 1rem;
+  color: #421e1e;
 }
 
 .burger_summary_value {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.7rem;
+  font-weight: 400;
   font-family: "Spectral", "serif";
+  color: #421e1e;
 }
 
 .patty_button {
