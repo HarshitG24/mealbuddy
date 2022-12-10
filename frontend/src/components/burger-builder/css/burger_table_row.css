@@ -6,7 +6,6 @@
 .patty_data {
   font-size: 2rem;
   background: #fff;
-  padding: 1rem;
   cursor: pointer;
 }
 
@@ -17,7 +16,9 @@
 .burger_calories {
   font-size: 1.2rem;
   font-weight: 400;
+  text-align: left;
 }
+
 .burger_price {
   display: flex;
   justify-content: space-between;
@@ -30,6 +31,8 @@
   justify-content: space-between;
   font-weight: 800;
   font-size: 2rem;
+  background: #fff;
+  padding: 1rem;
 }
 
 .summary_value {
@@ -38,11 +41,13 @@
 }
 
 .patty_button {
-  background: none;
-  color: inherit;
   border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
+  width: 100%;
+  height: 100%;
+  background: none;
+  padding: 1rem;
+  text-align: left;
+}
+.patty_button > tr {
+  width: 100%;
 }

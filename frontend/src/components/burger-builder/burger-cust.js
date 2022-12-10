@@ -28,17 +28,17 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
               <td
                 className={`${
                   topping.findIndex((t) => t.name === item.name) !== -1
-                    ? "patty_selected"
-                    : ""
+                    ? "patty_selected patty_data"
+                    : "patty_data"
                 }`}
               >
-                <div>
+                <button className="patty_button">
                   <div className="burger_price">
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                   </div>
                   <p className="burger_calories">{item.calories} Cal</p>
-                </div>
+                </button>
               </td>
             </tr>
           );
