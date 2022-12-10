@@ -4,6 +4,16 @@
   margin-top: 5rem;
 }
 
+.pagination_background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 .pagination_ul {
   text-decoration: none;
   display: flex;
@@ -13,6 +23,7 @@
 }
 
 .pagination_ul > li {
+  height: 100%;
   font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
@@ -20,6 +31,7 @@
   justify-content: center;
   align-items: center;
   color: #421e1e;
+  background: green;
 }
 
 .selected_ul {
@@ -27,4 +39,7 @@
   width: 2.5rem;
   height: 2.5rem;
   background: #f49001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

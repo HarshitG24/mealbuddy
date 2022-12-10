@@ -31,14 +31,16 @@ function CartOrder({ elem, cart, setCart }) {
       </div>
 
       <div className="delete_cart">
-        <FontAwesomeIcon
-          icon={faTrash}
-          size="2x"
-          className="add_to_cart_delete"
+        <button
           onClick={(e) => {
             setCart(cart.filter((e) => e.pid !== pid));
-          }}
-        />
+          }}>
+          <FontAwesomeIcon
+            icon={faTrash}
+            size="2x"
+            className="add_to_cart_delete"
+          />
+        </button>
       </div>
     </div>
   );
