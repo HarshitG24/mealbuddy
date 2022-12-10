@@ -40,21 +40,25 @@ export default function PastOrders() {
   function pastOrdersUI() {
     return (
       <div>
-        <Logo />
-        <div className="order_mainarea">
-          <h1>Order History</h1>
-          <div className="orders_data_list">
-            {past_orders.length == 0 ? (
-              <div>
-                <img src={default_img} alt="no_orders" />
-              </div>
-            ) : (
-              past_orders.map((element) => {
-                return <OrderComponent data={element} />;
-              })
-            )}
+        <header>
+          <Logo />
+        </header>
+        <main>
+          <div className="order_mainarea">
+            <h1>Order History</h1>
+            <div className="orders_data_list">
+              {past_orders.length == 0 ? (
+                <div>
+                  <img src={default_img} alt="no_orders" />
+                </div>
+              ) : (
+                past_orders.map((element) => {
+                  return <OrderComponent data={element} />;
+                })
+              )}
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     );
   }

@@ -43,6 +43,7 @@ export default function Component({ data, onClick, cart, setCart }) {
               });
               setCart(arr);
             }}
+            aria-label="add to cart from wishlist"
           >
             <FontAwesomeIcon
               icon={faShoppingCart}
@@ -57,6 +58,7 @@ export default function Component({ data, onClick, cart, setCart }) {
               e.preventDefault();
               onClick(pid);
             }}
+            aria-label="delete from wishlist"
           >
             <FontAwesomeIcon
               icon={faTrash}

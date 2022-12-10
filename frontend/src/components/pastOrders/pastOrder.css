@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,600&family=Nova+Mono&display=swap");
+
 .order_mainarea {
   flex-direction: column;
   height: 100%;
@@ -6,6 +8,8 @@
   padding: 20px 40px;
   width: 100%;
   align-items: center;
+  font-family: "Spectral", "serif";
+  color: #cc3636;
 }
 
 h1 {

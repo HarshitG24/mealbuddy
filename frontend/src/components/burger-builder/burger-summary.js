@@ -56,36 +56,36 @@ export default function BurgerSummaryTable({
       <tbody>
         <tr>
           <td>
-            <div className="summary_row">
+            <div className="burger_summary_row">
               <p className="burger_price">Base Price</p>
-              <p className="summary_value">${basePrice}</p>
+              <p className="burger_summary_value">${basePrice}</p>
             </div>
           </td>
         </tr>
 
         <tr>
           <td>
-            <div className="summary_row">
+            <div className="burger_summary_row">
               <p className="burger_price">Extras</p>
-              <p className="summary_value">${extras}</p>
+              <p className="burger_summary_value">${extras}</p>
             </div>
           </td>
         </tr>
 
         <tr>
           <td>
-            <div className="summary_row">
+            <div className="burger_summary_row">
               <p className="burger_price">Total Calories </p>
-              <p className="summary_value">{totalCalories} Cal</p>
+              <p className="burger_summary_value">{totalCalories} Cal</p>
             </div>
           </td>
         </tr>
 
         <tr>
           <td>
-            <div className="summary_row">
+            <div className="burger_summary_row">
               <p className="burger_price">Final Amount </p>
-              <p className="summary_value">${amt}</p>
+              <p className="burger_summary_value">${amt}</p>
             </div>
           </td>
         </tr>

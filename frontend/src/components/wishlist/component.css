@@ -16,6 +16,7 @@
   border-radius: 1rem;
   padding: 1rem;
   flex: 1;
+  color: #421e1e;
 }
 
 .wishlist_product_img {
@@ -88,7 +89,7 @@
   margin-top: 0.5rem;
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--calorie-color);
+  color: #421e1e;
 }
 
 .delete_wishlist {

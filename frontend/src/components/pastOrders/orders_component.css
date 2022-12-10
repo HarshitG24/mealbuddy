@@ -16,6 +16,7 @@
   border-radius: 1rem;
   padding: 1rem;
   flex: 1;
+  color: #421e1e;
 }
 
 .order_product_img {
@@ -54,7 +55,6 @@
   margin-top: 0.5rem;
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--calorie-color);
 }
 
 .past_order_img {

@@ -62,29 +62,33 @@ export default function Wishlist({ cart, setCart }) {
   function wishlist_showUI() {
     return (
       <div>
-        <Logo />
-        <div className="mainarea">
-          <h1>Wishlist</h1>
+        <header>
+          <Logo />
+        </header>
+        <main>
+          <div className="mainarea">
+            <h1>Wishlist</h1>
 
-          <div className="wishlist_data_list">
-            {wishlist.length === 0 ? (
-              <div>
-                <img src={default_img} alt="empty_wishlist" />
-              </div>
-            ) : (
-              wishlist.map((element) => {
-                return (
-                  <Component
-                    data={element}
-                    onClick={deleteData}
-                    cart={cart}
-                    setCart={setCart}
-                  />
-                );
-              })
-            )}
+            <div className="wishlist_data_list">
+              {wishlist.length === 0 ? (
+                <div>
+                  <img src={default_img} alt="empty_wishlist" />
+                </div>
+              ) : (
+                wishlist.map((element) => {
+                  return (
+                    <Component
+                      data={element}
+                      onClick={deleteData}
+                      cart={cart}
+                      setCart={setCart}
+                    />
+                  );
+                })
+              )}
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     );
   }

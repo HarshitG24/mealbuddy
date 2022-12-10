@@ -21,7 +21,7 @@
   font-size: 1.7rem;
   font-weight: 400;
   text-align: left;
-  color: #421e1e;
+  color: #767676;
   font-family: "Spectral", "serif";
 }
 
@@ -34,7 +34,7 @@
   font-family: "Spectral", "serif";
 }
 
-.summary_row {
+.burger_summary_row {
   display: flex;
   justify-content: space-between;
   font-weight: 800;
@@ -43,9 +43,9 @@
   padding: 1rem;
 }
 
-.summary_value {
+.burger_summary_value {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 800;
   font-family: "Spectral", "serif";
 }
 
