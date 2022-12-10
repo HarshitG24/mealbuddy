@@ -3,6 +3,7 @@
   padding: 1rem;
   background: #fff;
   cursor: pointer;
+  border: none;
 }
 
 .selected_size {

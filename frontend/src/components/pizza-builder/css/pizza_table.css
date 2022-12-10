@@ -13,3 +13,7 @@ table {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.table_title_value {
+  padding: 1rem;
+}

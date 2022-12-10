@@ -18,8 +18,10 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
   }
   return (
     <table>
-      <td className="table_title">{title}</td>
       <tbody>
+        <tr className="table_title">
+          <td className="table_title_value">{title}</td>
+        </tr>
         {data.map((item) => {
           return (
             // <button className="topping_btn">
