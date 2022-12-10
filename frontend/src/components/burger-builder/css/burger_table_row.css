@@ -7,16 +7,19 @@
   font-size: 2rem;
   background: #fff;
   cursor: pointer;
+  color: #421e1e;
 }
 
 .patty_selected {
   background-color: orange;
+  color: #421e1e;
 }
 
 .burger_calories {
   font-size: 1.2rem;
   font-weight: 400;
   text-align: left;
+  color: #421e1e;
 }
 
 .burger_price {
@@ -24,6 +27,7 @@
   justify-content: space-between;
   font-weight: 800;
   font-size: 2rem;
+  color: #421e1e;
 }
 
 .summary_row {
