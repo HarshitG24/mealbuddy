@@ -36,7 +36,7 @@ function PizzaTableRow({ data, value, setValue, size, title }) {
           <tr key={e.bid} onClick={() => setValue(e)}>
             <td
               className={
-                index === value.bid ? "crust_selected table_data" : "table_data"
+                index === value.bid ? "table_data crust_selected" : "table_data"
               }>
               <button className="topping_btn">
                 <div className="crust_price">

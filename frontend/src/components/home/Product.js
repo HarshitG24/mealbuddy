@@ -65,12 +65,9 @@ function Product({ elem, cart, setCart, productName }) {
   return (
     <div className="product_card">
       <div className="product_wishlist">
-        <FontAwesomeIcon
-          icon={faHeart}
-          size="2x"
-          className="product_heart"
-          onClick={addToWishlist}
-        />
+        <button className="wishlist_btn" onClick={addToWishlist}>
+          <FontAwesomeIcon icon={faHeart} size="2x" className="product_heart" />
+        </button>
       </div>
       <div className="product_content">
         <img
@@ -82,10 +79,8 @@ function Product({ elem, cart, setCart, productName }) {
         <p className="product_calories">{calories} cal</p>
         <div className="product_end">
           <p className="product_price">${price}</p>
-          <FontAwesomeIcon
-            icon={faPlus}
-            size="2x"
-            className="product_add"
+          <button
+            className="wishlist_btn"
             onClick={(e) => {
               e.preventDefault();
               let arr = generateCart(cart, {
@@ -98,8 +93,9 @@ function Product({ elem, cart, setCart, productName }) {
                 qty: 1,
               });
               setCart(arr);
-            }}
-          />
+            }}>
+            <FontAwesomeIcon icon={faPlus} size="1x" className="product_add" />
+          </button>
         </div>
       </div>
     </div>
