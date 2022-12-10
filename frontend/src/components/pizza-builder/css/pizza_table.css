@@ -1,4 +1,5 @@
 /* AUTHOR: HARSHIT GAJJAR */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
 table {
   width: 40%;
 }
@@ -17,4 +18,6 @@ table {
 .table_title_value {
   color: #421e1e;
   padding: 1rem;
+  font-size: 2.3rem;
+  font-family: "Spectral", "serif";
 }

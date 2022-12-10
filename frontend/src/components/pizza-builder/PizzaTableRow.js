@@ -43,7 +43,14 @@ function PizzaTableRow({ data, value, setValue, size, title }) {
                   <p>{e.name}</p>
                   <p>${(e.price * updateCrustPrice(size)).toFixed(2)}</p>
                 </div>
-                <p className="crust_calories">{e.calories} Cal</p>
+                <p
+                  className={
+                    index === value.bid
+                      ? "crust_calories selected_Color"
+                      : "crust_calories"
+                  }>
+                  {e.calories} Cal
+                </p>
               </button>
             </td>
           </tr>

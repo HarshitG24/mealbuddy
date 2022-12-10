@@ -1,4 +1,6 @@
 /* AUTHOR: HARSHIT GAJJAR */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,600&family=Nova+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
 :root {
   --pizza-title-color: #f09312;
 }
@@ -13,6 +15,7 @@
   font-size: 5rem;
   text-align: center;
   margin-bottom: 2rem;
+  font-family: "Alegreya", "serif";
 }
 
 .pizza_size {
@@ -98,4 +101,8 @@
   font-weight: 800;
   margin: 3rem 0;
   cursor: pointer;
+}
+
+.add_to_cart {
+  font-family: "Spectral", "serif";
 }

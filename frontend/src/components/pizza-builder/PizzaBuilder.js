@@ -164,7 +164,11 @@ function PizzaBuilder({ cart, setCart }) {
                     amt={amt}
                     setAmt={setAmt}
                   />
-                  <button onClick={() => addCustomPizza()}>Add to Cart</button>
+                  <button
+                    className="add_to_cart"
+                    onClick={() => addCustomPizza()}>
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             ) : null}
