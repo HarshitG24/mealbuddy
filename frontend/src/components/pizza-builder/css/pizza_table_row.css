@@ -12,13 +12,14 @@
 }
 
 .crust_selected {
-  background-color: orange;
+  background-color: #f09312;
 }
 
 .crust_calories {
   font-size: 1.2rem;
   font-weight: 400;
   text-align: left;
+  color: #421e1e;
 }
 
 .crust_price {
@@ -26,6 +27,7 @@
   justify-content: space-between;
   font-weight: 800;
   font-size: 2rem;
+  color: #421e1e;
 }
 
 .summary_row {
@@ -35,6 +37,7 @@
   font-size: 2rem;
   background: #fff;
   padding: 1rem;
+  color: #421e1e;
 }
 
 .summary_value {
