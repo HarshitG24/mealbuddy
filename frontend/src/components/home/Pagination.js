@@ -13,15 +13,12 @@ function Pagination({ currentData, dataPerPage, currentPage, setCurrentPage }) {
       <ul className="pagination_ul">
         {pageNumber.map((e) => {
           return (
-            <button
-              className="pagination_background"
-              onClick={() => setCurrentPage(e)}>
-              <li
-                className={`${e === currentPage ? "selected_ul" : ""} `}
-                key={e}>
-                {e}
-              </li>
-            </button>
+            <li
+              onClick={() => setCurrentPage(e)}
+              className={`${e === currentPage ? "selected_ul" : ""} `}
+              key={e}>
+              <button className="pagination_background">{e}</button>
+            </li>
           );
         })}
       </ul>

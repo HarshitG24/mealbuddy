@@ -65,7 +65,10 @@ function Product({ elem, cart, setCart, productName }) {
   return (
     <div className="product_card">
       <div className="product_wishlist">
-        <button className="wishlist_btn" onClick={addToWishlist}>
+        <button
+          aria-label="button to add pizza to wishlist"
+          className="wishlist_btn"
+          onClick={addToWishlist}>
           <FontAwesomeIcon icon={faHeart} size="2x" className="product_heart" />
         </button>
       </div>
@@ -80,6 +83,7 @@ function Product({ elem, cart, setCart, productName }) {
         <div className="product_end">
           <p className="product_price">${price}</p>
           <button
+            aria-label="button to add pizza to cart"
             className="wishlist_btn"
             onClick={(e) => {
               e.preventDefault();
