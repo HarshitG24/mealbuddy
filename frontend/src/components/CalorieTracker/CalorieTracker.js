@@ -110,7 +110,7 @@ function CalorieTracker() {
         </div>
         <div className="calorie_table">
           <table>
-            <tbody>
+            <tbody className="calorie_table_body">
               <tr>
                 <th className="table_header">Item</th>
                 <th className="table_header">Quantity</th>
@@ -119,9 +119,11 @@ function CalorieTracker() {
               {categories.map((t, index) => {
                 return (
                   <tr key={index}>
-                    <td>{t}</td>
-                    <td>{tData[t].count}</td>
-                    <td>{tData[t].calories} calories</td>
+                    <td className="calorie_row">{t}</td>
+                    <td className="calorie_row">{tData[t].count}</td>
+                    <td className="calorie_row">
+                      {tData[t].calories} calories
+                    </td>
                   </tr>
                 );
               })}

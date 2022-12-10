@@ -1,9 +1,17 @@
+/* AUTHOR: HARSHIT GAJJAR */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,600&family=Nova+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
+
 .pie_chart_container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.pie_chart_container > h1 {
+  font-family: "Alegreya", "serif";
 }
 
 .pie_chart_container > h1 {
@@ -18,12 +26,17 @@
 
 .calorie_table {
   width: 100%;
+  font-family: "Spectral", "serif";
 }
 
 .calorie_table > table {
   width: 100%;
   margin-top: 3rem;
   padding-bottom: 5rem;
+}
+
+.calorie_table_body {
+  background: #fff;
 }
 
 .table_header {
@@ -34,4 +47,10 @@
 
 .color1 {
   background-color: "#E38627";
+}
+
+.calorie_row {
+  padding: 1rem;
+  font-size: 2rem;
+  color: #421e1e;
 }
