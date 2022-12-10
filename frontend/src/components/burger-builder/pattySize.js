@@ -8,14 +8,14 @@ export default function PattySize({ size, selected, setSize, index }) {
     setSize(index);
   }
   return (
-    <div
+    <button
       className={`burger_size_block ${
         selected === index ? "selected_size" : ""
       }`}
       onClick={(index) => selectSize(index)}
     >
       <span>{size}</span>
-    </div>
+    </button>
   );
 }
 

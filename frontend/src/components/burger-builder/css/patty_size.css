@@ -1,8 +1,8 @@
 .burger_size_block {
   padding: 1rem;
-  /* background: #f49001; */
   background: #fff;
   cursor: pointer;
+  border: none;
 }
 
 .selected_size {

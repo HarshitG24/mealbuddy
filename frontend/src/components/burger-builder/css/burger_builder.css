@@ -8,8 +8,10 @@
 
 .burger_builder_title {
   font-weight: 800;
-  color: var(--pizza-title-color);
+  color: #cc3636;
   font-size: 5rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .burger_size {
