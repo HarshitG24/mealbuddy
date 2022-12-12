@@ -94,14 +94,17 @@ h1 {
 
 .user_input:focus + .user_input_label,
 .user_input:valid + .user_input_label {
-  transform: translate(10px, -14px) scale(0.8);
-  color: #f09312;
+  transform: translate(5px, -14px) scale(0.8);
+  color: #c46919;
   padding-inline: 5px;
-  outline-color: #f09312;
+  outline-color: #c46919;
+  font-size: 2rem;
+  background: #fff;
 }
 
 .user_input:is(:focus, :valid) {
-  outline-color: #f09312;
+  /* outline-color: #c46919; */
+  outline: 2px solid #c46919;
 }
 
 .user_login_btn {
@@ -143,4 +146,5 @@ h1 {
   color: #f09312;
   border: 2px solid #f09312;
   font-size: 1.5rem;
+  cursor: pointer;
 }

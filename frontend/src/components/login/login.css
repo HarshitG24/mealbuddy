@@ -89,15 +89,17 @@ h1 {
 
 .login_input:focus + .login_input_label,
 .login_input:valid + .login_input_label {
-  transform: translate(10px, -8px) scale(1);
+  transform: translate(10px, -20px) scale(1);
   color: #c46919;
 
   padding-inline: 5px;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  background: #fff;
 }
 
 .login_input:is(:focus, :valid) {
-  outline-color: #f09312;
+  /* outline-color: #c46919; */
+  outline: 2px solid #c46919;
 }
 
 .login_btn {

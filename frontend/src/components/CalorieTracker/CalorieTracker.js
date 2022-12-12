@@ -97,24 +97,16 @@ function CalorieTracker() {
           <h1>Calorie Tracker</h1>
           <div>
             <div className="pie_chart">
-              <PieChart
-                // label={(props) => {
-                //   return (
-                //     props.dataEntry.title + "-" + props.dataEntry.value + "%"
-                //   );
-                // }}
-                data={pieData}
-                // labelStyle={() => {
-                //   return { fontSize: "5px", fill: "white" };
-                // }}
-              />
+              <PieChart data={pieData} />
               <div className="key_codes">
                 {pieData.length > 0
                   ? pieData.map((e) => {
                       return (
                         <div className="calorie_key">
                           <div className={`key_circle ${e.cssClassName}`}></div>
-                          <p className="calorie_item_name">{e.title}</p>
+                          <p className="calorie_item_name">
+                            {e.title.charAt(0).toUpperCase() + e.title.slice(1)}
+                          </p>
                         </div>
                       );
                     })
