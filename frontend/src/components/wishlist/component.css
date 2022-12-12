@@ -109,7 +109,7 @@
 }
 
 .wishlist_cart {
-  color: var(--delete-icon);
+  color: #f09312;
   background: var(--delete-icon-background);
   padding: 0.8rem;
   border-radius: 0.3rem;
