@@ -54,3 +54,40 @@
   font-size: 2rem;
   color: #421e1e;
 }
+
+.key_circle {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.calorie_key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.calorie_item_name {
+  margin-left: 0.5rem;
+  color: #421e1e;
+  font-size: 1.5rem;
+}
+
+.c1 {
+  background-color: #e38627;
+}
+
+.c2 {
+  background-color: #c13c37;
+}
+
+.key_codes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
