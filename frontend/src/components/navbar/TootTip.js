@@ -20,19 +20,18 @@ function Tooltip(props) {
   return (
     <div
       className="Tooltip-Wrapper"
-      // When to show the tooltip
       onMouseEnter={showTip}
       onMouseLeave={hideTip}>
-      {/* Wrapping */}
       {props.children}
       {active && (
         <div className={`Tooltip-Tip ${props.direction || "top"}`}>
-          {/* Content */}
           {props.content}
         </div>
       )}
     </div>
   );
 }
+
+Tooltip.propTypes = {};
 
 export default Tooltip;

@@ -28,7 +28,8 @@ function Menu({ name, img, sel, index, setMenu, setProductName }) {
       onClick={() => {
         setMenu(index);
         findProduct(index);
-      }}>
+      }}
+    >
       <span className={img}></span>
       <p className="menu_name">{name}</p>
     </div>

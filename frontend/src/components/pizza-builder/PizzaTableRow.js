@@ -37,7 +37,8 @@ function PizzaTableRow({ data, value, setValue, size, title }) {
             <td
               className={
                 index === value.bid ? "table_data crust_selected" : "table_data"
-              }>
+              }
+            >
               <button className="topping_btn">
                 <div className="crust_price">
                   <p>{e.name}</p>
@@ -48,7 +49,8 @@ function PizzaTableRow({ data, value, setValue, size, title }) {
                     index === value.bid
                       ? "crust_calories selected_Color"
                       : "crust_calories"
-                  }>
+                  }
+                >
                   {e.calories} Cal
                 </p>
               </button>

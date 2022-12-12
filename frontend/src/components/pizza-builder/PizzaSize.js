@@ -11,7 +11,8 @@ function PizzaSize({ size, selected, setSize, index }) {
       className={`pizza_size_block ${
         selected === index ? "selected_size" : ""
       }`}
-      onClick={(index) => selectSize(index)}>
+      onClick={(index) => selectSize(index)}
+    >
       <span>{size} inches</span>
     </button>
   );

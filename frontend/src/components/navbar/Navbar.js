@@ -25,7 +25,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/"
         aria-label="Click to go to Home Page"
-        onClick={() => navbarClicked(1)}>
+        onClick={() => navbarClicked(1)}
+      >
         <Tooltip content="Home" direction="right">
           <FontAwesomeIcon
             icon={faHouseChimney}
@@ -38,7 +39,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/past-orders"
         aria-label="Click to go to Past Orders Page"
-        onClick={() => navbarClicked(2)}>
+        onClick={() => navbarClicked(2)}
+      >
         <Tooltip content="Past Orders" direction="right">
           <FontAwesomeIcon
             icon={faBoxOpen}
@@ -51,7 +53,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/wishlist"
         aria-label="Click to go to Wishlist Page"
-        onClick={() => navbarClicked(3)}>
+        onClick={() => navbarClicked(3)}
+      >
         <Tooltip content="Wishlist" direction="right">
           <FontAwesomeIcon
             icon={faHeart}
@@ -64,7 +67,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/pizza-builder"
         aria-label="Click to go to Pizza Builder Page"
-        onClick={() => navbarClicked(4)}>
+        onClick={() => navbarClicked(4)}
+      >
         <Tooltip content="Pizza Builder" direction="right">
           <FontAwesomeIcon
             icon={faPizzaSlice}
@@ -76,7 +80,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/burger-builder"
         aria-label="Click to go to Burger Builder Page"
-        onClick={() => navbarClicked(5)}>
+        onClick={() => navbarClicked(5)}
+      >
         <Tooltip content="Burger Builder" direction="right">
           <FontAwesomeIcon
             icon={faBurger}
@@ -88,7 +93,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/calorie-tracker"
         aria-label="Click to go to Calorie Tracker Page"
-        onClick={() => navbarClicked(6)}>
+        onClick={() => navbarClicked(6)}
+      >
         <Tooltip content="Calorie Tracker" direction="right">
           <FontAwesomeIcon
             icon={faCalculator}
@@ -100,7 +106,8 @@ function Navbar({ selected, setSelected }) {
       <Link
         to="/settings"
         aria-label="Click to go to Settings Page"
-        onClick={() => navbarClicked(7)}>
+        onClick={() => navbarClicked(7)}
+      >
         <Tooltip content="Settings" direction="right">
           <FontAwesomeIcon
             icon={faUser}

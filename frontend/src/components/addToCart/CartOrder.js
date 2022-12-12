@@ -36,7 +36,8 @@ function CartOrder({ elem, cart, setCart }) {
           aria-label="this is to delete item from cart"
           onClick={(e) => {
             setCart(cart.filter((e) => e.pid !== pid));
-          }}>
+          }}
+        >
           <FontAwesomeIcon
             icon={faTrash}
             size="2x"

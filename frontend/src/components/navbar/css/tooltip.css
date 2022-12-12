@@ -1,4 +1,6 @@
 /* AUTHOR: HARSHIT GAJJAR */
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
 :root {
   --tooltip-text-color: white;
   --tooltip-background-color: black;
@@ -10,6 +12,7 @@
 .Tooltip-Wrapper {
   display: inline-block;
   position: relative;
+  font-family: "Spectral", "serif";
 }
 
 /* Absolute positioning */
