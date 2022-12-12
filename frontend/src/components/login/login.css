@@ -14,6 +14,9 @@
 html {
   font-size: 62.5%;
 }
+h1 {
+  color: #421e1e;
+}
 
 .login_form {
   width: 42.5rem;
@@ -50,7 +53,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: #421e1e;
   padding-top: 2rem;
   padding-bottom: 2rem;
   flex-direction: column;
@@ -72,7 +75,7 @@ html {
   font: inherit;
   color: black;
   background-color: transparent;
-  outline: 2px solid #c46919;
+  outline: 2px solid #f09312;
   width: 100%;
   font-size: 2rem;
 }
@@ -94,7 +97,7 @@ html {
 }
 
 .login_input:is(:focus, :valid) {
-  outline-color: #c46919;
+  outline-color: #f09312;
 }
 
 .login_btn {
@@ -102,8 +105,8 @@ html {
   width: 50%;
   height: 20%;
   background: transparent;
-  color: black;
-  border: 2px solid #c46919;
+  color: #421e1e;
+  border: 2px solid #f09312;
   padding: 0.5rem;
   font-size: 1.7rem;
   cursor: pointer;
@@ -126,7 +129,7 @@ html {
 .login_no_account > a {
   background: none;
   border: none;
-  color: #c46919;
+  color: #f09312;
   margin-left: 0.01rem;
   padding: 0.3rem;
   font-size: 1.2rem;
