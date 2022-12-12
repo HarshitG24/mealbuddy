@@ -5,8 +5,14 @@
   --btn-txt: #fff;
 }
 
+.setting_title {
+  color: #e95200;
+  margin-bottom: 1rem;
+}
+
 .setting_container {
   display: flex;
+  margin-bottom: 1rem;
 }
 
 .settings_all_data {

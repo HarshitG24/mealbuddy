@@ -4,7 +4,7 @@ import "./css/calorie-tracker.css";
 import "../../Reused.css";
 import Logo from "../header/logo";
 import { useEffect, useState } from "react";
-import { pieColors } from "../../utils/util";
+import { pieColors, cssClass } from "../../utils/util";
 import NotLoggedIn from "../NoLogIn/NotLoggedIn";
 import Spinner from "../Spinner/Spinner";
 
@@ -65,6 +65,7 @@ function CalorieTracker() {
               title: e,
               value: obj[e].calories,
               color: pieColors[index],
+              cssClassName: cssClass[index],
             });
           });
 
@@ -94,18 +95,32 @@ function CalorieTracker() {
       <main>
         <div className="pie_chart_container">
           <h1>Calorie Tracker</h1>
-          <div className="pie_chart">
-            <PieChart
-              label={(props) => {
-                return (
-                  props.dataEntry.title + "-" + props.dataEntry.value + "%"
-                );
-              }}
-              data={pieData}
-              labelStyle={() => {
-                return { fontSize: "5px", fill: "white" };
-              }}
-            />
+          <div>
+            <div className="pie_chart">
+              <PieChart
+                // label={(props) => {
+                //   return (
+                //     props.dataEntry.title + "-" + props.dataEntry.value + "%"
+                //   );
+                // }}
+                data={pieData}
+                // labelStyle={() => {
+                //   return { fontSize: "5px", fill: "white" };
+                // }}
+              />
+              <div className="key_codes">
+                {pieData.length > 0
+                  ? pieData.map((e) => {
+                      return (
+                        <div className="calorie_key">
+                          <div className={`key_circle ${e.cssClassName}`}></div>
+                          <p className="calorie_item_name">{e.title}</p>
+                        </div>
+                      );
+                    })
+                  : ""}
+              </div>
+            </div>
           </div>
         </div>
         <div className="calorie_table">

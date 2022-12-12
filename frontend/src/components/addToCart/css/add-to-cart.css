@@ -66,6 +66,10 @@ html {
   margin: 0 0.8rem;
 }
 
+.fast_color {
+  color: #421e1e;
+}
+
 .highlight {
   color: #e07531;
 }
@@ -79,6 +83,7 @@ html {
 .your_order {
   width: 95%;
   margin-top: 5rem;
+  color: #421e1e;
 }
 
 .your_order > p {
@@ -107,12 +112,14 @@ html {
   font-size: 1.5rem;
   font-weight: 400;
   padding-left: 0.5rem;
+  color: #421e1e;
 }
 
 .order_summary_txt {
   font-size: 1.5rem;
   font-weight: 800;
   align-items: center;
+  color: #421e1e;
 }
 
 .order_checkout_div {

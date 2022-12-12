@@ -23,3 +23,5 @@ export const pieColors = [
   "#FFE15D",
   "#0D4C92",
 ];
+
+export const cssClass = ["c1", "c2"];

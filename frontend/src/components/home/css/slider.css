@@ -8,6 +8,7 @@
   background: #fff;
   border-radius: 1rem;
   padding: 2rem 2.5rem 0rem;
+  color: #421e1e;
 }
 
 header h2 {
@@ -24,6 +25,7 @@ header p {
   width: 100%;
   margin: 3rem 0 3.5rem;
   display: flex;
+  color: #421e1e;
 }
 
 .price-input .field {
@@ -41,6 +43,7 @@ header p {
   border: 0.1rem solid #999;
   font-size: 2rem;
   -moz-appearance: none;
+  color: #421e1e;
 }
 
 .field span {
@@ -91,6 +94,7 @@ input[type="number"]::-webkit-inner-spin-button {
   background: none;
   pointer-events: none;
   -webkit-appearance: none;
+  color: #421e1e;
 }
 
 input[type="range"]::-webkit-slider-thumb {
