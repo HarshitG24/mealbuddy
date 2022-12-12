@@ -82,57 +82,53 @@ function Settings() {
 
   function settingsUI() {
     return (
-      <div>
-        <header>
-          <h1 className="setting_title">Settings</h1>
-        </header>
-        <main className="settings_all_data">
-          <div className="setting_block">
-            <p className="setting_label">Email</p>
-            <input
-              className="setting_input"
-              aria-label="input field for email"
-              onChange={(e) => setEmail(e?.target?.value || "")}
-              value={email}
-              placeholder="Email"
-              disabled
-            />
-          </div>
-          <div className="setting_block">
-            <p className="setting_label">Name</p>
-            <input
-              className="setting_input"
-              aria-label="input field for name"
-              onChange={(e) => setName(e?.target?.value || "")}
-              value={name}
-              placeholder="Name"
-            />
-          </div>
-          <div className="setting_block">
-            <p className="setting_label">Password</p>
-            <input
-              className="setting_input"
-              aria-label="input field for password"
-              onChange={(e) => setPassword(e?.target?.value || "")}
-              value={password}
-              placeholder="Password"
-              type="password"
-            />
-          </div>
-          <div className="setting_actions">
-            <button
-              className="button_setting"
-              onClick={() => updateUserProfile()}>
-              Update Profile
-            </button>
-            <button
-              className="button_setting delete_btn"
-              onClick={() => deleteUserProfile()}>
-              Delete Profile
-            </button>
-          </div>
-        </main>
-      </div>
+      <main className="settings_all_data">
+        <h1 className="setting_title">Settings</h1>
+        <div className="setting_block">
+          <p className="setting_label">Email</p>
+          <input
+            className="setting_input"
+            aria-label="input field for email"
+            onChange={(e) => setEmail(e?.target?.value || "")}
+            value={email}
+            placeholder="Email"
+            disabled
+          />
+        </div>
+        <div className="setting_block">
+          <p className="setting_label">Name</p>
+          <input
+            className="setting_input"
+            aria-label="input field for name"
+            onChange={(e) => setName(e?.target?.value || "")}
+            value={name}
+            placeholder="Name"
+          />
+        </div>
+        <div className="setting_block">
+          <p className="setting_label">Password</p>
+          <input
+            className="setting_input"
+            aria-label="input field for password"
+            onChange={(e) => setPassword(e?.target?.value || "")}
+            value={password}
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <div className="setting_actions">
+          <button
+            className="button_setting"
+            onClick={() => updateUserProfile()}>
+            Update Profile
+          </button>
+          <button
+            className="button_setting delete_btn"
+            onClick={() => deleteUserProfile()}>
+            Delete Profile
+          </button>
+        </div>
+      </main>
     );
   }
 
