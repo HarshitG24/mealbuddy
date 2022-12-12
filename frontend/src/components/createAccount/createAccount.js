@@ -41,57 +41,59 @@ export default function CreateAccount() {
 
   return (
     <div className="user_card_page">
-      <div className="user_card_container">
-        <div className="user_card">
-          <h1>Register New User</h1>
-          <div className="user_input_group">
-            <input
-              type="name"
-              id="name"
-              required
-              className="user_input"
-              ref={user_name}
-            />
-            <label htmlFor="name" className="user_input_label">
-              Full Name
-            </label>
-          </div>
+      <main>
+        <div className="user_card_container">
+          <div className="user_card">
+            <h1>Register New User</h1>
+            <div className="user_input_group">
+              <input
+                type="name"
+                id="name"
+                required
+                className="user_input"
+                ref={user_name}
+              />
+              <label htmlFor="name" className="user_input_label">
+                Full Name
+              </label>
+            </div>
 
-          <div className="user_input_group">
-            <input
-              type="email"
-              id="email"
-              required
-              className="user_input"
-              ref={user_email}
-            />
-            <label htmlFor="email" className="user_input_label">
-              Email
-            </label>
-          </div>
-          <div className="user_input_group">
-            <input
-              type="password"
-              id="password"
-              required
-              className="user_input"
-              ref={user_password}
-            />
-            <label htmlFor="password" className="user_input_label">
-              Password
-            </label>
-          </div>
-          <div>
-            <button
-              id="create"
-              className="user_create_account"
-              onClick={createUser}
-            >
-              Create Account
-            </button>
+            <div className="user_input_group">
+              <input
+                type="email"
+                id="email"
+                required
+                className="user_input"
+                ref={user_email}
+              />
+              <label htmlFor="email" className="user_input_label">
+                Email
+              </label>
+            </div>
+            <div className="user_input_group">
+              <input
+                type="password"
+                id="password"
+                required
+                className="user_input"
+                ref={user_password}
+              />
+              <label htmlFor="password" className="user_input_label">
+                Password
+              </label>
+            </div>
+            <div>
+              <button
+                id="create"
+                className="user_create_account"
+                onClick={createUser}
+              >
+                Create Account
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

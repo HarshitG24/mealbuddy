@@ -28,53 +28,56 @@ export default function Login() {
   }
   return (
     <div className="login">
-      <div className="login_form">
-        <div className="login_logo">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/4039/4039232.png"
-            alt="pizza logo"
-          />
-        </div>
-        <div className="login_fields">
-          <div className="login_input_group">
-            <input
-              type="email"
-              id="email"
-              required
-              className="login_input"
-              ref={input_email}
+      <main>
+        <div className="login_form">
+          <div className="login_logo">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/4039/4039232.png"
+              alt="pizza logo"
             />
-            <label for="email" className="login_input_label">
-              Email Address
-            </label>
           </div>
+          <div className="login_fields">
+            <div className="login_input_group">
+              <input
+                type="email"
+                id="email"
+                required
+                className="login_input"
+                ref={input_email}
+              />
+              <label for="email" className="login_input_label">
+                Email Address
+              </label>
+            </div>
 
-          <div className="login_input_group">
-            <input
-              type="password"
-              id="password"
-              required
-              className="login_input"
-              ref={input_password}
-            />
-            <label for="password" className="login_input_label">
-              Password
-            </label>
-          </div>
+            <div className="login_input_group">
+              <input
+                type="password"
+                id="password"
+                required
+                className="login_input"
+                ref={input_password}
+              />
+              <label for="password" className="login_input_label">
+                Password
+              </label>
+            </div>
 
-          <button
-            id="clickme"
-            className="login_btn"
-            onClick={check_credentials}>
-            Login
-          </button>
+            <button
+              id="clickme"
+              className="login_btn"
+              onClick={check_credentials}
+            >
+              Login
+            </button>
 
-          <div className="login_no_account">
-            <p>Don't have an account?</p>
-            <a href="/createAccount">Create Account</a>
+            <div className="login_no_account">
+              <p>Don't have an account?</p>
+              <a href="/createAccount">Create Account</a>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

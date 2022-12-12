@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@600&family=Kalam:wght@400;700&family=Spectral:wght@400;700&display=swap");
-caption {
-  background: orange;
-  padding: 1rem;
-  font-size: 2.5rem;
-  font-weight: 800;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #421e1e;
-  font-family: "Spectral", "serif";
-}
-
 table {
   width: 40%;
+}
+
+.table_title {
+  width: 100%;
+  background: #f09312;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.table_title_value {
+  color: #421e1e;
+  padding: 1rem;
+  font-size: 2.3rem;
+  font-family: "Spectral", "serif";
 }

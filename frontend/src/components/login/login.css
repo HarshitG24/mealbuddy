@@ -73,7 +73,7 @@ h1 {
   border: none;
   border-radius: 4px;
   font: inherit;
-  color: black;
+  color: #421e1e;
   background-color: transparent;
   outline: 2px solid #f09312;
   width: 100%;
@@ -99,7 +99,7 @@ h1 {
 
 .login_input:is(:focus, :valid) {
   /* outline-color: #c46919; */
-  outline: 2px solid #c46919;
+  outline: 2px solid #f09312;
 }
 
 .login_btn {

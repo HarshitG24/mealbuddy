@@ -52,7 +52,9 @@ export default function BurgerSummaryTable({
 
   return (
     <table>
-      <caption>{title}</caption>
+      <tr className="table_title">
+        <td className="table_title_value">{title}</td>
+      </tr>
       <tbody>
         <tr>
           <td>

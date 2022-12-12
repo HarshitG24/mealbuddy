@@ -7,7 +7,9 @@ export default function BurgerTable({ allData, value, setValue, size }) {
   const { title, data } = allData;
   return (
     <table>
-      <caption>{title}</caption>
+      <tr className="table_title">
+        <td className="table_title_value">{title}</td>
+      </tr>
       <BurgerTableRow
         data={data}
         value={value}

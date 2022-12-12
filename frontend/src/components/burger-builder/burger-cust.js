@@ -17,7 +17,9 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
   }
   return (
     <table>
-      <caption>{title}</caption>
+      <tr className="table_title">
+        <td className="table_title_value">{title}</td>
+      </tr>
       <tbody>
         {data.map((item) => {
           let ind = topping.findIndex((t) => t.name === item.name);
