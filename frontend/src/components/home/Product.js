@@ -68,7 +68,8 @@ function Product({ elem, cart, setCart, productName }) {
         <button
           aria-label="button to add pizza to wishlist"
           className="wishlist_btn"
-          onClick={addToWishlist}>
+          onClick={addToWishlist}
+        >
           <FontAwesomeIcon icon={faHeart} size="2x" className="product_heart" />
         </button>
       </div>
@@ -97,7 +98,8 @@ function Product({ elem, cart, setCart, productName }) {
                 qty: 1,
               });
               setCart(arr);
-            }}>
+            }}
+          >
             <FontAwesomeIcon icon={faPlus} size="1x" className="product_add" />
           </button>
         </div>

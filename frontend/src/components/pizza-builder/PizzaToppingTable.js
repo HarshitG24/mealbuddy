@@ -27,9 +27,11 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
           return (
             <tr
               onClick={(event) => handleToppingClick(event, item)}
-              key={item.tid}>
+              key={item.tid}
+            >
               <td
-                className={`table_data ${ind !== -1 ? "crust_selected" : ""}`}>
+                className={`table_data ${ind !== -1 ? "crust_selected" : ""}`}
+              >
                 <button className="topping_btn">
                   <div className="crust_price">
                     <p>{item.name}</p>
@@ -40,7 +42,8 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
                       ind !== -1
                         ? "crust_calories selected_Color"
                         : "crust_calories"
-                    }>
+                    }
+                  >
                     {item.calories} Cal
                   </p>
                 </button>

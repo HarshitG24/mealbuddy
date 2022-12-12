@@ -119,12 +119,14 @@ function Settings() {
         <div className="setting_actions">
           <button
             className="button_setting"
-            onClick={() => updateUserProfile()}>
+            onClick={() => updateUserProfile()}
+          >
             Update Profile
           </button>
           <button
             className="button_setting delete_btn"
-            onClick={() => deleteUserProfile()}>
+            onClick={() => deleteUserProfile()}
+          >
             Delete Profile
           </button>
         </div>

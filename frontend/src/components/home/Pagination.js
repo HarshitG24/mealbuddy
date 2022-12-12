@@ -16,7 +16,8 @@ function Pagination({ currentData, dataPerPage, currentPage, setCurrentPage }) {
             <li
               onClick={() => setCurrentPage(e)}
               className={`${e === currentPage ? "selected_ul" : ""} `}
-              key={e}>
+              key={e}
+            >
               <button className="pagination_background">{e}</button>
             </li>
           );

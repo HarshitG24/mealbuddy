@@ -1,7 +1,6 @@
 // AUTHOR: HARSHIT GAJJAR
 import React, { useState } from "react";
 import "./css/tooltip.css";
-import PropTypes from "prop-types";
 
 function Tooltip(props) {
   let timeout;
