@@ -17,8 +17,8 @@ export function generateCart(arr, obj) {
 }
 
 export const pieColors = [
-  "#E38627",
-  "#C13C37",
+  "#CC3636",
+  "#f09312",
   "#6A2135",
   "#FFE15D",
   "#0D4C92",

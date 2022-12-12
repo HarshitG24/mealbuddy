@@ -20,13 +20,15 @@
 
 .pie_chart {
   margin-top: 4rem;
-  width: 50rem;
-  height: 50rem;
+  width: 30rem;
+  height: 30rem;
 }
 
 .calorie_table {
+  display: flex;
   width: 100%;
   font-family: "Spectral", "serif";
+  margin-top: 6rem;
 }
 
 .calorie_table > table {
@@ -72,22 +74,22 @@
 .calorie_item_name {
   margin-left: 0.5rem;
   color: #421e1e;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .c1 {
-  background-color: #e38627;
+  background-color: #f09312;
 }
 
 .c2 {
-  background-color: #c13c37;
+  background-color: #cc3636;
 }
 
 .key_codes {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin-bottom: 2rem;
+  padding-top: 3rem;
 }
