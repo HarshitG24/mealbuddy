@@ -93,7 +93,8 @@ h1 {
 }
 
 .user_input:focus + .user_input_label,
-.user_input:valid + .user_input_label {
+.user_input:valid + .user_input_label,
+.user_input:empty + .user_input_label {
   transform: translate(5px, -14px) scale(0.8);
   color: #c46919;
   padding-inline: 5px;

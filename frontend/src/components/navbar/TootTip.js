@@ -21,7 +21,8 @@ function Tooltip(props) {
     <div
       className="Tooltip-Wrapper"
       onMouseEnter={showTip}
-      onMouseLeave={hideTip}>
+      onMouseLeave={hideTip}
+    >
       {props.children}
       {active && (
         <div className={`Tooltip-Tip ${props.direction || "top"}`}>
