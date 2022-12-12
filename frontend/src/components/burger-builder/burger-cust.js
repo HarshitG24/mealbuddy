@@ -20,6 +20,7 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
       <caption>{title}</caption>
       <tbody>
         {data.map((item) => {
+          let ind = topping.findIndex((t) => t.name === item.name);
           return (
             <tr
               key={item.tid}
@@ -27,9 +28,7 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
             >
               <td
                 className={`${
-                  topping.findIndex((t) => t.name === item.name) !== -1
-                    ? "patty_selected patty_data"
-                    : "patty_data"
+                  ind !== -1 ? "patty_selected patty_data" : "patty_data"
                 }`}
               >
                 <button className="patty_button">
@@ -37,7 +36,15 @@ export default function BurgerCustTable({ allData, topping, setTopping }) {
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                   </div>
-                  <p className="burger_calories">{item.calories} Cal</p>
+                  <p
+                    className={
+                      ind !== -1
+                        ? "burger_selected_calories"
+                        : "burger_calories"
+                    }
+                  >
+                    {item.calories} Cal
+                  </p>
                 </button>
               </td>
             </tr>

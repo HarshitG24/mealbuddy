@@ -52,8 +52,8 @@ export default function PastOrders() {
                   <img src={default_img} alt="no_orders" />
                 </div>
               ) : (
-                past_orders.map((element) => {
-                  return <OrderComponent data={element} />;
+                past_orders.map((element, index) => {
+                  return <OrderComponent data={element} key={index} />;
                 })
               )}
             </div>

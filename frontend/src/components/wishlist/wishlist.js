@@ -19,7 +19,7 @@ export default function Wishlist({ cart, setCart }) {
       try {
         const user_name = await fetch("/api/account/getUser");
         const user = await user_name.json();
-        console.log(user.user);
+
         const fetched_data = await fetch(
           "/api/fetch_wishlist_data/" + user.user
         );
@@ -75,13 +75,14 @@ export default function Wishlist({ cart, setCart }) {
                   <img src={default_img} alt="empty_wishlist" />
                 </div>
               ) : (
-                wishlist.map((element) => {
+                wishlist.map((element, index) => {
                   return (
                     <Component
                       data={element}
                       onClick={deleteData}
                       cart={cart}
                       setCart={setCart}
+                      key={index}
                     />
                   );
                 })

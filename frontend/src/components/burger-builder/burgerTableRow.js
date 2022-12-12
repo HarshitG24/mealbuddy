@@ -20,7 +20,15 @@ export default function BurgerTableRow({ data, value, setValue, size }) {
                   <p>${e.price * (size + 1)}</p>
                 </div>
 
-                <p className="burger_calories">{e.calories} Cal</p>
+                <p
+                  className={
+                    index === value.bid
+                      ? "burger_selected_calories"
+                      : "burger_calories"
+                  }
+                >
+                  {e.calories} Cal
+                </p>
               </button>
             </td>
           </tr>

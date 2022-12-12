@@ -24,6 +24,13 @@
   color: #767676;
   font-family: "Spectral", "serif";
 }
+.burger_selected_calories {
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-align: left;
+  color: #421e1e;
+  font-family: "Spectral", "serif";
+}
 
 .burger_price {
   display: flex;
