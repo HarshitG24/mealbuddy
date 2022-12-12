@@ -32,6 +32,8 @@ function CartOrder({ elem, cart, setCart }) {
 
       <div className="delete_cart">
         <button
+          className="delete_cart_btn"
+          aria-label="this is to delete item from cart"
           onClick={(e) => {
             setCart(cart.filter((e) => e.pid !== pid));
           }}>

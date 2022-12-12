@@ -23,27 +23,29 @@ function PizzaToppingTable({ allData, topping, setTopping }) {
           <td className="table_title_value">{title}</td>
         </tr>
         {data.map((item) => {
+          let ind = topping.findIndex((t) => t.name === item.name);
           return (
-            // <button className="topping_btn">
             <tr
               onClick={(event) => handleToppingClick(event, item)}
               key={item.tid}>
               <td
-                className={`table_data ${
-                  topping.findIndex((t) => t.name === item.name) !== -1
-                    ? "crust_selected"
-                    : ""
-                }`}>
+                className={`table_data ${ind !== -1 ? "crust_selected" : ""}`}>
                 <button className="topping_btn">
                   <div className="crust_price">
                     <p>{item.name}</p>
                     <p>${item.price}</p>
                   </div>
-                  <p className="crust_calories">{item.calories} Cal</p>
+                  <p
+                    className={
+                      ind !== -1
+                        ? "crust_calories selected_Color"
+                        : "crust_calories"
+                    }>
+                    {item.calories} Cal
+                  </p>
                 </button>
               </td>
             </tr>
-            // </button>
           );
         })}
       </tbody>

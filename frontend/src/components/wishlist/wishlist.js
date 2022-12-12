@@ -75,13 +75,14 @@ export default function Wishlist({ cart, setCart }) {
                   <img src={default_img} alt="empty_wishlist" />
                 </div>
               ) : (
-                wishlist.map((element) => {
+                wishlist.map((element, index) => {
                   return (
                     <Component
                       data={element}
                       onClick={deleteData}
                       cart={cart}
                       setCart={setCart}
+                      key={index}
                     />
                   );
                 })
