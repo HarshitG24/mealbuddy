@@ -1,4 +1,5 @@
-## Submission
+## **Project 4 -> rls/master branch of the repository**
+## Submission (Project 3 -> Main branch of the repository)
 **We have made the submission by November 22, 2022, aiming for the bonus points. We have made the google submission and also the other necessary requirements.**
 
 **Author:**
@@ -88,4 +89,4 @@ We followed the concept of pair progarmming while working on this project
 2. master - Contains the final code
 3. rls/harshit - All code commits by Harshit Gajjar
 4. rls/mihir - All code commits by Mihir Mesia
-5. rls/master - branch to merge changes from rls/harshit and rls/mihir
+5. rls/master - final changes for Project 4
