@@ -32,7 +32,7 @@ A Fast food delivery application for user’s to order delicious , mouth-waterin
 9. Run **yarn start**
 10. It will take you to localhost://3000
 
-Note (for local running): for the app to work on local, replace the line 39 on package.json of frontend with this **http://localhost:4200** instead of **https://mealbuddy.onrender.com**
+Note (for local running): for the app to work on local, replace the line 39 on package.json of frontend with this **http://localhost:4200** instead of **https://mealbuddyimp.onrender.com/**
 
 ## Changes in Project 4
 1. Typography
@@ -84,6 +84,16 @@ Note (for local running): for the app to work on local, replace the line 39 on p
 [CS5610 Web Development Course](https://johnguerra.co/classes/webDevelopment_fall_2022/)
 
 ## Screenshots
+<img width="1727" alt="Screen Shot 2022-12-12 at 5 19 59 PM" src="https://user-images.githubusercontent.com/35658851/207203001-f0c92d58-654c-4286-abdb-d0bd634b4af4.png">
+<img width="1728" alt="Screen Shot 2022-12-12 at 5 20 14 PM" src="https://user-images.githubusercontent.com/35658851/207203010-e4e6d21b-f34b-4724-a648-7a2326aabb4a.png">
+<img width="1726" alt="Screen Shot 2022-12-12 at 5 20 45 PM" src="https://user-images.githubusercontent.com/35658851/207203021-6d35b736-cc59-4b0f-916f-546b4a1cdb1b.png">
+<img width="1728" alt="Screen Shot 2022-12-12 at 5 21 01 PM" src="https://user-images.githubusercontent.com/35658851/207203026-8e8a7c48-bd97-4ecd-a78a-3bb8aff2d902.png">
+<img width="1728" alt="Screen Shot 2022-12-12 at 5 21 12 PM" src="https://user-images.githubusercontent.com/35658851/207203037-dc012186-80d6-4dd3-b299-237ddc081fb6.png">
+<img width="1726" alt="Screen Shot 2022-12-12 at 5 21 29 PM" src="https://user-images.githubusercontent.com/35658851/207203046-04ad1314-d604-497c-b263-196c5c1e2ab3.png">
+<img width="1726" alt="Screen Shot 2022-12-12 at 5 21 40 PM" src="https://user-images.githubusercontent.com/35658851/207203050-
+<img width="1728" alt="Screen Shot 2022-12-12 at 5 21 50 PM" src="https://user-images.githubusercontent.com/35658851/207203058-8acea3c4-e029-434c-bed1-da9c6cf9aef1.png">
+bbc25e73-a2ca-4a4f-9746-74bba77400d2.png">
+<img width="1726" alt="Screen Shot 2022-12-12 at 5 22 00 PM" src="https://user-images.githubusercontent.com/35658851/207203062-1095aa8a-cfe4-4957-a2fb-bd8344de0d02.png">
 
 
 ## Branching
