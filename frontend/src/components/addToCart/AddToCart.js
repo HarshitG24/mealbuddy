@@ -20,9 +20,11 @@ function AddToCart({ cart, setCart }) {
       p += element.qty * element.price;
       c += element.qty * element.calories;
     });
+    
+    // it would be good practice to round the price and calorie value here
 
-    setTotalPrice(p);
-    setTotalCalories(c);
+    setTotalPrice(Math.round(p));
+    setTotalCalories(Math.round(c));
 
     async function getCurrentUser() {
       const user_name = await fetch("/api/account/getUser");
