@@ -90,3 +90,7 @@ We followed the concept of pair progarmming while working on this project
 3. rls/harshit - All code commits by Harshit Gajjar
 4. rls/mihir - All code commits by Mihir Mesia
 5. rls/master - final changes for Project 4
+
+## Pair review from Taohan
+Overall awesome project and great implementation. I especially like how you are able to visualize the difference of ingredients in the creating process.
+However, I noticed a few places that might some improvement (and not mentioned by previous comments).
