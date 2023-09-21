@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.spinner {
+/* .spinner {
   width: 64px;
   height: 64px;
   border: 8px solid;
@@ -20,7 +20,7 @@
     no-repeat;
   border-radius: 50%;
   animation: spin-anim 1.2s linear infinite;
-}
+} */
 
 @keyframes spin-anim {
   0% {
