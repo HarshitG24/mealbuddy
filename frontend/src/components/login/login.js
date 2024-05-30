@@ -43,9 +43,10 @@ export default function Login() {
               required
               className="login_input"
               ref={input_email}
+              placeholder="Email Address"
             />
             <label for="email" className="login_input_label">
-              Email Address
+              {/* Email Address */}
             </label>
           </div>
 
@@ -56,9 +57,10 @@ export default function Login() {
               required
               className="login_input"
               ref={input_password}
+              placeholder="Password"
             />
             <label for="password" className="login_input_label">
-              Password
+              {/* Password */}
             </label>
           </div>
 
