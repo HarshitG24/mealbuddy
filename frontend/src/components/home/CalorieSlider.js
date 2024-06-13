@@ -58,4 +58,5 @@ CalorieSlider.propTypes = {
   setCurrentPage: PropTypes.func.isRequired,
 };
 
+
 export default CalorieSlider;
